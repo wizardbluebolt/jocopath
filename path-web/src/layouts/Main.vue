@@ -30,27 +30,20 @@
           </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main class="d-flex align-center justify-center">
-      <v-container class="fill-height">
-        <v-responsive class="align-center text-center fill-height">
-        
-          <v-row class="d-flex align-center justify-center fill-height">
-            <v-col cols="auto">
-              <router-view />
-            </v-col>
-          </v-row>
-
-        </v-responsive>
-      </v-container>
+    <v-main>
+        <router-view />
     </v-main>
-    <v-footer height="60">
-      <v-row class="bg-teal-lighten-1 align-center justify-center">
+    <v-footer height="60" app>
+      <v-row class="bg-teal-lighten-1 align-center justify-space-around">
         <v-col cols="auto">
           Get Help
         </v-col>
 
-        <v-col cols="auto">
-          <v-img width="65" height="65" src="@/assets/images/PATHlogo.svg" />
+        <v-col cols="auto" align-center>
+          <v-row>
+            <v-img width="60" height="60" src="@/assets/images/PATHlogo.svg"  class="pa-0;"/>
+            <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>
+          </v-row>
         </v-col>
 
         <v-col cols="auto">
