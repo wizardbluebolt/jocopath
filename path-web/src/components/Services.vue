@@ -65,16 +65,10 @@
   
   <script setup>
     import { ref } from 'vue'
-    import { copyText } from 'vue3-clipboard'
+    import { toClipboard } from '@soerenmartius/vue3-clipboard'
     
     function doCopy(pText) {
-      copyText(pText, undefined, (error, event) => {
-        if (error) {
-          console.log('Cannot copy selected text ' + pText)
-        } else {
-          console.log(event)
-        }
-      })
+      toClipboard(pText)
     }
 
     const allServices = ref(
