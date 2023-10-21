@@ -9,7 +9,7 @@
         </v-row>
       </v-responsive>
     </v-container>
-  </template>
+</template>
   
   <script setup>
     //

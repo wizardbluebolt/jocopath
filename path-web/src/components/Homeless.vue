@@ -1,5 +1,6 @@
 <template>
-    <v-tabs
+  <h3 style="text-align: center;">Homelessness in Josephine County</h3>
+  <v-tabs
       v-model="viewTab"
       fixed-tabs
       bg-color="primary"

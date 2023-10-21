@@ -1,4 +1,5 @@
 <template>
+  <h3 style="text-align: center;">About PATH</h3>
     <v-tabs
       v-model="viewTab"
       fixed-tabs

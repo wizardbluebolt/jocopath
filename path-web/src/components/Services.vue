@@ -1,4 +1,5 @@
 <template>
+  <h3 style="text-align: center;">Services</h3>
   <v-card variant="outlined" v-for="service in allServices">
     <v-card-item>
       <v-card-title>
