@@ -76,7 +76,7 @@
       [
         {
           name: "Angels",
-          description: "",
+          description: "Details needed.",
           locations: "Grants Pass",
           address: "",
           phone: "",
