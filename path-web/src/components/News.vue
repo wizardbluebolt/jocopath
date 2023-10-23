@@ -97,7 +97,7 @@
     const allEvents = ref(
       [
         {
-          headline: "PATH General Meeting",
+          headline: "PATH General Meeting Sept 2023",
           description: "PATH General Meeting for September 2023.  Open to those wishing to learn more about recent PATH activities and progress or wishing to volunteer to serve on a committee or other activity.",
           date: setDate("2023-09-26"),
           time: "3:30 - 5:00pm",
@@ -109,7 +109,7 @@
           expirationDate: setDate("2023-09-27")
         },
         {
-          headline: "PATH General Meeting",
+          headline: "PATH General Meeting Oct 2023",
           description: "PATH General Meeting for October 2023.  Open to those wishing to learn more about recent PATH activities and progress or wishing to volunteer to serve on a committee or other activity.",
           date: setDate("2023-10-24"),
           time: "3:30 - 5:00pm",
@@ -121,7 +121,7 @@
           expirationDate: setDate("2023-10-25")
         },
         {
-          headline: "PATH General Meeting",
+          headline: "PATH General Meeting Nov 2023",
           description: "PATH General Meeting for November 2023.  Open to those wishing to learn more about recent PATH activities and progress or wishing to volunteer to serve on a committee or other activity.",
           date: setDate("2023-11-28"),
           time: "3:30 - 5:00pm",
