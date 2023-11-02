@@ -1,0 +1,26 @@
+{
+    "Version": "2023-11-01",
+    "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:CreateLogGroup",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:${region}:${account}:*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:BatchGetItem",
+              "dynamodb:GetItem",
+              "dynamodb:Query",
+              "dynamodb:DeleteItem",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem"
+          ],
+          "Resource": "arn:aws:dynamodb:${region}:${account}:table/${db_table_name}"
+      }
+    ]
+}
