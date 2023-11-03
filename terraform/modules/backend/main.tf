@@ -1,11 +1,11 @@
 locals {
-  source_file = "${var.operation}${var.object_type_name}.py"
+  source_file = "${var.operation}${var.object_type_name}"
 }
 
 data "archive_file" "lambda_archive" {
     type = "zip"
-    source_file = "${path.module}/lambda/${var.object_type_name}/${locals.source_file}.py"
-    output_path = "${path.module}/lambda/${var.object_type_name}/${locals.source_file}.zip"
+    source_file = "${path.module}/lambda/${var.object_type_name}/${local.source_file}.py"
+    output_path = "${path.module}/lambda/${var.object_type_name}/${local.source_file}.zip"
 }
 
 resource "aws_lambda_function" "operation_handler" {
@@ -30,6 +30,7 @@ resource "aws_apigatewayv2_integration" "operation" {
     integration_uri = aws_lambda_function.operation_handler.invoke_arn
     integration_type = "AWS_PROXY"
     integration_method = "POST"
+    payload_format_version = "2.0"
 }
 
 resource "aws_apigatewayv2_route" "operation" {

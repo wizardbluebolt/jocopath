@@ -6,7 +6,7 @@ resource "aws_iam_role" "lambdarole" {
 resource "aws_iam_policy" "lambdapolicy" {
     name = "${var.db_table_name}LambdaPolicy"
     path = "/"
-    description = "IAM policy for ${db_table_name} lambda functions"
+    description = "IAM policy for ${var.db_table_name} lambda functions"
     policy = templatefile(
                 "${path.module}/policy.tftpl", 
                 {

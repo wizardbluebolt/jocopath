@@ -23,31 +23,31 @@ locals {
 }
 
 provider "aws" {
-  region = "${locals.region}"
+  region = "${local.region}"
 }
 
 module "database" {
     source = "../../modules/database"
-    env_name = "${locals.env_name}"
+    env_name = "${local.env_name}"
 }
 
 module "apigw" {
   source = "../../modules/apigw"
-  env_name = "${locals.env_name}"
-  root_domain_name = "${locals.root_domain_name}"
+  env_name = "${local.env_name}"
+  root_domain_name = "${local.root_domain_name}"
 }
 
 module "authEvents" {
   source = "../../modules/authorization"
   db_table_name = "Events"
-  region = "${locals.region}"
-  account = "${locals.account}"
+  region = "${local.region}"
+  account = "${local.account}"
 }
 
 module "createEvent" {
   source = "../../modules/backend"
-  env_name = "${locals.env_name}"
-  region = "${locals.region}"
+  env_name = "${local.env_name}"
+  region = "${local.region}"
   db_table = "Events"
   object_type_name = "Event"
   operation = "create"
