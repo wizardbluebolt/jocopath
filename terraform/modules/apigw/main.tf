@@ -1,27 +1,11 @@
-resource "aws_route53_zone" "primary" {
-    name = var.root_domain_name
+data "aws_acm_certificate" "issued" {
+  domain = "${var.root_domain_name}"
+  types = ["AMAZON_ISSUED"]
+  most_recent = true
 }
 
-resource "aws_acm_certificate" "domain_cert" {
-    domain_name = var.root_domain_name
-    validation_method = "DNS"
-    lifecycle {
-      create_before_destroy = true
-    }
-}
-
-resource "aws_route53_record" "domain_dns" {
-    allow_overwrite = true
-    name = tolist(aws_acm_certificate.domain_cert.domain_validation_options)[0].resource_record_name
-    records = [tolist(aws_acm_certificate.domain_cert.domain_validation_options)[0].resource_record_value]
-    type = tolist(aws_acm_certificate.domain_cert.domain_validation_options)[0].resource_record_type
-    zone_id = aws_route53_zone.primary.zone_id
-    ttl = 60
-}
-
-resource "aws_acm_certificate_validation" "domain_cert_validation" {
-    certificate_arn = aws_acm_certificate.domain_cert.arn
-    validation_record_fqdns = [aws_route53_record.domain_dns.fqdn]
+data "aws_route53_zone" "hosted" {
+  name = "${var.root_domain_name}"
 }
 
 data "aws_iam_policy_document" "assume_role" {
@@ -79,6 +63,28 @@ resource "aws_apigatewayv2_api" "apigw" {
 resource "aws_cloudwatch_log_group" "stage_log_group" {
     name = "/aws/api_gw/${aws_apigatewayv2_api.apigw.name}"
     retention_in_days = 30
+}
+
+resource "aws_apigatewayv2_domain_name" "apidom" {
+  domain_name = "${var.root_domain_name}"
+
+  domain_name_configuration {
+    certificate_arn = data.aws_acm_certificate.issued.arn
+    endpoint_type = "REGIONAL"
+    security_policy = "TLS_1_2"
+  }
+}
+
+resource "aws_route53_record" "routerec" {
+  name = aws_apigatewayv2_domain_name.apidom.domain_name
+  type = "A"
+  zone_id = data.aws_route53_zone.hosted.zone_id
+
+  alias {
+    name = aws_apigatewayv2_domain_name.apidom.domain_name_configuration[0].target_domain_name
+    zone_id = aws_apigatewayv2_domain_name.apidom.domain_name_configuration[0].hosted_zone_id
+    evaluate_target_health = false
+  }
 }
 
 resource "aws_apigatewayv2_stage" "production" {
