@@ -9,3 +9,7 @@ variable "region" {
 variable "account" {
     description = "AWS account identifier for resource ARNs"
 }
+
+variable "env_name" {
+    description = "Deployment environment name"
+}

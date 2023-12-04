@@ -16,7 +16,7 @@ resource "aws_lambda_function" "operation_handler" {
     environment {
       variables = {
         REGION = "${var.region}"
-        TABLE = "${var.db_table}"
+        TABLE = "${var.env_name}_${var.db_table}"
       }
     }
     source_code_hash = filebase64sha256(data.archive_file.lambda_archive.output_path)

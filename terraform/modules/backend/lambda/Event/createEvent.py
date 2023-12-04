@@ -2,7 +2,7 @@ import logging
 import boto3
 import json
 import os
-session = boto3.Session(region=os.environ['REGION'])
+session = boto3.Session(region_name=os.environ['REGION'])
 dynamodb_client = session.client('dynamodb')
 
 def lambda_handler(event, context):

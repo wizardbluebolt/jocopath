@@ -1,18 +1,18 @@
 resource "aws_iam_role" "lambdarole" {
-    name = "${var.db_table_name}LambdaRole"
+    name = "${var.env_name}${var.db_table_name}LambdaRole"
     assume_role_policy = templatefile("${path.module}/rolePolicy.tftpl", {})
 }
 
 resource "aws_iam_policy" "lambdapolicy" {
-    name = "${var.db_table_name}LambdaPolicy"
+    name = "${var.env_name}${var.db_table_name}LambdaPolicy"
     path = "/"
-    description = "IAM policy for ${var.db_table_name} lambda functions"
+    description = "IAM policy for ${var.env_name}${var.db_table_name} lambda functions"
     policy = templatefile(
                 "${path.module}/policy.tftpl", 
                 {
                     region = "${var.region}", 
                     account = "${var.account}", 
-                    db_table_name = "${var.db_table_name}"
+                    db_table_name = "${var.env_name}_${var.db_table_name}"
                 })
 }
 

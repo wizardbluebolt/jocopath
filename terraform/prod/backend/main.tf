@@ -40,6 +40,7 @@ module "apigw" {
 module "authEvents" {
   source = "../../modules/authorization"
   db_table_name = "Events"
+  env_name = "${local.env_name}"
   region = "${local.region}"
   account = "${local.account}"
 }
