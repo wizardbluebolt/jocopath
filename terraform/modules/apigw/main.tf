@@ -108,3 +108,9 @@ resource "aws_apigatewayv2_stage" "production" {
       })
     }
 }
+
+resource "aws_apigatewayv2_api_mapping" "prodmap" {
+  api_id = aws_apigatewayv2_api.apigw.id
+  domain_name = aws_apigatewayv2_domain_name.apidom.id
+  stage = aws_apigatewayv2_stage.production.id
+}
