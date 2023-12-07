@@ -104,3 +104,18 @@ module "approveEvent" {
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
 }
+
+module "deleteEvent" {
+  source = "../../modules/backend"
+  env_name = "${local.env_name}"
+  region = "${local.region}"
+  db_table = "Events"
+  object_type_name = "Event"
+  operation = "delete"
+  http_method = "DELETE"
+  route_path = "event"
+  route_auth_type = "NONE"
+  lambda_source = "deleteEvent"
+  auth_role_arn = module.authEvents.role_arn
+  api_gw_id = module.apigw.gw_api_id
+}
