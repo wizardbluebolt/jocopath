@@ -89,3 +89,18 @@ module "approvedEvent" {
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
 }
+
+module "approveEvent" {
+  source = "../../modules/backend"
+  env_name = "${local.env_name}"
+  region = "${local.region}"
+  db_table = "Events"
+  object_type_name = "Event"
+  operation = "approve"
+  http_method = "PUT"
+  route_path = "event"
+  route_auth_type = "NONE"
+  lambda_source = "approveEvent"
+  auth_role_arn = module.authEvents.role_arn
+  api_gw_id = module.apigw.gw_api_id
+}
