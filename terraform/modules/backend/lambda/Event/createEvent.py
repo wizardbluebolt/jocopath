@@ -7,9 +7,9 @@ dynamodb_client = session.client('dynamodb')
 
 def lambda_handler(event, context):
     try:
-        print("event -> " + str(event))
+        # print("event -> " + str(event))
         payload = json.loads(event["body"])
-        print("payload -> " + str(payload))
+        print("Event create payload -> " + str(payload))
         dynamodb_response = dynamodb_client.put_item(
             TableName=os.environ["TABLE"],
             Item={
@@ -48,7 +48,7 @@ def lambda_handler(event, context):
                 }
             }
         )
-        print(dynamodb_response)
+        # print(dynamodb_response)
         return {
             'statusCode': 200,
             'body': '{"status": "Event created"}'

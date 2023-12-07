@@ -19,7 +19,7 @@ locals {
   account = data.aws_caller_identity.current.account_id
   region = "us-west-2"
   env_name = "Prod"
-  root_domain_name = "testpathjoco.org"
+  root_domain_name = "pathofjoco.org"
 }
 
 provider "aws" {
@@ -56,6 +56,36 @@ module "createEvent" {
   route_path = "event"
   route_auth_type = "NONE"
   lambda_source = "createEvent"
+  auth_role_arn = module.authEvents.role_arn
+  api_gw_id = module.apigw.gw_api_id
+}
+
+module "pendingEvent" {
+  source = "../../modules/backend"
+  env_name = "${local.env_name}"
+  region = "${local.region}"
+  db_table = "Events"
+  object_type_name = "Event"
+  operation = "queryPending"
+  http_method = "GET"
+  route_path = "eventpending"
+  route_auth_type = "NONE"
+  lambda_source = "queryPendingEvent"
+  auth_role_arn = module.authEvents.role_arn
+  api_gw_id = module.apigw.gw_api_id
+}
+
+module "approvedEvent" {
+  source = "../../modules/backend"
+  env_name = "${local.env_name}"
+  region = "${local.region}"
+  db_table = "Events"
+  object_type_name = "Event"
+  operation = "queryApproved"
+  http_method = "GET"
+  route_path = "event"
+  route_auth_type = "NONE"
+  lambda_source = "queryApprovedEvent"
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
 }
