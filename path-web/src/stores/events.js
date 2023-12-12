@@ -35,7 +35,7 @@ export const useEventStore = defineStore('event', {
         async saveEvent() {
             try {
                 await createEvent(this.currEvent);
-                this.currEvent = null;
+                this.newEvent();
             } catch (error) {
                 console.log("Error on create event")
                 console.error(error);
@@ -58,6 +58,20 @@ export const useEventStore = defineStore('event', {
                 console.log("Error on delete event " + this.currEvent.EventID)
                 console.error(error);
             }
+        },
+        newEvent() {
+            let newEvent = {
+                EventID: crypto.randomUUID(),
+                Headline: "",
+                Description: "",
+                WebURL: "",
+                Date: new Date(),
+                Location: "",
+                ContactName: "",
+                ContactEMail: "",
+                ContactPhone: ""
+            };
+            this.currEvent = newEvent;
         }
     }
 })

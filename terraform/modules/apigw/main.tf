@@ -58,6 +58,14 @@ resource "aws_apigatewayv2_api" "apigw" {
     name = "${var.env_name}"
     description = "PATH API Gateway for ${var.env_name} environment"
     protocol_type = "HTTP"
+    cors_configuration {
+      allow_credentials = true
+      allow_headers = ["*"]
+      allow_methods = ["DELETE", "GET", "POST", "PUT"]
+      allow_origins = ["http://localhost"]
+      expose_headers = ["*"]
+      max_age = 60
+    }
 }
 
 resource "aws_cloudwatch_log_group" "stage_log_group" {
