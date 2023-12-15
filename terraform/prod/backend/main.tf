@@ -19,7 +19,7 @@ locals {
   account = data.aws_caller_identity.current.account_id
   region = "us-west-2"
   env_name = "Prod"
-  root_domain_name = "pathofjoco.org"
+  root_domain_name = "api.pathofjoco.org"
 }
 
 provider "aws" {

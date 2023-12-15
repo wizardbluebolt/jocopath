@@ -62,7 +62,7 @@ resource "aws_apigatewayv2_api" "apigw" {
       allow_credentials = true
       allow_headers = ["*"]
       allow_methods = ["DELETE", "GET", "POST", "PUT"]
-      allow_origins = ["http://localhost"]
+      allow_origins = ["http://localhost", "https://pathofjoco.org"]
       expose_headers = ["*"]
       max_age = 60
     }

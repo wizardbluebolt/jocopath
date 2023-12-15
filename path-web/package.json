@@ -9,8 +9,10 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@aws-amplify/ui-vue": "^4.0.5",
     "@mdi/font": "7.0.96",
     "@soerenmartius/vue3-clipboard": "^0.1.2",
+    "aws-amplify": "^6.0.7",
     "axios": "^1.6.2",
     "core-js": "^3.29.0",
     "pinia": "^2.1.7",

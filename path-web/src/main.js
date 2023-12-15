@@ -11,9 +11,13 @@ import App from './App.vue'
 import { createApp } from 'vue'
 import { VueClipboard } from '@soerenmartius/vue3-clipboard'
 import { createPinia } from 'pinia'
+import { Amplify } from 'aws-amplify'
+import config from './amplifyconfiguration.json'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
+
+Amplify.configure(config)
 
 const pinia = createPinia()
 

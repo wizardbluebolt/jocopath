@@ -3,5 +3,5 @@ variable "env_name" {
 }
 
 variable "root_domain_name" {
-    description = "Root domain name to use for certificate creation and DNS entries"
+    description = "Root domain name to use for backend API"
 }
