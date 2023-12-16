@@ -1,6 +1,8 @@
 <template>
   <h3 style="text-align: center;">Contact PATH</h3>
-  <v-card-text class="d-flex justify-left align-center ga-2">
+  <Auth></Auth>
+  <v-card-text v-if="userStore.getIsAuthenticated"
+    class="d-flex justify-left align-center ga-2">
     <v-menu>
       <template v-slot:activator="{ props }">
         <v-btn color="primary" v-bind:="props">
@@ -19,7 +21,7 @@
       </v-list>
     </v-menu>
   </v-card-text>
-  <v-card-text>
+  <v-card-text v-if="userStore.getIsAuthenticated">
     <v-window v-model="formSelected">
       <v-window-item value=null>
         <p>Ground Rules</p>
@@ -49,12 +51,15 @@
   <script setup>
     import {ref} from 'vue'
     import EventForm from './EventForm.vue';
-    import { useEventStore } from '@/stores/events'
+    import { useEventStore } from '@/stores/events';
+    import { useUserStore } from '@/stores/user';
+    import Auth from './Auth.vue';
 
     const eventStore = useEventStore();
+    const userStore = useUserStore();
 
     const components = {
-      EventForm
+      EventForm, Auth
     }
 
     const formSelected = ref(null);

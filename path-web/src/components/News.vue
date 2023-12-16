@@ -7,7 +7,7 @@
     >
       <v-tab value="news">News</v-tab>
       <v-tab value="events">Events</v-tab>
-      <v-tab value="archive">Archive</v-tab>
+      <v-tab value="archive">Help Wanted</v-tab>
     </v-tabs>
     <v-card-text>
       <v-window v-model="viewTab">
