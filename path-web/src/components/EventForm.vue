@@ -80,8 +80,11 @@
 
     const eventStore = useEventStore();
 
+    const emit = defineEmits(['formSubmitted']);
+
     async function submitEvent() {
       await eventStore.saveEvent();
+      // emit('formSubmitted');
     }
 
     function isURL(pURL) {

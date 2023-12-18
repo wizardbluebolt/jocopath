@@ -28,7 +28,7 @@
             <v-card-title>{{ eventItem.Headline }}</v-card-title>
             <v-card-text>
               <p class="pa-4">{{ eventItem.Description }}</p>
-              <p class="pa-4">{{ eventItem.Date }}</p>
+              <p class="pa-4">{{ formatDateTime(eventItem.Date) }}</p>
               <p v-if="eventItem.Location.length > 0">
                 <b>Location: </b>{{ eventItem.Location }}
                 <v-tooltip location="end">
@@ -67,6 +67,7 @@
     import { ref, onMounted } from 'vue'
     import { toClipboard } from '@soerenmartius/vue3-clipboard'
     import { useEventStore } from '@/stores/events'
+    import { formatDateTime } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)

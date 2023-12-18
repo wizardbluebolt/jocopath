@@ -23,12 +23,14 @@ async function currentSession() {
   }
 
 export const useUserStore = defineStore('user', {
-    state: () => ({
+    state: () => {
+      return {
         currUser: '',
         isAuthenticated: false,
         isReviewer: false,
         isAdmin: false
-    }),
+      }
+    },
     getters: {
         getCurrUser: (state) => state.currUser,
         getIsAuthenticated: (state) => state.isAuthenticated,
@@ -38,6 +40,12 @@ export const useUserStore = defineStore('user', {
     actions: {
         async userLoggedIn() {
             const tokens = await currentAuthenticatedUser();
+            if (!tokens.idToken) {
+              this.currUser = '';
+              this.isAuthenticated = false;
+              this.isAdmin = false;
+              this.isReviewer = false;              
+            } else {
             this.currUser = tokens.idToken.payload.name;
             this.isAuthenticated = true;
             this.isAdmin = false;
@@ -46,9 +54,10 @@ export const useUserStore = defineStore('user', {
                 this.isAdmin = true;
                 this.isReviewer = true;
             } else {
-                if (tokens.idToken.payload['cognito:groups'].includes('reviewer')) {
+                if (tokens.idToken.payload['cognito:groups'].includes('reviewers')) {
                     this.isReviewer = true;
                 }
+              }              
             }
         },
         userLoggedOut() {

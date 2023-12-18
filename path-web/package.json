@@ -15,6 +15,7 @@
     "aws-amplify": "^6.0.7",
     "axios": "^1.6.2",
     "core-js": "^3.29.0",
+    "date-and-time": "^3.0.3",
     "pinia": "^2.1.7",
     "roboto-fontface": "*",
     "vue": "^3.2.0",

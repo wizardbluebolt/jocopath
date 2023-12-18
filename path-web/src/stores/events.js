@@ -36,6 +36,10 @@ export const useEventStore = defineStore('event', {
             try {
                 await createEvent(this.currEvent);
                 this.newEvent();
+                let response = await getApprovedEvents();
+                this.approvedEvents = convertObjects(response.data);
+                response = await getPendingEvents();
+                this.pendingEvents = convertObjects(response.data);
             } catch (error) {
                 console.log("Error on create event")
                 console.error(error);
@@ -46,7 +50,7 @@ export const useEventStore = defineStore('event', {
                 await approveEvent(this.currEvent.EventID);
                 this.currEvent = null;
             } catch (error) {
-                console.log("Error on approve event " + state.currEvent.EventID)
+                console.log("Error on approve event " + this.currEvent.EventID)
                 console.error(error);
             }
         },
@@ -72,6 +76,10 @@ export const useEventStore = defineStore('event', {
                 ContactPhone: ""
             };
             this.currEvent = newEvent;
+        },
+        selectEvent(pEventID) {
+            let tEvent = this.pendingEvents.find(tEvent => tEvent.EventID === pEventID );
+            this.currEvent = tEvent;
         }
     }
 })
