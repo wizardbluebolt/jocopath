@@ -9,8 +9,7 @@ dynamodb_client = session.client('dynamodb')
 def lambda_handler(event, context):
     try:
         print("event -> " + str(event))
-        payload = json.loads(event["body"])
-        eventID = payload["pEventID"]
+        eventID = event["queryStringParameters"]["eventID"]
         print("Event delete ID " + eventID)
         dynamodb_response = dynamodb_client.delete_item(
             TableName=os.environ["TABLE"],

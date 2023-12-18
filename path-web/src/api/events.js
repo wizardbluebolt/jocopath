@@ -10,7 +10,7 @@ const createEvent = (pEvent) => client.post("/event", pEvent);
 
 const approveEvent = (pEventID) => client.put("/event", { pEventID });
 
-const deleteEvent = (pEventID) => client.delete("/event", { pEventID });
+const deleteEvent = (pEventID) => client.delete("/event?eventID=" + pEventID);
 
 export {
     getApprovedEvents,
