@@ -55,11 +55,10 @@
                             <span>Delete event</span>
                         </v-tooltip>
                     </v-card-actions>
-                    <EventForm v-if="editMode && (eventItem.EventID === currEvent.EventID)" @formSubmitted="eventFormSubmitted"></EventForm>
-                    <v-btn v-if="editMode && (eventItem.EventID === currEvent.EventID)" 
-                        color="primary" @click="doCancelEditEvent()">
-                        Cancel
-                    </v-btn>
+                    <EventForm v-if="editMode && (eventItem.EventID === currEvent.EventID)" 
+                        @formSubmitted="eventFormSubmitted"
+                        @formEditCancelled="doCancelEditEvent">
+                    </EventForm>
                 </v-card>
             </v-window-item>
             <v-window-item value="archive">
@@ -115,12 +114,17 @@
         eventStore.selectEvent(pEventID);
     }
 
-    function doCancelEditEvent() {
-        editMode.value = false;
+    async function doCancelEditEvent() {
+        await eventStore.fetchPendingEvents();
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
     }
 
     async function eventFormSubmitted() {
-        editMode.value = false;
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
     }
 
     onMounted(async function () {

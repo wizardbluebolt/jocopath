@@ -63,14 +63,22 @@
         </v-col>
         </v-row>
         <v-row>
-        <v-col cols="2">
-            <v-btn 
-            type="submit" 
-            color="primary"
-            @click="$emit('formSubmitted')">
-            Submit Event
-            </v-btn>              
-        </v-col>
+          <v-col cols="2">
+              <v-btn 
+              type="submit" 
+              color="primary"
+              @click="$emit('formSubmitted')">
+              Submit Event
+              </v-btn>              
+          </v-col>
+          <v-col cols="2">
+              <v-btn 
+              type="button" 
+              color="primary"
+              @click="$emit('formEditCancelled')">
+              Cancel
+              </v-btn>              
+          </v-col>
         </v-row>
     </v-form>
 </template>
@@ -80,7 +88,7 @@
 
     const eventStore = useEventStore();
 
-    const emit = defineEmits(['formSubmitted']);
+    const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 
     async function submitEvent() {
       await eventStore.saveEvent();
