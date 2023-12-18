@@ -1,13 +1,16 @@
 import logging
 import boto3
 import os
+import json
+
 session = boto3.Session(region_name=os.environ['REGION'])
 dynamodb_client = session.client('dynamodb')
 
 def lambda_handler(event, context):
     try:
-        # print("event -> " + str(event))
-        eventID = event["queryStringParameters"]["eventID"]
+        print("event -> " + str(event))
+        payload = json.loads(event["body"])
+        eventID = payload["pEventID"]
         print("Event delete ID " + eventID)
         dynamodb_response = dynamodb_client.delete_item(
             TableName=os.environ["TABLE"],
