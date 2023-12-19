@@ -1,7 +1,7 @@
 <template>
     <h3 style="text-align: center">Review Submissions</h3>
     <Auth></Auth>
-    <v-tabs v-if="userStore.getIsReviewer" v-model="viewTab" fixed-tabs bg-color="primary">
+    <v-tabs v-if="userStore.getIsReviewer" v-model="viewTab" fixed-tabs bg-color="primary" slider-color="red">
         <v-tab value="news">News</v-tab>
         <v-tab value="events">Events ({{ pendingEvents.length }})</v-tab>
         <v-tab value="archive">Help Wanted</v-tab>
