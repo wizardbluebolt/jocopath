@@ -75,19 +75,6 @@
 
     const allServices = ref(
       [
-        {
-          name: "Angels",
-          description: "Details needed.",
-          locations: [
-            {
-              location: "Grants Pass",
-              address: "",
-              phone: "",
-            }
-          ],
-          email: "",
-          weburl: ""
-        },
         { 
           name: "Josephine County Food Bank",
           description: "Food distribution center serving community pantries throughout Josephine County.  The Food Bank is NOT itself a food pickup location for the general public.  The Food Bank provides food assistance for 18,000 residents of Josephine County. ",

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { getApprovedEvents, getPendingEvents, createEvent, approveEvent, deleteEvent } from "@/api/events"
 import { convertObjects } from "@/api/conversions"
+import { currentDateTime } from '@/api/datetimeops'
 
 export const useEventStore = defineStore('event', {
     state: () => ({
@@ -69,7 +70,7 @@ export const useEventStore = defineStore('event', {
                 Headline: "",
                 Description: "",
                 WebURL: "",
-                Date: new Date(),
+                Date: currentDateTime(),
                 Location: "",
                 ContactName: "",
                 ContactEMail: "",

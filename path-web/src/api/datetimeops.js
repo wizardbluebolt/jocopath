@@ -8,4 +8,9 @@ function formatDateTime(pString) {
     return date.format(dt, 'M/D/YYYY h:mm A')
 }
 
-export { formatDateTime }
+function currentDateTime() {
+    const now = new Date();
+    return date.format(now, "YYYY-MM-DDTHH:mm");
+}
+
+export { formatDateTime, currentDateTime }

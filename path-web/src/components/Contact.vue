@@ -39,7 +39,9 @@
           <p>Service form</p>
       </v-window-item>
       <v-window-item value="event">
-        <EventForm @formSubmitted="formSubmitted"></EventForm>
+        <EventForm 
+          @formSubmitted="formSubmitted" 
+          @formEditCancelled="formCancelled"></EventForm>
       </v-window-item>     
       <v-window-item value="helpwanted">
           <p>Help Wanted form</p>
@@ -49,7 +51,7 @@
 </template>
   
   <script setup>
-    import {ref} from 'vue'
+    import {ref, onMounted } from 'vue'
     import EventForm from './EventForm.vue';
     import { useEventStore } from '@/stores/events';
     import { useUserStore } from '@/stores/user';
@@ -64,6 +66,9 @@
 
     const formSelected = ref(null);
     const formTitle = ref("<- Select a choice");
+    const submitMsg = "Thank you for your submission.  " + 
+                      "Our team will review it for inclusion in the website as soon as possible.  " + 
+                      "They may contact you with questions."
 
     const forms = [
       {form: 'subscribe', title: 'Subscribe/Unsubscribe to PATH Newsletter'},
@@ -86,8 +91,18 @@
     }
 
     function formSubmitted() {
+      alert(submitMsg);
       formSelected.value = null;
       formTitle.value = "<- Select a choice";
     }
+
+    function formCancelled() {
+      formSelected.value = null;
+      formTitle.value = "<- Select a choice";
+    }
+
+    onMounted(async () => {
+      await userStore.userLoggedIn();
+    })
 
   </script>
