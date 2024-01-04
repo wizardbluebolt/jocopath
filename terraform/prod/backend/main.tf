@@ -20,6 +20,8 @@ locals {
   region = "us-west-2"
   env_name = "Prod"
   root_domain_name = "api.pathofjoco.org"
+  user_pool_id = "us-west-2_J2xOMISRT"
+  user_pool_client_app_id = "4rpuqofrtgqqp8ei2m8kq48jvd"
 }
 
 provider "aws" {
@@ -35,6 +37,9 @@ module "apigw" {
   source = "../../modules/apigw"
   env_name = "${local.env_name}"
   root_domain_name = "${local.root_domain_name}"
+  region = "${local.region}"
+  user_pool_id = "${local.user_pool_id}"
+  user_pool_client_app_id = "${local.user_pool_client_app_id}"
 }
 
 module "authEvents" {
@@ -54,10 +59,12 @@ module "createEvent" {
   operation = "create"
   http_method = "POST"
   route_path = "event"
-  route_auth_type = "NONE"
+  route_auth_type = "JWT"
   lambda_source = "createEvent"
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
+  api_gw_auth_id = module.apigw.gw_api_auth_id
+  auth_scope = "members"
 }
 
 module "pendingEvent" {
@@ -69,10 +76,12 @@ module "pendingEvent" {
   operation = "queryPending"
   http_method = "GET"
   route_path = "eventpending"
-  route_auth_type = "NONE"
+  route_auth_type = "JWT"
   lambda_source = "queryPendingEvent"
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
+  api_gw_auth_id = module.apigw.gw_api_auth_id
+  auth_scope = "reviewers"
 }
 
 module "approvedEvent" {
@@ -99,10 +108,12 @@ module "approveEvent" {
   operation = "approve"
   http_method = "PUT"
   route_path = "event"
-  route_auth_type = "NONE"
+  route_auth_type = "JWT"
   lambda_source = "approveEvent"
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
+  api_gw_auth_id = module.apigw.gw_api_auth_id
+  auth_scope = "reviewers"
 }
 
 module "deleteEvent" {
@@ -114,8 +125,10 @@ module "deleteEvent" {
   operation = "delete"
   http_method = "DELETE"
   route_path = "event"
-  route_auth_type = "NONE"
+  route_auth_type = "JWT"
   lambda_source = "deleteEvent"
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
+  api_gw_auth_id = module.apigw.gw_api_auth_id
+  auth_scope = "reviewers"
 }

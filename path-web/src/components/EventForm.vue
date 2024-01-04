@@ -85,13 +85,15 @@
 
 <script setup>
     import { useEventStore } from '@/stores/events'
+    import { useUserStore } from '@/stores/user';
 
     const eventStore = useEventStore();
+    const userStore = useUserStore();
 
     const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 
     async function submitEvent() {
-      await eventStore.saveEvent();
+      await eventStore.saveEvent(userStore.getAccessToken);
       // emit('formSubmitted');
     }
 

@@ -95,8 +95,8 @@
 
     async function doApproveEvent(pEventID) {
         eventStore.selectEvent(pEventID);
-        await eventStore.approveEvent();
-        await eventStore.fetchPendingEvents();
+        await eventStore.approveEvent(userStore.getAccessToken);
+        await eventStore.fetchPendingEvents(userStore.getAccessToken);
     }
 
     async function doDeleteEvent(pEventID) {
@@ -104,8 +104,8 @@
         let confResult = window.confirm(confMessage);
         if (confResult) {
             eventStore.selectEvent(pEventID);
-            await eventStore.deleteEvent();
-            await eventStore.fetchPendingEvents();
+            await eventStore.deleteEvent(userStore.getAccessToken);
+            await eventStore.fetchPendingEvents(userStore.getAccessToken);
         }
     }
 
@@ -115,7 +115,7 @@
     }
 
     async function doCancelEditEvent() {
-        await eventStore.fetchPendingEvents();
+        await eventStore.fetchPendingEvents(userStore.getAccessToken);
         setTimeout(() => {
             editMode.value = false;
         }, 1000);
@@ -128,9 +128,9 @@
     }
 
     onMounted(async function () {
-        userStore.userLoggedIn();
+        await userStore.userLoggedIn();
         if (eventStore.getPendingEvents.length === 0) {
-            await eventStore.fetchPendingEvents();
+            await eventStore.fetchPendingEvents(userStore.getAccessToken);
         }
     });
 </script>

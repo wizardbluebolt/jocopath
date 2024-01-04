@@ -62,10 +62,21 @@ resource "aws_apigatewayv2_api" "apigw" {
       allow_credentials = true
       allow_headers = ["*"]
       allow_methods = ["DELETE", "GET", "POST", "PUT"]
-      allow_origins = ["http://localhost", "https://pathofjoco.org"]
+      allow_origins = ["http://localhost:3000", "https://pathofjoco.org"]
       expose_headers = ["*"]
       max_age = 60
     }
+}
+
+resource "aws_apigatewayv2_authorizer" "apigw_auth" {
+  name = "PATH-JWT-Authorizer"
+  api_id = aws_apigatewayv2_api.apigw.id
+  authorizer_type = "JWT"
+  identity_sources = ["$request.header.Authorization"]
+  jwt_configuration {
+    audience = ["${var.user_pool_client_app_id}"]
+    issuer = "https://cognito-idp.${var.region}.amazonaws.com/${var.user_pool_id}"
+  }
 }
 
 resource "aws_cloudwatch_log_group" "stage_log_group" {

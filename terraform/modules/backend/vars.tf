@@ -27,7 +27,7 @@ variable "route_path" {
 }
 
 variable "route_auth_type" {
-    description = "Authorization type to use for route, either NONE or AWS_IAM"
+    description = "Authorization type to use for route, either NONE or JWT"
     default = "NONE"
 }
 
@@ -41,4 +41,14 @@ variable "auth_role_arn" {
 
 variable "api_gw_id" {
     description = "Identifier of the API Gateway resource the function will be deployed against"
+}
+
+variable "api_gw_auth_id" {
+    description = "Identifier of the API Gateway Authorizer to use for the route.  Required for JWT authorization type."
+    default = ""
+}
+
+variable "auth_scope" {
+    description = "Scope (user group name) to match to provide access to route.  Required for JWT authorization type."
+    default = ""
 }

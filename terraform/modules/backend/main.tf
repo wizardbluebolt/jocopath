@@ -38,4 +38,6 @@ resource "aws_apigatewayv2_route" "operation" {
   route_key = "${var.http_method} /${var.route_path}"
   target = "integrations/${aws_apigatewayv2_integration.operation.id}"
   authorization_type = "${var.route_auth_type}"
+  authorizer_id = var.route_auth_type == "NONE" ? null : "${var.api_gw_auth_id}"
+  authorization_scopes = var.route_auth_type == "NONE" ? null : ["${var.auth_scope}"]
 }

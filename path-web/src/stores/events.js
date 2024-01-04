@@ -24,40 +24,40 @@ export const useEventStore = defineStore('event', {
                 console.error(error);
             }
         },
-        async fetchPendingEvents() {
+        async fetchPendingEvents(pToken) {
             try {
-                const response = await getPendingEvents();
+                const response = await getPendingEvents(pToken);
                 this.pendingEvents =  convertObjects(response.data);
             } catch(error) {
                 console.log("Error on fetch pending events")
                 console.error(error);
             }
         },
-        async saveEvent() {
+        async saveEvent(pToken) {
             try {
-                await createEvent(this.currEvent);
+                await createEvent(pToken, this.currEvent);
                 this.newEvent();
                 let response = await getApprovedEvents();
                 this.approvedEvents = convertObjects(response.data);
-                response = await getPendingEvents();
+                response = await getPendingEvents(pToken);
                 this.pendingEvents = convertObjects(response.data);
             } catch (error) {
                 console.log("Error on create event")
                 console.error(error);
             }
         },
-        async approveEvent() {
+        async approveEvent(pToken) {
             try {
-                await approveEvent(this.currEvent.EventID);
+                await approveEvent(pToken, this.currEvent.EventID);
                 this.currEvent = null;
             } catch (error) {
                 console.log("Error on approve event " + this.currEvent.EventID)
                 console.error(error);
             }
         },
-        async deleteEvent() {
+        async deleteEvent(pToken) {
             try {
-                await deleteEvent(this.currEvent.EventID);
+                await deleteEvent(pToken, this.currEvent.EventID);
                 this.currEvent = null;
             } catch (error) {
                 console.log("Error on delete event " + this.currEvent.EventID)

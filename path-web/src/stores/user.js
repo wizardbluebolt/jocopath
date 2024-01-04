@@ -26,6 +26,7 @@ export const useUserStore = defineStore('user', {
     state: () => {
       return {
         currUser: '',
+        accessToken: null,
         isAuthenticated: false,
         isReviewer: false,
         isAdmin: false
@@ -33,6 +34,7 @@ export const useUserStore = defineStore('user', {
     },
     getters: {
         getCurrUser: (state) => state.currUser,
+        getAccessToken: (state) => state.accessToken,
         getIsAuthenticated: (state) => state.isAuthenticated,
         getIsReviewer: (state) => state.isReviewer,
         getIsAdmin: (state) => state.isAdmin
@@ -40,13 +42,15 @@ export const useUserStore = defineStore('user', {
     actions: {
         async userLoggedIn() {
             const tokens = await currentAuthenticatedUser();
-            if (!tokens.idToken) {
+            if (!tokens.accessToken) {
               this.currUser = '';
+              this.accessToken = null;
               this.isAuthenticated = false;
               this.isAdmin = false;
               this.isReviewer = false;              
             } else {
             this.currUser = tokens.idToken.payload.name;
+            this.accessToken = tokens.accessToken.toString();
             this.isAuthenticated = true;
             this.isAdmin = false;
             this.isReviewer = false;
@@ -62,6 +66,7 @@ export const useUserStore = defineStore('user', {
         },
         userLoggedOut() {
             this.currUser = '';
+            this.accessToken = null;
             this.isAuthenticated = false;
             this.isAdmin = false;
             this.isReviewer = false;
