@@ -64,6 +64,7 @@ module "createEvent" {
   auth_role_arn = module.authEvents.role_arn
   api_gw_id = module.apigw.gw_api_id
   api_gw_auth_id = module.apigw.gw_api_auth_id
+  auth_scope = "members"
 }
 
 module "pendingEvent" {
