@@ -20,8 +20,13 @@ const routes = [
         component: () => import('@/views/About.vue')
       },
       {
+        path: '/contribute',
+        name: 'Contribute',
+        component: () => import('@/views/Contribute.vue')
+      },
+      {
         path: '/contact',
-        name: 'Contact Us',
+        name: 'Contact',
         component: () => import('@/views/Contact.vue')
       },
       {

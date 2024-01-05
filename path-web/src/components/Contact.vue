@@ -24,19 +24,13 @@
   <v-card-text v-if="userStore.getIsAuthenticated">
     <v-window v-model="formSelected">
       <v-window-item value=null>
-        <p>Ground Rules</p>
-      </v-window-item>
-      <v-window-item value="subscribe">
-        <p>Subscription form</p>
-      </v-window-item>
-      <v-window-item value="unsubscribe">
-        <p>Unsubscription form</p>
-      </v-window-item>
-      <v-window-item value="volunteer">
-          <p>Volunteer form</p>
+        <p></p>
       </v-window-item>
       <v-window-item value="service">
           <p>Service form</p>
+      </v-window-item>
+      <v-window-item value="news">
+          <p>News form</p>
       </v-window-item>
       <v-window-item value="event">
         <EventForm 
@@ -71,9 +65,8 @@
                       "They may contact you with questions."
 
     const forms = [
-      {form: 'subscribe', title: 'Subscribe/Unsubscribe to PATH Newsletter'},
-      {form: 'volunteer', title: 'Volunteer with PATH'},
       {form: 'service', title: 'Tell us about your service'},
+      {form: 'news', title: 'Tell us about your news item'},
       {form: 'event', title: 'Tell us about your event'},
       {form: 'helpwanted', title: 'List a Help Wanted item'}
     ]

@@ -5,16 +5,13 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       </template>
       <v-app-bar-title>
-        Partners Assisting the Homeless in Josephine County
+        PATH: Partners Assisting the Homeless in Josephine County
       </v-app-bar-title>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" temporary>
       <v-list>
           <v-list-item>
               <router-link to="/about">About PATH</router-link>
-          </v-list-item>
-          <v-list-item>
-              <router-link to="/contact">Contact Us</router-link>
           </v-list-item>
           <v-list-item>
               <router-link to="/homeless">Homelessness in JoCo</router-link>
@@ -27,6 +24,14 @@
           </v-list-item>
           <v-list-item>
               <router-link to="/success">Success Stories</router-link>
+          </v-list-item>
+          <v-divider :thickness="3"></v-divider>
+          <p class="pa-4">Requires Registration</p>
+          <v-list-item>
+              <router-link to="/contribute">Contribute</router-link>
+          </v-list-item>
+          <v-list-item v-if="isReviewer">
+              <router-link to="/review">Review</router-link>
           </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -55,6 +60,12 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
+  import { useUserStore } from "@/stores/user";
+
+  const userStore = useUserStore();
   const drawer = ref(false)
+
+  const isReviewer = computed(() => userStore.getIsReviewer);
+
 </script>
