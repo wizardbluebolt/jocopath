@@ -4,6 +4,7 @@
       v-model="viewTab"
       fixed-tabs
       bg-color="primary"
+      color="yellow"
       slider-color="red">
       <v-tab value="news">News</v-tab>
       <v-tab value="events">Events</v-tab>

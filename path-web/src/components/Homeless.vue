@@ -4,6 +4,8 @@
       v-model="viewTab"
       fixed-tabs
       bg-color="primary"
+      color="yellow"
+      slider-color="red"
     >
       <v-tab value="facts">Facts</v-tab>
       <v-tab value="problem">The Problem</v-tab>
