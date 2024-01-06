@@ -1,5 +1,7 @@
 import date from 'date-and-time';
 
+const defaultExpireDays = 30;
+
 function formatDateTime(pString) {
     if (pString.length === 0) {
         return ""
@@ -13,4 +15,9 @@ function currentDateTime() {
     return date.format(now, "YYYY-MM-DDTHH:mm");
 }
 
-export { formatDateTime, currentDateTime }
+function defaultExpirationDate() {
+    const now = new Date();
+    return date.addDays(now, defaultExpireDays);
+}
+
+export { formatDateTime, currentDateTime, defaultExpirationDate }
