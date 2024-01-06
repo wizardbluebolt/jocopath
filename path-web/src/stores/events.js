@@ -81,6 +81,10 @@ export const useEventStore = defineStore('event', {
         selectEvent(pEventID) {
             let tEvent = this.pendingEvents.find(tEvent => tEvent.EventID === pEventID );
             this.currEvent = tEvent;
+        },
+        selectApprovedEvent(pEventID) {
+            let tEvent = this.approvedEvents.find(tEvent => tEvent.EventID === pEventID);
+            this.currEvent = tEvent;
         }
     }
 })

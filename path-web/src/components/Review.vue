@@ -1,18 +1,26 @@
 <template>
     <h3 style="text-align: center">Review Submissions</h3>
     <Auth></Auth>
+    <v-card-text>
+        <v-row>
+            <v-radio-group inline v-model="eventListMode">
+                    <v-radio label="Pending" value="Pending"></v-radio>
+                    <v-radio label="Approved" value="Approved"></v-radio>
+            </v-radio-group>
+        </v-row>
+    </v-card-text>
     <v-tabs v-if="userStore.getIsReviewer" 
         v-model="viewTab" fixed-tabs 
-        bg-color="primary" color="yellow" slider-color="red">
+        bg-color="primary" color="yellow" slider-color="yellow">
         <v-tab value="news">News</v-tab>
-        <v-tab value="events">Events ({{ pendingEvents.length }})</v-tab>
+        <v-tab value="events">Events ({{ eventsList.length }})</v-tab>
         <v-tab value="archive">Help Wanted</v-tab>
     </v-tabs>
     <v-card-text v-if="userStore.getIsReviewer">
         <v-window v-model="viewTab">
             <v-window-item value="news"> </v-window-item>
             <v-window-item value="events">
-                <v-card variant="outlined" v-for="eventItem in pendingEvents" :key="eventItem.EventID">
+                <v-card variant="outlined" v-for="eventItem in eventsList" :key="eventItem.EventID">
                     <v-card-title v-if="!editMode">{{ eventItem.Headline }}</v-card-title>
                     <v-card-text v-if="!editMode">
                         <p class="pa-4">{{ eventItem.Description }}</p>
@@ -29,7 +37,7 @@
                         </p>
                     </v-card-text>
                     <v-card-actions v-if="!editMode">
-                        <v-tooltip location="end">
+                        <v-tooltip location="end" v-if="eventListMode == 'Pending'">
                             <template v-slot:activator="{ props }">
                                 <v-btn v-bind="props" density="compact" aria-label="Approve Event" icon
                                     @click="doApproveEvent(eventItem.EventID)">
@@ -38,7 +46,7 @@
                             </template>
                             <span>Approve event</span>
                         </v-tooltip>
-                        <v-tooltip location="end">
+                        <v-tooltip location="end" v-if="eventListMode == 'Pending'">
                             <template v-slot:activator="{ props }">
                                 <v-btn v-bind="props" density="compact" aria-label="Edit Event" icon
                                     @click="doEditEvent(eventItem.EventID)">
@@ -47,7 +55,7 @@
                             </template>
                             <span>Edit event</span>
                         </v-tooltip>
-                        <v-tooltip location="end">
+                        <v-tooltip location="end" v-if="eventListMode == 'Pending'">
                             <template v-slot:activator="{ props }">
                                 <v-btn v-bind="props" density="compact" aria-label="Delete Event" icon
                                     @click="doDeleteEvent(eventItem.EventID)">
@@ -55,6 +63,15 @@
                                 </v-btn>
                             </template>
                             <span>Delete event</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="eventListMode != 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Cancel Event Approval" icon
+                                    @click="doCancelEvent(eventItem.EventID)">
+                                    <v-icon color="grey-lighten-1">mdi-cancel</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Cancel event approval</span>
                         </v-tooltip>
                     </v-card-actions>
                     <EventForm v-if="editMode && (eventItem.EventID === currEvent.EventID)" 
@@ -84,11 +101,18 @@
     const eventStore = useEventStore();
     const userStore = useUserStore();
 
-    const pendingEvents = computed(() => eventStore.pendingEvents);
-    const currEvent = computed(() => eventStore.currEvent);
-
     const viewTab = ref(null);
     const editMode = ref(false);
+    const eventListMode = ref("Pending");
+
+    const eventsList = computed(() => {
+        if (eventListMode.value == "Pending") {
+            return eventStore.pendingEvents;
+        } else {
+            return eventStore.approvedEvents;
+        }
+    });
+    const currEvent = computed(() => eventStore.currEvent);
 
     const components = {
         EventForm,
@@ -114,6 +138,17 @@
     function doEditEvent(pEventID) {
         editMode.value = true;
         eventStore.selectEvent(pEventID);
+    } 
+
+    async function doCancelEvent(pEventID) {
+        if (eventListMode.value == "Pending") {
+            eventStore.selectEvent(pEventID);
+        } else {
+            eventStore.selectApprovedEvent(pEventID);
+        }
+        await eventStore.saveEvent(userStore.getAccessToken);
+        await eventStore.fetchPendingEvents(userStore.getAccessToken);
+        await eventStore.fetchApprovedEvents();
     }
 
     async function doCancelEditEvent() {
@@ -133,6 +168,7 @@
         await userStore.userLoggedIn();
         if (eventStore.getPendingEvents.length === 0) {
             await eventStore.fetchPendingEvents(userStore.getAccessToken);
+            await eventStore.fetchApprovedEvents();
         }
     });
 </script>

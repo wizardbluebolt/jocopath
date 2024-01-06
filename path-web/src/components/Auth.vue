@@ -3,9 +3,9 @@
         'name'
     ]">
     </authenticator>
-    <template v-if="auth.route === 'authenticated'">
+<!--     <template v-if="auth.route === 'authenticated'">
         <v-btn @click="auth.signOut">Sign Out</v-btn>
-    </template>
+    </template> -->
 </template>
 
 <script setup>
