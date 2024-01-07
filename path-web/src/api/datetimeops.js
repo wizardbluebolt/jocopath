@@ -10,6 +10,14 @@ function formatDateTime(pString) {
     return date.format(dt, 'M/D/YYYY h:mm A')
 }
 
+function formatDate(pString) {
+    if (pString.length === 0) {
+        return ""
+    }
+    let tDate = date.parse(pString, 'YYYY-MM-DD HH:mm');
+    return date.format(tDate, 'M/D/YYYY')
+}
+
 function currentDateTime() {
     const now = new Date();
     return date.format(now, "YYYY-MM-DDTHH:mm");
@@ -21,4 +29,4 @@ function defaultExpirationDate() {
     return date.format(expired, "YYYY-MM-DDTHH:mm");
 }
 
-export { formatDateTime, currentDateTime, defaultExpirationDate }
+export { formatDateTime, formatDate, currentDateTime, defaultExpirationDate }

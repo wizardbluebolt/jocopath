@@ -14,7 +14,7 @@
         bg-color="primary" color="yellow" slider-color="yellow">
         <v-tab value="news">News ({{ newsList.length }})</v-tab>
         <v-tab value="events">Events ({{ eventsList.length }})</v-tab>
-        <v-tab value="helpwanted">Help Wanted</v-tab>
+        <v-tab value="helpwanted">Help Wanted ({{ helpList.length }})</v-tab>
     </v-tabs>
     <v-card-text v-if="userStore.getIsReviewer">
         <v-window v-model="viewTab">
@@ -137,8 +137,61 @@
                 </v-card>
             </v-window-item>
             <v-window-item value="helpwanted">
-                <v-card>
-                    <v-card-text> Help Wanted </v-card-text>
+                <v-card variant="outlined" v-for="helpItem in helpList" :key="helpItem.HelpID">
+                    <v-card-title v-if="!editMode">{{ helpItem.Headline }}</v-card-title>
+                    <v-card-text v-if="!editMode">
+                        <p class="pa-4">{{ helpItem.Description }}</p>
+                        <p class="pa-4">
+                            <b>Help Date: </b>{{ formatDateTime(helpItem.Date) }}
+                            <b>Expires: </b>{{ formatDateTime(helpItem.ExpirationDate) }}</p>
+                        <p v-if="helpItem.WebURL.length > 0">
+                            <b>Web URL: </b>{{ helpItem.WebURL }}</p>
+                        <p v-if="helpItem.ContactName.length > 0">
+                            <b>Contact: </b>{{ helpItem.ContactName }} {{ helpItem.ContactPhone }} {{ helpItem.ContactEMail }}</p>
+                        <p><b>Publish Contact Information with Help Wanted Item: </b>{{ helpItem.PublishContact }}</p>
+                    </v-card-text>
+                    <v-card-actions v-if="!editMode">
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Approve Help Wanted" icon
+                                    @click="doApproveHelp(helpItem.HelpID)">
+                                    <v-icon color="grey-lighten-1">mdi-check-decagram</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Approve help wanted item</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Edit Help Wanted" icon
+                                    @click="doEditHelp(helpItem.HelpID)">
+                                    <v-icon color="grey-lighten-1">mdi-pencil</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Edit help wanted item</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Delete Help Wanted" icon
+                                    @click="doDeleteHelp(helpItem.HelpID)">
+                                    <v-icon color="grey-lighten-1">mdi-trash-can</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Delete help wanted item</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode != 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Cancel Help Wanted Approval" icon
+                                    @click="doCancelHelp(helpItem.HelpID)">
+                                    <v-icon color="grey-lighten-1">mdi-cancel</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Cancel help wanted item approval</span>
+                        </v-tooltip>
+                    </v-card-actions>
+                    <HelpForm v-if="editMode && (helpItem.HelpID === currHelp.HelpID)" 
+                        @formSubmitted="helpFormSubmitted"
+                        @formEditCancelled="doCancelEditHelp">
+                    </HelpForm>                
                 </v-card>
             </v-window-item>
         </v-window>
@@ -151,6 +204,8 @@
     import { useEventStore } from "@/stores/events";
     import NewsForm from './NewsForm.vue';
     import { useNewsStore } from "@/stores/news";
+    import HelpForm from "./HelpForm.vue";
+    import { useHelpStore } from "@/stores/help";
     import { useUserStore } from "@/stores/user";
     import Auth from "./Auth.vue";
     import { formatDateTime } from '@/api/datetimeops';
@@ -158,6 +213,7 @@
 
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
+    const helpStore = useHelpStore();
     const userStore = useUserStore();
 
     const viewTab = ref(null);
@@ -182,9 +238,19 @@
     });
     const currNews = computed(() => newsStore.currNews);
 
+    const helpList = computed(() => {
+        if (listMode.value == "Pending") {
+            return helpStore.pendingHelp;
+        } else {
+            return helpStore.approvedHelp;
+        }
+    });
+    const currHelp = computed(() => helpStore.currHelp);
+
     const components = {
         EventForm,
         NewsForm,
+        HelpForm,
         Auth,
     };
 
@@ -192,12 +258,21 @@
         eventStore.selectEvent(pEventID);
         await eventStore.approveEvent(userStore.getAccessToken);
         await eventStore.fetchPendingEvents(userStore.getAccessToken);
+        await eventStore.fetchApprovedEvents();
     }
 
     async function doApproveNews(pNewsID) {
         newsStore.selectNews(pNewsID);
         await newsStore.approveNews(userStore.getAccessToken);
         await newsStore.fetchPendingNews(userStore.getAccessToken);
+        await newsStore.fetchApprovedNews();
+    }
+
+    async function doApproveHelp(pHelpID) {
+        helpStore.selectHelp(pHelpID);
+        await helpStore.approveHelp(userStore.getAccessToken);
+        await helpStore.fetchPendingHelp(userStore.getAccessToken);
+        await helpStore.fetchApprovedHelp();
     }
 
     async function doDeleteEvent(pEventID) {
@@ -220,6 +295,16 @@
         }
     }
 
+    async function doDeleteHelp(pHelpID) {
+        let confMessage = "Are you sure you want to delete this help wanted item?";
+        let confResult = window.confirm(confMessage);
+        if (confResult) {
+            helpStore.selectHelp(pHelpID);
+            await helpStore.deleteHelp(userStore.getAccessToken);
+            await helpStore.fetchPendingHelp(userStore.getAccessToken);
+        }
+    }
+
     function doEditEvent(pEventID) {
         editMode.value = true;
         eventStore.selectEvent(pEventID);
@@ -228,6 +313,11 @@
     function doEditNews(pNewsID) {
         editMode.value = true;
         newsStore.selectNews(pNewsID);
+    }
+
+    function doEditHelp(pHelpID) {
+        editMode.value = true;
+        helpStore.selectHelp(pHelpID);
     }
 
     async function doCancelEvent(pEventID) {
@@ -252,6 +342,17 @@
         await newsStore.fetchApprovedNews();
     }
 
+    async function doCancelHelp(pHelpID) {
+        if (listMode.value == "Pending") {
+            helpStore.selectHelp(pHelpID);
+        } else {
+            helpStore.selectApprovedHelp(pHelpID);
+        }
+        await helpStore.saveHelp(userStore.getAccessToken);
+        await helpStore.fetchPendingHelp(userStore.getAccessToken);
+        await helpStore.fetchApprovedHelp();
+    }
+
     async function doCancelEditEvent() {
         await eventStore.fetchPendingEvents(userStore.getAccessToken);
         setTimeout(() => {
@@ -261,6 +362,13 @@
 
     async function doCancelEditNews() {
         await newsStore.fetchPendingNews(userStore.getAccessToken);
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000)
+    }
+
+    async function doCancelEditHelp() {
+        await helpStore.fetchPendingHelp(userStore.getAccessToken);
         setTimeout(() => {
             editMode.value = false;
         }, 1000)
@@ -278,6 +386,12 @@
         }, 1000);
     }
 
+    async function helpFormSubmitted() {
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
+    }
+
     onMounted(async function () {
         await userStore.userLoggedIn();
         if (eventStore.getPendingEvents.length === 0) {
@@ -287,6 +401,10 @@
         if (newsStore.getPendingNews.length === 0) {
             await newsStore.fetchPendingNews(userStore.getAccessToken);
             await newsStore.fetchApprovedNews();
+        };
+        if (helpStore.getPendingHelp.length === 0) {
+            await helpStore.fetchPendingHelp(userStore.getAccessToken);
+            await helpStore.fetchApprovedHelp();
         };
     });
 </script>

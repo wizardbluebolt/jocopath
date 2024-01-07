@@ -40,7 +40,9 @@
           @formEditCancelled="formCancelled"></EventForm>
       </v-window-item>     
       <v-window-item value="helpwanted">
-          <p>Help Wanted form</p>
+        <HelpForm
+          @formSubmitted="formSubmitted"
+          @formEditCancelled="formCancelled"></HelpForm>
       </v-window-item>       
     </v-window>
   </v-card-text>
@@ -50,17 +52,20 @@
     import {ref, onMounted } from 'vue';
     import EventForm from './EventForm.vue';
     import NewsForm from './NewsForm.vue';
+    import HelpForm from './HelpForm.vue';
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
+    import { useHelpStore } from '@/stores/help';
     import { useUserStore } from '@/stores/user';
     import Auth from './Auth.vue';
 
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
+    const helpStore = useHelpStore();
     const userStore = useUserStore();
 
     const components = {
-      EventForm, NewsForm, Auth
+      EventForm, NewsForm, HelpForm, Auth
     }
 
     const formSelected = ref(null);
@@ -85,6 +90,9 @@
           break;
         case "news":
           newsStore.newNews();
+          break;
+        case "helpwanted":
+          helpStore.newHelp();
           break;
         default:
 

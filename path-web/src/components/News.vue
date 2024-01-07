@@ -53,9 +53,21 @@
           </v-card>
         </v-window-item>
         <v-window-item value="helpwanted">
-          <v-card>
+          <v-card variant="outlined" v-for="helpItem in helpStore.getApprovedHelp">
+            <v-card-title>{{ helpItem.Headline }}</v-card-title>
             <v-card-text>
-              Help Wanted
+              <p class="pa-4">{{ helpItem.Description }}</p>
+              <p class="pa-4">{{ formatDate(helpItem.Date) }}</p>
+              <p>
+                <a v-if="helpItem.WebURL.length > 0" :href="helpItem.WebURL">More Information</a>
+              </p>
+              <span v-if="helpItem.PublishContact == 'Y'">
+                <p v-if="helpItem.ContactName.length > 0">
+                  <b>Contact: </b>{{ helpItem.ContactName }} 
+                  <b>Phone: </b>{{ helpItem.ContactPhone }}
+                  <b>EMail: </b>{{ helpItem.ContactEMail }}
+                </p>
+              </span>
             </v-card-text>
           </v-card>
         </v-window-item>
@@ -68,7 +80,8 @@
     import { toClipboard } from '@soerenmartius/vue3-clipboard';
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
-    import { formatDateTime } from '@/api/datetimeops';
+    import { useHelpStore } from '@/stores/help';
+    import { formatDateTime, formatDate } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)
@@ -78,6 +91,7 @@
     
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
+    const helpStore = useHelpStore();
 
     onMounted(async function () {
         if (eventStore.getApprovedEvents.length === 0)  {
@@ -85,6 +99,9 @@
         }
         if (newsStore.getApprovedNews.length === 0) {
           await newsStore.fetchApprovedNews();
+        }
+        if (helpStore.getApprovedHelp.length === 0) {
+          await helpStore.fetchApprovedHelp();
         }
     });  
   
