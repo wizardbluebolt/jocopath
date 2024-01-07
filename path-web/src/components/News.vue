@@ -8,7 +8,7 @@
       slider-color="red">
       <v-tab value="news">News</v-tab>
       <v-tab value="events">Events</v-tab>
-      <v-tab value="archive">Help Wanted</v-tab>
+      <v-tab value="helpwanted">Help Wanted</v-tab>
     </v-tabs>
     <v-card-text>
       <v-window v-model="viewTab">
@@ -52,7 +52,7 @@
             </v-card-text>
           </v-card>
         </v-window-item>
-        <v-window-item value="archive">
+        <v-window-item value="helpwanted">
           <v-card>
             <v-card-text>
               Help Wanted
