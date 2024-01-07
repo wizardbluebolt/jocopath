@@ -13,19 +13,19 @@
     <v-card-text>
       <v-window v-model="viewTab">
         <v-window-item value="news">
-          <v-card variant="outlined" v-for="newsItem in allNews">
-            <v-card-title>{{ newsItem.headline }}</v-card-title>
+          <v-card variant="outlined" v-for="newsItem in newsStore.getApprovedNews">
+            <v-card-title>{{ newsItem.Headline }}</v-card-title>
             <v-card-text>
-              <p class="pa-4">{{ newsItem.description }}</p>
-              <p class="pa-4">{{ newsItem.date.toLocaleDateString() }}</p>
+              <p class="pa-4">{{ newsItem.Description }}</p>
+              <p class="pa-4">{{ formatDateTime(newsItem.Date) }}</p>
               <p>
-                <a v-if="newsItem.weburl.length > 0" :href="newsItem.weburl">More Information</a>
+                <a v-if="newsItem.WebURL.length > 0" :href="newsItem.WebURL">More Information</a>
               </p>
             </v-card-text>
           </v-card>
         </v-window-item>
         <v-window-item value="events">
-          <v-card variant="outlined" v-for="eventItem in store.getApprovedEvents">
+          <v-card variant="outlined" v-for="eventItem in eventStore.getApprovedEvents">
             <v-card-title>{{ eventItem.Headline }}</v-card-title>
             <v-card-text>
               <p class="pa-4">{{ eventItem.Description }}</p>
@@ -55,54 +55,36 @@
         <v-window-item value="archive">
           <v-card>
             <v-card-text>
-              News and Event Archive
+              Help Wanted
             </v-card-text>
           </v-card>
         </v-window-item>
-
       </v-window>
     </v-card-text>
   </template>
   
   <script setup>
-    import { ref, onMounted } from 'vue'
-    import { toClipboard } from '@soerenmartius/vue3-clipboard'
-    import { useEventStore } from '@/stores/events'
+    import { ref, onMounted } from 'vue';
+    import { toClipboard } from '@soerenmartius/vue3-clipboard';
+    import { useEventStore } from '@/stores/events';
+    import { useNewsStore } from '@/stores/news';
     import { formatDateTime } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)
     }
 
-    function setDate(pDate) {
-      let rDate = new Date(pDate)
-      return rDate
-    }
-
-    function currentItems(pCollect) {
-      return pCollect.filter((pItem) => {
-        return ((Object.is(pItem.expirationDate, null) || (pItem.expirationDate >= new Date())))
-      })
-    }
-
     const viewTab = ref(null)
-    const allNews = ref(
-      [
-        {
-          headline: "Warming Shelter Volunteers Needed",
-          description: "A warming shelter is planned again this winter season in Grants Pass.  Volunteers are needed to help serve during overnight hours to keep the shelter staffed and open.  If you are able to volunteer, please contact...",
-          weburl: "",
-          date: setDate("2023-10-01 17:00:00"),
-          expirationDate: setDate("2024-03-31 00:00:00")
-        },
-      ]
-    )
     
-    const store = useEventStore();
+    const eventStore = useEventStore();
+    const newsStore = useNewsStore();
 
     onMounted(async function () {
-        if (store.getApprovedEvents.length === 0)  {
-          await store.fetchApprovedEvents();
+        if (eventStore.getApprovedEvents.length === 0)  {
+          await eventStore.fetchApprovedEvents();
+        }
+        if (newsStore.getApprovedNews.length === 0) {
+          await newsStore.fetchApprovedNews();
         }
     });  
   

@@ -30,7 +30,9 @@
           <p>Service form</p>
       </v-window-item>
       <v-window-item value="news">
-          <p>News form</p>
+        <NewsForm
+          @formSubmitted="formSubmitted"
+          @formEditCancelled="formCancelled"></NewsForm>
       </v-window-item>
       <v-window-item value="event">
         <EventForm 
@@ -45,17 +47,20 @@
 </template>
   
   <script setup>
-    import {ref, onMounted } from 'vue'
+    import {ref, onMounted } from 'vue';
     import EventForm from './EventForm.vue';
+    import NewsForm from './NewsForm.vue';
     import { useEventStore } from '@/stores/events';
+    import { useNewsStore } from '@/stores/news';
     import { useUserStore } from '@/stores/user';
     import Auth from './Auth.vue';
 
     const eventStore = useEventStore();
+    const newsStore = useNewsStore();
     const userStore = useUserStore();
 
     const components = {
-      EventForm, Auth
+      EventForm, NewsForm, Auth
     }
 
     const formSelected = ref(null);
@@ -77,6 +82,9 @@
       switch(pItem.form) {
         case "event":
           eventStore.newEvent();
+          break;
+        case "news":
+          newsStore.newNews();
           break;
         default:
 

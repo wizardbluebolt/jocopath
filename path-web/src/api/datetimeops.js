@@ -17,7 +17,8 @@ function currentDateTime() {
 
 function defaultExpirationDate() {
     const now = new Date();
-    return date.addDays(now, defaultExpireDays);
+    let expired = date.addDays(now, defaultExpireDays);
+    return date.format(expired, "YYYY-MM-DDTHH:mm");
 }
 
 export { formatDateTime, currentDateTime, defaultExpirationDate }

@@ -4,7 +4,7 @@ import { getHeaders } from "./headers";
 const client = httpClient.httpClient;
 
 const getApprovedNews = async () => {
-    let response = await client.get("/News");
+    let response = await client.get("/news");
     return response;
 }
 

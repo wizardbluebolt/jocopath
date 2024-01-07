@@ -1,41 +1,42 @@
 <template>
-    <v-form @submit.prevent="submitEvent">
+    <v-form @submit.prevent="submitNews">
         <v-row>
         <v-col cols="12">
             <v-text-field
-            v-model="eventStore.currEvent.Headline"
-            :rules="rules.headlineRules"
-            label="Headline">
+                v-model="newsStore.currNews.Headline"
+                :rules="rules.headlineRules"
+                label="Headline">
             </v-text-field>              
         </v-col>
         <v-col cols="12">
             <v-textarea
-            v-model="eventStore.currEvent.Description"
-            counter
-            :rules="rules.descriptionRules"
-            label="Description">
+                v-model="newsStore.currNews.Description"
+                counter
+                :rules="rules.descriptionRules"
+                label="Description">
             </v-textarea>
         </v-col>
         <v-col cols="4">
             <v-text-field
-            type="datetime-local"
-            v-model="eventStore.currEvent.Date"
-            :rules="rules.date"
-            label="Date">
+                type="datetime-local"
+                v-model="newsStore.currNews.Date"
+                :rules="rules.date"
+                label="Date">
             </v-text-field>
         </v-col>
-        <v-col cols="8">
+        <v-col cols="4">
             <v-text-field
-            v-model="eventStore.currEvent.Location"
-            :rules="rules.location"
-            label="Location">
+                type="datetime-local"
+                v-model="newsStore.currNews.ExpirationDate"
+                :rules="rules.date"
+                label="Expiration Date">
             </v-text-field>
         </v-col>
         <v-col cols="6">
             <v-text-field
-            v-model="eventStore.currEvent.WebURL"
-            :rules="rules.weburl"
-            label="Web URL (optional)">
+                v-model="newsStore.currNews.WebURL"
+                :rules="rules.weburl"
+                label="Web URL (optional)">
             </v-text-field>
         </v-col>
         </v-row>
@@ -45,38 +46,38 @@
         </v-col>
         <v-col cols="4">
             <v-text-field
-            v-model="eventStore.currEvent.ContactName"
-            label="Contact Name (optional)">
+                v-model="newsStore.currNews.ContactName"
+                label="Contact Name (optional)">
             </v-text-field>              
         </v-col>
         <v-col cols="4">
             <v-text-field
-            v-model="eventStore.currEvent.ContactPhone"
-            label="Contact Phone (optional)">
+                v-model="newsStore.currNews.ContactPhone"
+                label="Contact Phone (optional)">
             </v-text-field>              
         </v-col>
         <v-col cols="4">
             <v-text-field
-            v-model="eventStore.currEvent.ContactEMail"
-            label="Contact E-Mail (optional)">
+                v-model="newsStore.currNews.ContactEMail"
+                label="Contact E-Mail (optional)">
             </v-text-field>              
         </v-col>
         </v-row>
         <v-row>
           <v-col cols="2">
               <v-btn 
-              type="submit" 
-              color="primary"
-              @click="$emit('formSubmitted')">
-              Submit Event
+                type="submit" 
+                color="primary"
+                @click="$emit('formSubmitted')">
+                Submit News
               </v-btn>              
           </v-col>
           <v-col cols="2">
               <v-btn 
-              type="button" 
-              color="primary"
-              @click="$emit('formEditCancelled')">
-              Cancel
+                type="button" 
+                color="primary"
+                @click="$emit('formEditCancelled')">
+                Cancel
               </v-btn>              
           </v-col>
         </v-row>
@@ -84,17 +85,17 @@
 </template>
 
 <script setup>
-    import { useEventStore } from '@/stores/events'
+    import { useNewsStore } from '@/stores/news';
     import { useUserStore } from '@/stores/user';
-    import { isURL } from '@/api/validationUtils'
+    import { isURL } from '@/api/validationUtils';
 
-    const eventStore = useEventStore();
+    const newsStore = useNewsStore();
     const userStore = useUserStore();
 
     const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 
-    async function submitEvent() {
-      await eventStore.saveEvent(userStore.getAccessToken);
+    async function submitNews() {
+      await newsStore.saveNews(userStore.getAccessToken);
       // emit('formSubmitted');
     }
 
@@ -118,12 +119,6 @@
           const tToday = new Date()
           if (value < tToday) return 'Date must be in the future'
           return true
-        }
-      ],
-      location: [
-        value => {
-          if (value?.length > 2) return true
-          return 'Location is required and must be at least 3 characters'
         }
       ],
       weburl: [
