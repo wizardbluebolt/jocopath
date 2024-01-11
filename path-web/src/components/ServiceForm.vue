@@ -1,13 +1,13 @@
 <template>
     <v-form @submit.prevent="submitService">
-        <v-col cols="12">
+        <v-col class="pb-1" cols="12">
             <v-text-field
             v-model="serviceStore.currService.ServiceName"
             :rules="rules.headlineRules"
             label="Service Name">
             </v-text-field>              
         </v-col>
-        <v-col cols="12">
+        <v-col class="pb-1" cols="12">
             <v-textarea
             v-model="serviceStore.currService.Description"
             counter
@@ -15,19 +15,19 @@
             label="Description">
             </v-textarea>
         </v-col>
-        <v-col cols="6">
+        <v-col class="pb-1" cols="6">
             <v-text-field
             v-model="serviceStore.currService.WebURL"
             :rules="rules.weburl"
             label="Web URL (optional)">
             </v-text-field>
         </v-col>
-        <v-row>
-            <v-col cols="4">
+        <v-row dense no-gutters>
+            <v-col class="pb-1" cols="10">
                 <b>Locations: </b>
             </v-col>
-            <v-col cols="1">
-                <v-tooltip location="end">
+            <v-col class="pb-1 pl-8" cols="1">
+                <v-tooltip location="end" v-if="!serviceStore.currLocationItem">
                   <template v-slot:activator="{ props }">
                     <v-btn 
                       v-bind="props"
@@ -42,18 +42,19 @@
             </v-col>
         </v-row>
         <div v-for="(locationItem, locIndex) in serviceStore.currService.LocationItems">
-            <v-row v-if="locationItem !== serviceStore.currLocationItem" width="100%">
-                <v-col cols="8">
+            <v-row dense no-gutters v-if="locationItem !== serviceStore.currLocationItem" width="100%">
+                <v-col class="pb-1 pl-8" cols="8">
                     {{ locationItem.Location }}
                 </v-col>
-                <v-col cols="5">
+                <v-col class="pb-1 pl-8" cols="5">
                     {{ locationItem.Address }}
                 </v-col>
-                <v-col cols="3">
+                <v-col class="pb-1 pl-4" cols="3">
                     {{ locationItem.Phone }}
                 </v-col>
-                <v-col cols="1">
-                    <v-tooltip location="end">
+                <v-col cols="2"></v-col>
+                <v-col class="pb-1 pl-8" cols="1">
+                    <v-tooltip location="end" v-if="!serviceStore.currLocationItem">
                         <template v-slot:activator="{ props }">
                             <v-btn
                                 v-bind="props"
@@ -66,8 +67,8 @@
                         <span>Edit location entry</span>
                     </v-tooltip>
                 </v-col>
-                <v-col cols="1">
-                    <v-tooltip location="end">
+                <v-col class="pb-1" cols="1">
+                    <v-tooltip location="end" v-if="!serviceStore.currLocationItem">
                         <template v-slot:activator="{ props }">
                             <v-btn
                                 v-bind="props"
@@ -81,27 +82,28 @@
                     </v-tooltip>
                 </v-col>
             </v-row>
-            <v-row v-if="locationItem === serviceStore.currLocationItem">
-                <v-col cols="6">
+            <v-row dense no-gutters v-if="locationItem === serviceStore.currLocationItem">
+                <v-col class="pb-1 ml-8 mt-4" cols="6">
                     <v-text-field
                         v-model="serviceStore.currLocationItem.Location"
                         :rules="rules.location"
                         label="Location name">
                     </v-text-field>                
                 </v-col>
-                <v-col cols="7">
+                <v-col class="pb-1 ml-8 pr-4" cols="7">
                     <v-text-field
                         v-model="serviceStore.currLocationItem.Address"
                         label="Location address">
                     </v-text-field>                
                 </v-col>
-                <v-col cols="3">
+                <v-col class="pb-1 pr-4" cols="3">
                     <v-text-field
                         v-model="serviceStore.currLocationItem.Phone"
+                        type="tel"
                         label="Location phone">
                     </v-text-field>                
                 </v-col>
-                <v-col cols="1">
+                <v-col class="pb-1 pt-4" cols="1">
                     <v-tooltip location="end">
                         <template v-slot:activator="{ props }">
                             <v-btn
@@ -117,31 +119,32 @@
                 </v-col>
             </v-row>
         </div>
-        <v-row>
-        <v-col cols="12" class="ml-4 mb-0 pb-0">
-            Contact information is only used by PATH staff.  It will not be published.
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-            v-model="serviceStore.currService.ContactName"
-            label="Contact Name (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-            v-model="serviceStore.currService.ContactPhone"
-            label="Contact Phone (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-            v-model="serviceStore.currService.ContactEMail"
-            label="Contact E-Mail (optional)">
-            </v-text-field>              
-        </v-col>
+        <v-row dense no-gutters>
+            <v-col cols="12" class="ml-4 mt-4 mb-0 pb-2">
+                Contact information is only used by PATH staff.  It will not be published.
+            </v-col>
+            <v-col class="pb-1 pr-4" cols="4">
+                <v-text-field
+                v-model="serviceStore.currService.ContactName"
+                label="Contact Name (optional)">
+                </v-text-field>              
+            </v-col>
+            <v-col class="pb-1 pr-4" cols="4">
+                <v-text-field
+                v-model="serviceStore.currService.ContactPhone"
+                type="tel"
+                label="Contact Phone (optional)">
+                </v-text-field>              
+            </v-col>
+            <v-col class="pb-1" cols="4">
+                <v-text-field
+                v-model="serviceStore.currService.ContactEMail"
+                label="Contact E-Mail (optional)">
+                </v-text-field>              
+            </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="2">
+        <v-row dense no-gutters>
+          <v-col cols="2" class="pr-4">
               <v-btn 
               type="submit" 
               color="primary"

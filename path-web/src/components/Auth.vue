@@ -1,22 +1,20 @@
 <template>
-    <authenticator :sign-up-attributes="[
-        'name'
-    ]">
+    <authenticator 
+        :sign-up-attributes="['name']"
+        :login-mechanisms="['email']"
+        :social-providers="[]">
     </authenticator>
-<!--     <template v-if="auth.route === 'authenticated'">
-        <v-btn @click="auth.signOut">Sign Out</v-btn>
-    </template> -->
 </template>
 
 <script setup>
-    import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue";
+    import { useAuthenticator, Authenticator } from "@aws-amplify/ui-vue";
     import "@aws-amplify/ui-vue/styles.css";
     import { Hub } from 'aws-amplify/utils';
     import { useUserStore } from '@/stores/user';
 
-    const auth = useAuthenticator();
-
     const userStore = useUserStore();
+
+    const auth = useAuthenticator();
 
     const authListener = async (data) => {
         switch (data.payload.event) {

@@ -1,75 +1,77 @@
 <template>
     <v-form @submit.prevent="submitHelp">
-        <v-row>
-        <v-col cols="12">
-            <v-text-field
-                v-model="helpStore.currHelp.Headline"
-                :rules="rules.headlineRules"
-                label="Headline">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="12">
-            <v-textarea
-                v-model="helpStore.currHelp.Description"
-                counter
-                :rules="rules.descriptionRules"
-                label="Description">
-            </v-textarea>
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                type="datetime-local"
-                v-model="helpStore.currHelp.Date"
-                :rules="rules.date"
-                label="Date">
-            </v-text-field>
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                type="datetime-local"
-                v-model="helpStore.currHelp.ExpirationDate"
-                :rules="rules.date"
-                label="Expiration Date">
-            </v-text-field>
-        </v-col>
-        <v-col cols="6">
-            <v-text-field
-                v-model="helpStore.currHelp.WebURL"
-                :rules="rules.weburl"
-                label="Web URL (optional)">
-            </v-text-field>
-        </v-col>
+        <v-row dense no-gutters>
+          <v-col cols="12">
+              <v-text-field
+                  v-model="helpStore.currHelp.Headline"
+                  :rules="rules.headlineRules"
+                  label="Headline">
+              </v-text-field>              
+          </v-col>
+          <v-col cols="12">
+              <v-textarea
+                  v-model="helpStore.currHelp.Description"
+                  counter
+                  :rules="rules.descriptionRules"
+                  label="Description">
+              </v-textarea>
+          </v-col>
+          <v-col class="mr-4" cols="4">
+              <v-text-field
+                  type="datetime-local"
+                  v-model="helpStore.currHelp.Date"
+                  :rules="rules.date"
+                  label="Date">
+              </v-text-field>
+          </v-col>
+          <v-col cols="4">
+              <v-text-field
+                  type="datetime-local"
+                  v-model="helpStore.currHelp.ExpirationDate"
+                  :rules="rules.date"
+                  label="Expiration Date">
+              </v-text-field>
+          </v-col>
+          <v-col cols="6">
+              <v-text-field
+                  v-model="helpStore.currHelp.WebURL"
+                  :rules="rules.weburl"
+                  label="Web URL (optional)">
+              </v-text-field>
+          </v-col>
         </v-row>
-        <v-row>
-        <v-col cols="12" class="ml-4 mb-0 pb-0">
-            <v-checkbox
-                v-model="helpStore.currHelp.PublishContact"
-                label="Publish contact information with the Help Wanted item"
-                false-value="N"
-                true-value="Y">
-            </v-checkbox>
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="helpStore.currHelp.ContactName"
-                label="Contact Name (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="helpStore.currHelp.ContactPhone"
-                label="Contact Phone (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="helpStore.currHelp.ContactEMail"
-                label="Contact E-Mail (optional)">
-            </v-text-field>              
-        </v-col>
+        <v-row dense no-gutters>
+          <v-col cols="12" class="ml-4 mb-0 pb-0">
+              <v-checkbox
+                  v-model="helpStore.currHelp.PublishContact"
+                  label="Publish contact information with the Help Wanted item"
+                  false-value="N"
+                  true-value="Y"
+                  hide-details="true">
+              </v-checkbox>
+          </v-col>
+          <v-col class="mr-4" cols="4">
+              <v-text-field
+                  v-model="helpStore.currHelp.ContactName"
+                  label="Contact Name (optional)">
+              </v-text-field>              
+          </v-col>
+          <v-col class="mr-4" cols="3">
+              <v-text-field
+                  v-model="helpStore.currHelp.ContactPhone"
+                  type="tel"
+                  label="Contact Phone (optional)">
+              </v-text-field>              
+          </v-col>
+          <v-col cols="4">
+              <v-text-field
+                  v-model="helpStore.currHelp.ContactEMail"
+                  label="Contact E-Mail (optional)">
+              </v-text-field>              
+          </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="3">
+        <v-row dense no-gutters>
+          <v-col class="pr-4" cols="3">
               <v-btn 
                 type="submit" 
                 color="primary"

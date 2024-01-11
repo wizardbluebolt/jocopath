@@ -1,5 +1,5 @@
 <template>
-  <h3 style="text-align: center;">Contact PATH</h3>
+  <h2 style="text-align: center; padding: 4px;">Contact PATH</h2>
   <Auth></Auth>
   <v-card-text v-if="userStore.getIsAuthenticated"
     class="d-flex justify-left align-center ga-2">
@@ -92,15 +92,22 @@
       switch(pItem.form) {
         case "event":
           eventStore.newEvent();
+          eventStore.currEvent.ContactName = userStore.getCurrUser;
+          eventStore.currEvent.ContactEMail = userStore.getCurrEmail;
           break;
         case "news":
           newsStore.newNews();
-          break;
+          newsStore.currNews.ContactName = userStore.getCurrUser;
+          newsStore.currNews.ContactEMail = userStore.getCurrEmail;          break;
         case "helpwanted":
           helpStore.newHelp();
+          helpStore.currHelp.ContactName = userStore.getCurrUser;
+          helpStore.currHelp.ContactEMail = userStore.getCurrEmail;
           break;
         case "service":
           serviceStore.newService();
+          serviceStore.currService.ContactName = userStore.getCurrUser;
+          serviceStore.currService.ContactEMail = userStore.getCurrEmail;
         default:
 
       }

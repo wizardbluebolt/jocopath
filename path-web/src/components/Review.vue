@@ -1,11 +1,11 @@
 <template>
-    <h3 style="text-align: center">Review Submissions</h3>
+    <h2 style="text-align: center; padding: 4px;">Review Submissions</h2>
     <Auth></Auth>
     <v-card-text>
-        <v-row>
-            <v-radio-group inline v-model="listMode">
-                    <v-radio label="Pending" value="Pending"></v-radio>
-                    <v-radio label="Approved" value="Approved"></v-radio>
+        <v-row dense no-gutters>
+            <v-radio-group inline hide-details v-model="listMode">
+                <v-radio label="Pending" value="Pending"></v-radio>
+                <v-radio label="Approved" value="Approved"></v-radio>
             </v-radio-group>
         </v-row>
     </v-card-text>

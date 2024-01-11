@@ -33,6 +33,14 @@
           <v-list-item v-if="isReviewer">
               <router-link to="/review">Review</router-link>
           </v-list-item>
+          <v-list-item v-if="userStore.currUser != ''">
+            <v-btn 
+              variant="plain"
+              density="compact"
+              text="Sign Out"
+              class="pl-0"
+              @click="auth.signOut"></v-btn>
+          </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-main>
@@ -62,9 +70,12 @@
 <script setup>
   import { ref, computed } from 'vue'
   import { useUserStore } from "@/stores/user";
+  import { useAuthenticator } from "@aws-amplify/ui-vue";
 
   const userStore = useUserStore();
-  const drawer = ref(false)
+  const drawer = ref(false);
+
+  const auth = useAuthenticator();
 
   const isReviewer = computed(() => userStore.getIsReviewer);
 

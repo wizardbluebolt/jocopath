@@ -1,70 +1,71 @@
 <template>
     <v-form @submit.prevent="submitNews">
-        <v-row>
-        <v-col cols="12">
-            <v-text-field
-                v-model="newsStore.currNews.Headline"
-                :rules="rules.headlineRules"
-                label="Headline">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="12">
-            <v-textarea
-                v-model="newsStore.currNews.Description"
-                counter
-                :rules="rules.descriptionRules"
-                label="Description">
-            </v-textarea>
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                type="datetime-local"
-                v-model="newsStore.currNews.Date"
-                :rules="rules.date"
-                label="Date">
-            </v-text-field>
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                type="datetime-local"
-                v-model="newsStore.currNews.ExpirationDate"
-                :rules="rules.date"
-                label="Expiration Date">
-            </v-text-field>
-        </v-col>
-        <v-col cols="6">
-            <v-text-field
-                v-model="newsStore.currNews.WebURL"
-                :rules="rules.weburl"
-                label="Web URL (optional)">
-            </v-text-field>
-        </v-col>
+        <v-row dense no-gutters>
+          <v-col cols="12">
+              <v-text-field
+                  v-model="newsStore.currNews.Headline"
+                  :rules="rules.headlineRules"
+                  label="Headline">
+              </v-text-field>              
+          </v-col>
+          <v-col cols="12">
+              <v-textarea
+                  v-model="newsStore.currNews.Description"
+                  counter
+                  :rules="rules.descriptionRules"
+                  label="Description">
+              </v-textarea>
+          </v-col>
+          <v-col class="mr-4" cols="4">
+              <v-text-field
+                  type="datetime-local"
+                  v-model="newsStore.currNews.Date"
+                  :rules="rules.date"
+                  label="Date">
+              </v-text-field>
+          </v-col>
+          <v-col cols="4">
+              <v-text-field
+                  type="datetime-local"
+                  v-model="newsStore.currNews.ExpirationDate"
+                  :rules="rules.date"
+                  label="Expiration Date">
+              </v-text-field>
+          </v-col>
+          <v-col cols="6">
+              <v-text-field
+                  v-model="newsStore.currNews.WebURL"
+                  :rules="rules.weburl"
+                  label="Web URL (optional)">
+              </v-text-field>
+          </v-col>
         </v-row>
-        <v-row>
-        <v-col cols="12" class="ml-4 mb-0 pb-0">
-            Contact information is only used by PATH staff.  It will not be published.
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="newsStore.currNews.ContactName"
-                label="Contact Name (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="newsStore.currNews.ContactPhone"
-                label="Contact Phone (optional)">
-            </v-text-field>              
-        </v-col>
-        <v-col cols="4">
-            <v-text-field
-                v-model="newsStore.currNews.ContactEMail"
-                label="Contact E-Mail (optional)">
-            </v-text-field>              
-        </v-col>
+        <v-row dense no-gutters>
+          <v-col cols="12" class="ml-4 mb-2 pb-0">
+              Contact information is only used by PATH staff.  It will not be published.
+          </v-col>
+          <v-col class="mr-4" cols="4">
+              <v-text-field
+                  v-model="newsStore.currNews.ContactName"
+                  label="Contact Name (optional)">
+              </v-text-field>              
+          </v-col>
+          <v-col class="mr-4" cols="3">
+              <v-text-field
+                  v-model="newsStore.currNews.ContactPhone"
+                  type="tel"
+                  label="Contact Phone (optional)">
+              </v-text-field>              
+          </v-col>
+          <v-col cols="4">
+              <v-text-field
+                  v-model="newsStore.currNews.ContactEMail"
+                  label="Contact E-Mail (optional)">
+              </v-text-field>              
+          </v-col>
         </v-row>
-        <v-row>
-          <v-col cols="2">
+        <v-row dense no-gutters>
+          <v-col class="pr-4" cols="2">
               <v-btn 
                 type="submit" 
                 color="primary"
