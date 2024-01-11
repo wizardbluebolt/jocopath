@@ -1,5 +1,5 @@
 <template>
-  <h3 style="text-align: center;">About PATH</h3>
+  <h2 style="text-align: center; padding: 4px;">About PATH</h2>
     <v-tabs
       v-model="viewTab"
       fixed-tabs
@@ -27,7 +27,7 @@
               <p class="pa-2">The purpose of PATH is to find positive workable solutions to help those in our community who are unhoused.</p>
               <p> </p>
               <p class="pa-2">The purpose of this website is:</p>
-              <ul class="pa-4">
+              <ul class="pa-4 ml-6">
                   <li>to provide examples of programs that have been shown to be successful elsewhere,</li>
                   <li class="pt-2">to provide interviews of people experiencing homelessness here in our community 
                     so that we might better understand them and their situation,</li>
@@ -71,7 +71,7 @@
               </v-card-subtitle>
               <v-card-text>
                 <p>{{ committee.purpose }}</p>
-                <p><b>Meets: </b>{{ committee.meetingDays }}</p>
+                <p class="pt-4"><b>Meets: </b>{{ committee.meetingDays }}</p>
               </v-card-text>
             </v-card-item>
           </v-card>
@@ -88,7 +88,7 @@
         {
           name: "Steering",
           chair: "Julie Thomas",
-          photo: "images/MattHeadshot2023.jpg",
+          photo: "images/JulieThomasHeadshot.png",
           purpose: "Overall governance of the PATH group.",
           meetingDays: "First Tuesday of each month"
         },
@@ -102,28 +102,28 @@
         {
           name: "Operations and Outreach",
           chair: "Diane Dahlgren",
-          photo: "images/MattHeadshot2023.jpg",
+          photo: "images/MissingHeadshot.png",
           purpose: "Support specific events, volunteer groups, and coordinate with non-profits.",
           meetingDays: "Friday each week"
         },
         {
           name: "Fundraising",
           chair: "TBD",
-          photo: "images/MattHeadshot2023.jpg",
+          photo: "images/MissingHeadshot.png",
           purpose: "Identify ways to raise funds to support PATH operations.",
           meetingDays: "Fifth Wednesday each month"
         },
         {
           name: "Housing and Development",
           chair: "Doug Walker",
-          photo: "images/MattHeadshot2023.jpg",
+          photo: "images/MissingHeadshot.png",
           purpose: "Support efforts to increase housing and new developments in the community.",
           meetingDays: "Second Tuesday each month"
         },   
         {
           name: "Mental Health and Addiction Recovery Solutions",
           chair: "Ann Igl",
-          photo: "images/MattHeadshot2023.jpg",
+          photo: "images/MissingHeadshot.png",
           purpose: "Support organizations providing mental health and addition recovery solutions.",
           meetingDays: "Third Thursday of each month"
         },                                     

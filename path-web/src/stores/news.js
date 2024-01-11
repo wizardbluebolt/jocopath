@@ -3,6 +3,17 @@ import { getApprovedNews, getPendingNews, createNews, approveNews, deleteNews } 
 import { convertObjects } from "@/api/conversions"
 import { currentDateTime, defaultExpirationDate } from '@/api/datetimeops'
 
+// Sort news so that the latest appears first
+function compareNews(pNews1, pNews2) {
+    if (pNews1.Date > pNews2.Date) {
+        return -1;
+    }
+    if (pNews1.Date < pNews2.Date) {
+        return 1;
+    }
+    return 0;
+}
+
 export const useNewsStore = defineStore('news', {
     state: () => ({
         approvedNews: [],
@@ -18,7 +29,7 @@ export const useNewsStore = defineStore('news', {
         async fetchApprovedNews() {
             try {
                 const response = await getApprovedNews();
-                this.approvedNews = convertObjects(response.data);
+                this.approvedNews = convertObjects(response.data).sort(compareNews);
             } catch (error) {
                 console.log("Error on fetch approved news");
                 console.error(error);
@@ -27,7 +38,7 @@ export const useNewsStore = defineStore('news', {
         async fetchPendingNews(pToken) {
             try {
                 const response = await getPendingNews(pToken);
-                this.pendingNews =  convertObjects(response.data);
+                this.pendingNews =  convertObjects(response.data).sort(compareNews);
             } catch(error) {
                 console.log("Error on fetch pending news")
                 console.error(error);
@@ -38,9 +49,9 @@ export const useNewsStore = defineStore('news', {
                 await createNews(pToken, this.currNews);
                 this.newNews();
                 let response = await getApprovedNews();
-                this.approvedNews = convertObjects(response.data);
+                this.approvedNews = convertObjects(response.data).sort(compareNews);
                 response = await getPendingNews(pToken);
-                this.pendingNews = convertObjects(response.data);
+                this.pendingNews = convertObjects(response.data).sort(compareNews);
             } catch (error) {
                 console.log("Error on create news")
                 console.error(error);

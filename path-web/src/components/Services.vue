@@ -1,65 +1,82 @@
 <template>
-  <h3 style="text-align: center;">Services</h3>
+  <h2 style="text-align: center; padding: 4px;">Services</h2>
   <v-card variant="outlined" v-for="service in serviceStore.getApprovedServices">
     <v-card-item>
       <v-card-title>
         {{ service.ServiceName }}
       </v-card-title>
       <v-card-text>
-        <p class="pa-4">{{ service.Description }}</p>
+        <p class="pa-2 ma-1">{{ service.Description }}</p>
         <p>
           <a v-if="service.WebURL.length > 0" :href="service.WebURL">Web Site</a>
         </p>
-        <p class="pa-4" v-for="locationItem in service.LocationItems">
-          <p><b>Location: </b>{{ locationItem.Location }}</p>
-          <p v-if="locationItem.Address.length > 0"><b>Address: </b>{{ locationItem.Address }}
+        <p class="pa-2 ma-1" v-for="(locationItem, locationIdx) in service.LocationItems">
+          <v-row dense no-gutters v-if="service.LocationItems.length > 0">
+            <v-col cols="2" class="pr-3 text-right">
+              <b v-if="locationIdx == 0">Locations:</b>
+            </v-col>
+            <v-col cols="10">
+              <p>{{ locationItem.Location }}</p>
+            </v-col>
+          </v-row>
+          <v-row dense no-gutters>
+            <v-col cols="2"></v-col>
+            <v-col cols="10">
+              <span class="pr-4" v-if="locationItem.Address.length > 0">{{ locationItem.Address }}
+                <v-tooltip location="end">
+                  <template v-slot:activator="{ props }">
+                    <v-btn 
+                      v-bind="props"
+                      density="compact" 
+                      aria-label="Copy Address" 
+                      icon
+                      @click="doCopy(locationItem.Address)">
+                      <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Copy address</span>
+                </v-tooltip>
+              </span>
+              <span v-if="locationItem.Phone.length > 0">
+                {{ locationItem.Phone }}
+                <v-tooltip location="end">
+                  <template v-slot:activator="{ props }">
+                    <v-btn 
+                      v-bind="props"
+                      density="compact" 
+                      aria-label="Copy Phone" 
+                      icon
+                      @click="doCopy(locationItem.Phone)">
+                      <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Copy phone</span>
+                </v-tooltip>
+              </span>
+            </v-col>
+          </v-row>
+        </p>
+        <v-row dense no-gutters v-if="service.ContactEMail.length > 0">
+          <v-col cols="2" class="pt-1 pr-3 text-right">
+            <b>E-Mail: </b>
+          </v-col>
+          <v-col cols="10" class="pl-2">
+            {{ service.ContactEMail }}
             <v-tooltip location="end">
               <template v-slot:activator="{ props }">
                 <v-btn 
                   v-bind="props"
                   density="compact" 
-                  aria-label="Copy Address" 
+                  aria-label="Copy E-Mail" 
                   icon
-                  @click="doCopy(locationItem.Address)">
+                  @click="doCopy(service.ContactEMail)">
                   <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
                 </v-btn>
               </template>
-              <span>Copy address</span>
+              <span>Copy e-mail</span>
             </v-tooltip>
-          </p>
-          <p v-if="locationItem.Phone.length > 0">
-            <b>Phone: </b>{{ locationItem.Phone }}
-            <v-tooltip location="end">
-              <template v-slot:activator="{ props }">
-                <v-btn 
-                  v-bind="props"
-                  density="compact" 
-                  aria-label="Copy Phone" 
-                  icon
-                  @click="doCopy(locationItem.Phone)">
-                  <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
-                </v-btn>
-              </template>
-              <span>Copy phone</span>
-            </v-tooltip>
-          </p>
-        </p>
-        <p v-if="service.ContactEMail.length > 0">
-          <b>E-Mail: </b>{{ service.ContactEMail }}
-          <v-tooltip location="end">
-            <template v-slot:activator="{ props }">
-              <v-btn 
-                v-bind="props"
-                density="compact" 
-                aria-label="Copy E-Mail" 
-                icon
-                @click="doCopy(service.ContactEMail)">
-                <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
-              </v-btn>
-            </template>
-            <span>Copy e-mail</span>
-          </v-tooltip>
-        </p>
+          </v-col>
+        </v-row>
       </v-card-text>
     </v-card-item>
   </v-card>

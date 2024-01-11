@@ -1,5 +1,5 @@
 <template>
-  <h3 style="text-align: center;">Homelessness in Josephine County</h3>
+  <h2 style="text-align: center; padding: 4px;">Homelessness in Josephine County</h2>
   <v-tabs
       v-model="viewTab"
       fixed-tabs
@@ -18,9 +18,21 @@
           <v-card>
             <v-card-text>
               <h3 class="pa-2">Facts about homelessness in Josephine County</h3>
+              <p class="pa-4">In the State of Oregon, there are estimated to be about 18,000 homeless people on a given night.
+                This is an average rate of 42.4 homeless for every 10,000 people in the general population.  
+                This rate is a slight decrease from the reported rate of 47.6 people per 10,000 population in 2007.
+              </p>
               <p class="pa-4">As of 2023, there are estimated to be over 600 homeless people in Grants Pass alone
-                among its 38,000 residents.</p>
-              <p class="pa-4">The median monthly rental in Grants Pass is $x,xxx while the median income is $x,xxx.</p>
+                among its 38,000 residents, which is a rate of 63 homeless per 10,000 in the general population.  
+                This is 50% higher than the reported state average, and double the rate estimated in 2007!</p>
+              <p class="pa-4">In the Medford, Ashland, and Jackson County area, there are estimated to be 1,250 homeless people on a given night, 
+                which is an average of 56 people per 10,000 in the general population.  Medford has a very active low barrier shelter and more established
+                set of services to help address the problem, which may help to explain its lower rate.
+              </p>
+              <p class="pa-4">The median "fair market" monthly rental in Grants Pass in 2020 was reported to be $1,070 for a two-bedroom apartment ($12,840 per year).
+                This was an increase from $955 per month in 2019.  </p>
+              <p class="pa-4">The median household income in 2020 was $46,580, meaning half of households have income less than this amount.  
+                Rent accounts for 28% of the average household's budget.</p>
             </v-card-text>
           </v-card>
         </v-window-item>

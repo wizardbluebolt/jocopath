@@ -1,5 +1,5 @@
 <template>
-  <h3 style="text-align: center;">News and Events</h3>
+  <h2 style="text-align: center; padding: 4px;">News and Events</h2>
     <v-tabs
       v-model="viewTab"
       fixed-tabs
@@ -16,11 +16,15 @@
           <v-card variant="outlined" v-for="newsItem in newsStore.getApprovedNews">
             <v-card-title>{{ newsItem.Headline }}</v-card-title>
             <v-card-text>
-              <p class="pa-4">{{ newsItem.Description }}</p>
-              <p class="pa-4">{{ formatDateTime(newsItem.Date) }}</p>
-              <p>
-                <a v-if="newsItem.WebURL.length > 0" :href="newsItem.WebURL">More Information</a>
-              </p>
+              <p class="pa-4">{{ newsItem.Description }}</p>              
+              <v-row dense>
+                <v-col cols="8" class="pl-2">
+                  <a v-if="newsItem.WebURL.length > 0" :href="newsItem.WebURL">More Information</a>
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  {{ formatDateTime(newsItem.Date) }}
+                </v-col>
+              </v-row>
             </v-card-text>
           </v-card>
         </v-window-item>
@@ -29,23 +33,35 @@
             <v-card-title>{{ eventItem.Headline }}</v-card-title>
             <v-card-text>
               <p class="pa-4">{{ eventItem.Description }}</p>
-              <p class="pa-4">{{ formatDateTime(eventItem.Date) }}</p>
-              <p v-if="eventItem.Location.length > 0">
-                <b>Location: </b>{{ eventItem.Location }}
-                <v-tooltip location="end">
-                  <template v-slot:activator="{ props }">
-                    <v-btn 
-                      v-bind="props"
-                      density="compact" 
-                      aria-label="Copy Address" 
-                      icon
-                      @click="doCopy(eventItem.Location)">
-                      <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Copy address</span>
-                </v-tooltip>
-              </p>
+              <v-row dense no-gutters>
+                <v-col cols="2" class="pr-3 text-right">
+                  <b>When: </b>
+                </v-col>
+                <v-col cols="10">
+                  {{ formatDateTime(eventItem.Date) }}
+                </v-col>
+              </v-row>
+              <v-row dense no-gutters v-if="eventItem.Location.length > 0">
+                <v-col cols="2" class="pr-3 pt-1 text-right">
+                  <b>Where: </b>
+                </v-col>
+                <v-col cols="10">
+                  {{ eventItem.Location }}
+                  <v-tooltip location="end">
+                    <template v-slot:activator="{ props }">
+                      <v-btn 
+                        v-bind="props"
+                        density="compact" 
+                        aria-label="Copy Address" 
+                        icon
+                        @click="doCopy(eventItem.Location)">
+                        <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Copy address</span>
+                  </v-tooltip>
+                </v-col>
+              </v-row>
               <p>
                 <a v-if="eventItem.WebURL.length > 0" :href="eventItem.WebURL">More Information</a>
               </p>
@@ -57,17 +73,23 @@
             <v-card-title>{{ helpItem.Headline }}</v-card-title>
             <v-card-text>
               <p class="pa-4">{{ helpItem.Description }}</p>
-              <p class="pa-4">{{ formatDate(helpItem.Date) }}</p>
-              <p>
-                <a v-if="helpItem.WebURL.length > 0" :href="helpItem.WebURL">More Information</a>
-              </p>
-              <span v-if="helpItem.PublishContact == 'Y'">
-                <p v-if="helpItem.ContactName.length > 0">
-                  <b>Contact: </b>{{ helpItem.ContactName }} 
-                  <b>Phone: </b>{{ helpItem.ContactPhone }}
-                  <b>EMail: </b>{{ helpItem.ContactEMail }}
+              <v-row dense>
+                <v-col cols="8" class="pl-2">
+                  <a v-if="helpItem.WebURL.length > 0" :href="helpItem.WebURL">More Information</a>
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  {{ formatDateTime(helpItem.Date) }}
+                </v-col>
+              </v-row>
+              <v-row dense no-gutters class="pt-4" v-if="helpItem.PublishContact == 'Y'">
+                <p class="pl-4" v-if="helpItem.ContactName.length > 0">
+                  <b>Contact: </b><span class="pr-4">{{ helpItem.ContactName }}</span> 
+                  <b v-if="helpItem.ContactPhone.length > 0">Phone: </b>
+                  <span class="pr-4" v-if="helpItem.ContactPhone.length > 0">{{ helpItem.ContactPhone }}</span>
+                  <b v-if="helpItem.ContactEMail.length > 0">EMail: </b>
+                  <span v-if="helpItem.ContactEMail.length > 0">{{ helpItem.ContactEMail }}</span>
                 </p>
-              </span>
+              </v-row>
             </v-card-text>
           </v-card>
         </v-window-item>

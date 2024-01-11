@@ -16,7 +16,7 @@ function decodeLocationItems(pServiceData) {
             Address: addrList[idx],
             Phone: phoneList[idx]
         };
-        locations.push(tLocItem);
+        if (tLocItem.Location.length > 0) locations.push(tLocItem);
     };
     return locations;
 }

@@ -3,6 +3,17 @@ import { getApprovedHelp, getPendingHelp, createHelp, approveHelp, deleteHelp } 
 import { convertObjects } from "@/api/conversions"
 import { currentDateTime, defaultExpirationDate } from '@/api/datetimeops'
 
+// Sort help wanted so that the latest appears first
+function compareHelp(pHelp1, pHelp2) {
+    if (pHelp1.Date > pHelp2.Date) {
+        return -1;
+    }
+    if (pHelp1.Date < pHelp2.Date) {
+        return 1;
+    }
+    return 0;
+}
+
 export const useHelpStore = defineStore('help', {
     state: () => ({
         approvedHelp: [],
@@ -18,7 +29,7 @@ export const useHelpStore = defineStore('help', {
         async fetchApprovedHelp() {
             try {
                 const response = await getApprovedHelp();
-                this.approvedHelp = convertObjects(response.data);
+                this.approvedHelp = convertObjects(response.data).sort(compareHelp);
             } catch (error) {
                 console.log("Error on fetch approved help wanted");
                 console.error(error);
@@ -27,7 +38,7 @@ export const useHelpStore = defineStore('help', {
         async fetchPendingHelp(pToken) {
             try {
                 const response = await getPendingHelp(pToken);
-                this.pendingHelp =  convertObjects(response.data);
+                this.pendingHelp =  convertObjects(response.data).sort(compareHelp);
             } catch(error) {
                 console.log("Error on fetch pending help wanted")
                 console.error(error);
@@ -38,9 +49,9 @@ export const useHelpStore = defineStore('help', {
                 await createHelp(pToken, this.currHelp);
                 this.newHelp();
                 let response = await getApprovedHelp();
-                this.approvedHelp = convertObjects(response.data);
+                this.approvedHelp = convertObjects(response.data).sort(compareHelp);
                 response = await getPendingHelp(pToken);
-                this.pendingHelp = convertObjects(response.data);
+                this.pendingHelp = convertObjects(response.data).sort(compareHelp);
             } catch (error) {
                 console.log("Error on create help wanted")
                 console.error(error);
