@@ -81,7 +81,7 @@ resource "aws_apigatewayv2_authorizer" "apigw_auth" {
 
 resource "aws_cloudwatch_log_group" "stage_log_group" {
     name = "/aws/api_gw/${aws_apigatewayv2_api.apigw.name}"
-    retention_in_days = 30
+    retention_in_days = 14
 }
 
 resource "aws_apigatewayv2_domain_name" "apidom" {

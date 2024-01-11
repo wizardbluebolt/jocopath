@@ -27,7 +27,9 @@
         <p></p>
       </v-window-item>
       <v-window-item value="service">
-          <p>Service form</p>
+         <ServiceForm
+          @formSubmitted="formSubmitted"
+          @formEditCancelled="formCancelled"></ServiceForm>
       </v-window-item>
       <v-window-item value="news">
         <NewsForm
@@ -53,19 +55,22 @@
     import EventForm from './EventForm.vue';
     import NewsForm from './NewsForm.vue';
     import HelpForm from './HelpForm.vue';
+    import ServiceForm from './ServiceForm.vue';
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
+    import { useServiceStore } from '@/stores/services';
     import { useUserStore } from '@/stores/user';
     import Auth from './Auth.vue';
 
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
     const helpStore = useHelpStore();
+    const serviceStore = useServiceStore();
     const userStore = useUserStore();
 
     const components = {
-      EventForm, NewsForm, HelpForm, Auth
+      EventForm, NewsForm, HelpForm, ServiceForm, Auth
     }
 
     const formSelected = ref(null);
@@ -94,6 +99,8 @@
         case "helpwanted":
           helpStore.newHelp();
           break;
+        case "service":
+          serviceStore.newService();
         default:
 
       }

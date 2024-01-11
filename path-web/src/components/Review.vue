@@ -15,6 +15,7 @@
         <v-tab value="news">News ({{ newsList.length }})</v-tab>
         <v-tab value="events">Events ({{ eventsList.length }})</v-tab>
         <v-tab value="helpwanted">Help Wanted ({{ helpList.length }})</v-tab>
+        <v-tab value="services">Services ({{ servicesList.length }})</v-tab>
     </v-tabs>
     <v-card-text v-if="userStore.getIsReviewer">
         <v-window v-model="viewTab">
@@ -194,6 +195,65 @@
                     </HelpForm>                
                 </v-card>
             </v-window-item>
+            <v-window-item value="services">
+                <v-card variant="outlined" v-for="serviceItem in servicesList" :key="serviceItem.ServiceID">
+                    <v-card-title v-if="!editMode">{{ serviceItem.ServiceName }}</v-card-title>
+                    <v-card-text v-if="!editMode">
+                        <p class="pa-4">{{ serviceItem.Description }}</p>
+                        <p v-if="serviceItem.WebURL.length > 0">
+                            <b>Web URL: </b>{{ serviceItem.WebURL }}
+                        </p>
+                        <p v-for="locationItem in serviceItem.LocationItems">
+                            <b>Location: </b>{{ locationItem.Location }} {{ locationItem.Address }} {{ locationItem.Phone }}
+                        </p>
+                        <p v-if="serviceItem.ContactName.length > 0">
+                            <b>Contact: </b>{{ serviceItem.ContactName }} {{ serviceItem.ContactPhone }} {{ serviceItem.ContactEMail }}
+                        </p>
+                    </v-card-text>
+                    <v-card-actions v-if="!editMode">
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Approve Service" icon
+                                    @click="doApproveService(serviceItem.ServiceID)">
+                                    <v-icon color="grey-lighten-1">mdi-check-decagram</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Approve service</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Edit Service" icon
+                                    @click="doEditService(serviceItem.ServiceID)">
+                                    <v-icon color="grey-lighten-1">mdi-pencil</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Edit service</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Delete Service" icon
+                                    @click="doDeleteService(serviceItem.ServiceID)">
+                                    <v-icon color="grey-lighten-1">mdi-trash-can</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Delete service</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode != 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Cancel Service Approval" icon
+                                    @click="doCancelService(serviceItem.ServiceID)">
+                                    <v-icon color="grey-lighten-1">mdi-cancel</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Cancel service approval</span>
+                        </v-tooltip>
+                    </v-card-actions>
+                    <ServiceForm v-if="editMode && (serviceItem.ServiceID === currService.ServiceID)" 
+                        @formSubmitted="serviceFormSubmitted"
+                        @formEditCancelled="doCancelEditService">
+                    </ServiceForm>
+                </v-card>
+            </v-window-item>
         </v-window>
     </v-card-text>
 </template>
@@ -206,6 +266,8 @@
     import { useNewsStore } from "@/stores/news";
     import HelpForm from "./HelpForm.vue";
     import { useHelpStore } from "@/stores/help";
+    import ServiceForm from "./ServiceForm.vue";
+    import { useServiceStore } from "@/stores/services";
     import { useUserStore } from "@/stores/user";
     import Auth from "./Auth.vue";
     import { formatDateTime } from '@/api/datetimeops';
@@ -214,6 +276,7 @@
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
     const helpStore = useHelpStore();
+    const serviceStore = useServiceStore();
     const userStore = useUserStore();
 
     const viewTab = ref(null);
@@ -247,10 +310,20 @@
     });
     const currHelp = computed(() => helpStore.currHelp);
 
+    const servicesList = computed(() => {
+        if (listMode.value == "Pending") {
+            return serviceStore.pendingServices;
+        } else {
+            return serviceStore.approvedServices;
+        }
+    });
+    const currService = computed(() => serviceStore.currService);
+
     const components = {
         EventForm,
         NewsForm,
         HelpForm,
+        ServiceForm,
         Auth,
     };
 
@@ -273,6 +346,13 @@
         await helpStore.approveHelp(userStore.getAccessToken);
         await helpStore.fetchPendingHelp(userStore.getAccessToken);
         await helpStore.fetchApprovedHelp();
+    }
+
+    async function doApproveService(pServiceID) {
+        serviceStore.selectService(pServiceID);
+        await serviceStore.approveService(userStore.getAccessToken);
+        await serviceStore.fetchPendingServices(userStore.getAccessToken);
+        await serviceStore.fetchApprovedServices();
     }
 
     async function doDeleteEvent(pEventID) {
@@ -305,6 +385,16 @@
         }
     }
 
+    async function doDeleteService(pServiceID) {
+        let confMessage = "Are you sure you want to delete this service?";
+        let confResult = window.confirm(confMessage);
+        if (confResult) {
+            serviceStore.selectService(pServiceID);
+            await serviceStore.deleteService(userStore.getAccessToken);
+            await serviceStore.fetchPendingServices(userStore.getAccessToken);
+        }
+    }
+
     function doEditEvent(pEventID) {
         editMode.value = true;
         eventStore.selectEvent(pEventID);
@@ -319,6 +409,11 @@
         editMode.value = true;
         helpStore.selectHelp(pHelpID);
     }
+
+    function doEditService(pServiceID) {
+        editMode.value = true;
+        serviceStore.selectService(pServiceID);
+    } 
 
     async function doCancelEvent(pEventID) {
         if (listMode.value == "Pending") {
@@ -353,6 +448,17 @@
         await helpStore.fetchApprovedHelp();
     }
 
+    async function doCancelService(pServiceID) {
+        if (listMode.value == "Pending") {
+            serviceStore.selectService(pServiceID);
+        } else {
+            serviceStore.selectApprovedService(pServiceID);
+        }
+        await serviceStore.saveService(userStore.getAccessToken);
+        await serviceStore.fetchPendingServices(userStore.getAccessToken);
+        await serviceStore.fetchApprovedServices();
+    }
+
     async function doCancelEditEvent() {
         await eventStore.fetchPendingEvents(userStore.getAccessToken);
         setTimeout(() => {
@@ -374,6 +480,13 @@
         }, 1000)
     }
 
+    async function doCancelEditService() {
+        await eventStore.fetchPendingServices(userStore.getAccessToken);
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
+    }
+
     async function eventFormSubmitted() {
         setTimeout(() => {
             editMode.value = false;
@@ -392,6 +505,12 @@
         }, 1000);
     }
 
+    async function serviceFormSubmitted() {
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
+    }
+
     onMounted(async function () {
         await userStore.userLoggedIn();
         if (eventStore.getPendingEvents.length === 0) {
@@ -405,6 +524,10 @@
         if (helpStore.getPendingHelp.length === 0) {
             await helpStore.fetchPendingHelp(userStore.getAccessToken);
             await helpStore.fetchApprovedHelp();
+        };
+        if (serviceStore.getPendingServices.length === 0) {
+            await serviceStore.fetchPendingServices(userStore.getAccessToken);
+            await serviceStore.fetchApprovedServices();
         };
     });
 </script>

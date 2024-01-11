@@ -28,13 +28,19 @@ def lambda_handler(event, context):
                 },
                 "Phones": {
                     "S": payload["Phones"]
+                },
+                "WebURL": {
+                    "S": payload["WebURL"]
+                },                
+                "ContactName": {
+                    "S": payload["ContactName"]
+                },
+                "ContactPhone": {
+                    "S": payload["ContactPhone"]
                 },                
                 "ContactEMail": {
                     "S": payload["ContactEMail"]
                 },                
-                "WebURL": {
-                    "S": payload["WebURL"]
-                },
                 "Approved": {
                     "S": "N"
                 }
