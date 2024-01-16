@@ -125,7 +125,7 @@
         </v-window-item>
         <v-window-item value="committees">
           <v-card variant="outlined" v-for="committee in allCommittees">
-            <v-card-item>
+            <v-card-item class="text-body-1">
               <v-card-title>
                 {{ committee.name }}
               </v-card-title>

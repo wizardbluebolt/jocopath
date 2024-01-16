@@ -1,7 +1,7 @@
 <template>
   <h2 style="text-align: center; padding: 4px;">Services</h2>
   <v-card variant="outlined" v-for="service in serviceStore.getApprovedServices">
-    <v-card-item>
+    <v-card-item class="text-body-1">
       <v-card-title>
         {{ service.ServiceName }}
       </v-card-title>

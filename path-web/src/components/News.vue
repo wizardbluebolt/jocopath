@@ -10,7 +10,7 @@
       <v-tab value="events">Events</v-tab>
       <v-tab value="helpwanted">Help Wanted</v-tab>
     </v-tabs>
-    <v-card-text>
+    <v-card-text class="text-body-1">
       <v-window v-model="viewTab">
         <v-window-item value="news">
           <v-card variant="outlined" v-for="newsItem in newsStore.getApprovedNews">

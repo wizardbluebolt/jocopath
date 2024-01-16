@@ -1,7 +1,7 @@
 <template>
     <h2 style="text-align: center; padding: 4px;">Review Submissions</h2>
     <Auth></Auth>
-    <v-card-text>
+    <v-card-text v-if="userStore.getIsReviewer">
         <v-row dense no-gutters>
             <v-radio-group inline hide-details v-model="listMode">
                 <v-radio label="Pending" value="Pending"></v-radio>
@@ -17,7 +17,7 @@
         <v-tab value="helpwanted">Help Wanted ({{ helpList.length }})</v-tab>
         <v-tab value="services">Services ({{ servicesList.length }})</v-tab>
     </v-tabs>
-    <v-card-text v-if="userStore.getIsReviewer">
+    <v-card-text v-if="userStore.getIsReviewer" class="text-body-1">
         <v-window v-model="viewTab">
             <v-window-item value="news"> 
                 <v-card variant="outlined" v-for="newsItem in newsList" :key="newsItem.NewsID">
