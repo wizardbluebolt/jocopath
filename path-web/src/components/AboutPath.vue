@@ -16,40 +16,35 @@
         <v-window-item value="mission">
           <v-card>
             <v-card-text>
-              <h3 class="pa-2">We create and advocate for sustainable services and facilities to help people transition out of 
-          homelessness and provide a better future for all in Josephine County.</h3>
-              <p class="pa-2">Our amazing team of volunteers are committed to helping 
-            to reduce homelessness in Josephine County.</p>
-              <p class="pa-2">We work with our partners in the field and connect with our elected leaders.</p>
-              <p> </p>
-              <p class="pa-2">Think you would be a good fit?  Click the link at the bottom of the page to learn how you can volunteer!</p>
-              <p> </p>
-              <p class="pa-2">The purpose of PATH is to find positive workable solutions to help those in our community who are unhoused.</p>
-              <p> </p>
-              <p class="pa-2">The purpose of this website is:</p>
-              <ul class="pa-4 ml-6">
-                  <li>to provide examples of programs that have been shown to be successful elsewhere,</li>
-                  <li class="pt-2">to provide interviews of people experiencing homelessness here in our community 
-                    so that we might better understand them and their situation,</li>
-                  <li class="pt-2">to provide information about the many service providers that help the homeless 
-                    and give them an opportunity to list their events and share their results,</li>
-                  <li class="pt-2">to provide updates about the status of state and federal laws and court actions 
-                    that affect homelessness and that affect our community, and</li>
-                  <li class="pt-2">
-                    <ul class="pt-2">
-                      to provide information about actions that are being taken by our city and county governments that affect:
-                      <div style="text-indent: 1em; padding-left: 1em;">
-                        <li>affordable housing,</li>
-                        <li>homelessness,</li>
-                        <li>returning our parks to their original intent as places for relaxation and recreation 
-                          for everyone, not emergency campgrounds.</li>
-                      </div>
-                    </ul>
-                  </li>
-              </ul>
-              <h3 class="pa-2">This website is not a place to assign blame either directly or by implication. 
-                We encourage comments, suggestions, and questions that further or clarify our goals. However, comments that are 
-                divisive will be removed and commenters who continue to make such remarks will have their privileges revoked.</h3>
+              <v-row>
+                <v-col cols="12">
+                  <h2 class="pa-2">“We advocate for sustainable services to help people transition out of homelessness 
+                    to a self-sufficient future in Josephine County.”</h2>                  
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="6">
+                  <v-row>
+                    <v-col cols="12">
+                      <ul class="pa-4 ml-6">
+                        <li class="pb-6 text-h6">We actively support law enforcement, city government, non-profit organizations, 
+                          and other local entities working to positively impact these issues plaguing our community
+                        </li>
+                        <li class="text-h6">Our goal is to work collaboratively with our community partners to find and support 
+                          projects and programs that get people off the streets, out of our parks, and into a position
+                          where they can get the help they need, with self-sufficiency being the ultimate goal</li>
+                      </ul>
+                    </v-col>
+                    <v-col cols="10">
+                      <img src="images/JulieThomasHeadshot.png" width="200"><span class="pl-4 text-h6">Julie Thomas - PATH President</span>
+                    </v-col> 
+                    <v-col cols="2"></v-col>
+                  </v-row>                  
+                </v-col>
+                <v-col cols="6">
+                  <img src="images/TrailPath.jpg" width="600" height="500">
+                </v-col>
+            </v-row>
             </v-card-text>
           </v-card>
         </v-window-item>
@@ -161,43 +156,66 @@
           name: "Steering",
           chair: "Julie Thomas",
           photo: "images/JulieThomasHeadshot.png",
-          purpose: "Overall governance of the PATH group.",
-          meetingDays: "First Tuesday of each month"
+          purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
+                    "Secretary, and the leaders of each committee.  The Steering Committee sets " +
+                    "the policies for PATH and makes all executive decisions.  The committee provides " +
+                    "oversight to all other committees and subcommittees. The committee reviews " +
+                    "membership and plans the general meetings.  The committee ensures that other " +
+                    "committees are not duplicating each other`s efforts or working at cross-purposes.",
+          meetingDays: "Twice each month or as necessary to make sure all committees are working in tandem."
         },
         {
           name: "Information and Communications",
           chair: "Richard Flora",
           photo: "images/RichardFloraHeadshot.jpg",
-          purpose: "Gather information related to homelessness and facilitate communications with and between our members, the organizations who provide services that affect the homeless, our local government, the homeless, and the citizens of Josephine County.",
-          meetingDays: "Tuesday 2pm to 3:30pm each week"
+          purpose: "Gather information relevant to homelessness in Josephine County so that we might better facilitate " +
+                    "communication within PATH and between the many organizations that provide services to the homeless, " +
+                    "our local government, law enforcement, our homeless community, and our community at large.  " + 
+                    "We strive to ensure that our communications are consistently positive and productive.  "  + 
+                    "The committee responsibilities include administration of the PATH Slack Workgroup, our Facebook page, " +
+                    "and the website.  We monitor what is going on with regards to homelessness, within our community, and " +
+                    "within the world at large, and keep our members informed so that they can determine how best to respond, " +
+                    "if at all.",
+          meetingDays: "First and Third Tuesday afternoon each month"
         },
         {
           name: "Operations and Outreach",
           chair: "Diane Dahlgren",
           photo: "images/MissingHeadshot.png",
-          purpose: "Support specific events, volunteer groups, and coordinate with non-profits.",
-          meetingDays: "Friday each week"
+          purpose: "Identifies and coordinates PATH liaisons to various community service organizations. " +
+                    "PATH liaisons reach out to the organizations to find out what each of them do, what services " +
+                    "they provide, and what clientele they serve, then ask if there are ways PATH can support their efforts. " +
+                    "The committee looks for ways to serve by providing volunteers, services, identifying giving opportunities, " +
+                    "or by connecting the organizations with other available resources. This committee`s goal is to identify " +
+                    "gaps and fill those gaps within service organizations so they can better accomplish their mission. " +
+                    "We would love to invite those having a connection to a church or organization in Josephine County to " +
+                    "become a liaison.",
+          meetingDays: "Monthly"
         },
         {
           name: "Fundraising",
           chair: "TBD",
           photo: "images/MissingHeadshot.png",
           purpose: "Identify ways to raise funds to support PATH operations.",
-          meetingDays: "Fifth Wednesday each month"
+          meetingDays: "Not currently active"
         },
         {
           name: "Housing and Development",
           chair: "Doug Walker",
           photo: "images/MissingHeadshot.png",
           purpose: "Support efforts to increase housing and new developments in the community.",
-          meetingDays: "Second Tuesday each month"
+          meetingDays: "Monthly"
         },   
         {
           name: "Mental Health and Addiction Recovery Solutions",
           chair: "Ann Igl",
           photo: "images/MissingHeadshot.png",
-          purpose: "Support organizations providing mental health and addition recovery solutions.",
-          meetingDays: "Third Thursday of each month"
+          purpose: "The committee is dedicated to supporting and creating pathways to recovery for those suffering from " +
+                    "addiction and/or mental health challenges within the homeless population in Josephine County. " +
+                    "We seek to better understand the intersection between homelessness, addiction, and mental health " +
+                    "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
+                    "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
+          meetingDays: "Twice each month"
         },                                     
       ])
   </script>
