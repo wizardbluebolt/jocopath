@@ -54,7 +54,79 @@
           </v-card>
         </v-window-item>
         <v-window-item value="history">
-          PATH of Josephine County was formed in November of 2022 by ...
+          <v-carousel 
+          :continuous="false"
+          :show-arrows="true">
+          <v-carousel-item>
+            <v-row>
+              <v-col cols="12">
+                <p class="text-h4" style="text-align: center;">What is the Problem?</p>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="2"></v-col>
+              <v-col cols="4" class="text-h5 pl-8">
+                <p class="pb-6">A Crisis of Homelessness</p>
+                <ul class="pl-4">
+                  <li class="pb-4">Lack of Affordable Housing</li>
+                  <li class="pb-4">Homeless People in Our Parks</li>
+                  <li class="pb-4">People Overdosing on Drugs</li>
+                  <li>People Struggling with Mental Illness</li>
+                </ul>
+              </v-col>
+              <v-col cols="6" class="text-h5">
+                <p class="pb-6">In Grants Pass in the First Nine Months of 2023:</p>
+                <ul class="pl-4">
+                  <li class="pb-4">146 Drug Overdoses</li>
+                  <li class="pb-4">14 Deaths from Overdoses</li>
+                </ul>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-row>
+              <v-col cols="12">
+                <p class="text-h4" style="text-align: center;">How did we get here?</p>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="2"></v-col>
+              <v-col cols="8" class="text-h5 pl-8">
+                <p class="pb-6">Many things have contributed to where we are today, but most notably:</p>
+                <ul class="pl-4">
+                  <li class="pb-4">Court ordered injunction that allows people to sleep on public property, including parks</li>
+                  <li class="pb-4">Measure 110 which decriminalized many drugs</li>
+                  <li class="pb-4">Housing shortage</li>
+                  <li>People choosing a lifestyle with “no rules”</li>
+                </ul>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-row>
+              <v-col cols="12">
+                <p class="text-h4" style="text-align: center;">So, what did we do about it?</p>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="2"></v-col>
+              <v-col cols="8" class="text-h5 pb-4">
+                <ul>
+                  <li class="pb-4">On November 14, 2022, a small group of concerned citizens got together to brainstorm ideas on how to improve our situation.</li>
+                  <li class="pb-4">These conversations turned into action.</li>
+                  <li>This small group has evolved into a grassroots advocacy and action organization committed to finding sustainable solutions to 
+                    positively impact homelessness, addiction, and mental illness in our community.</li>
+                </ul>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="2"></v-col>
+              <v-col cols="9">
+                <i class="text-h5">Our name is PATH (Partners Assisting the Homeless)</i>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+         </v-carousel>
         </v-window-item>
         <v-window-item value="committees">
           <v-card variant="outlined" v-for="committee in allCommittees">
