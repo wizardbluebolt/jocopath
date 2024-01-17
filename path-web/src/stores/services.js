@@ -66,6 +66,17 @@ function encodeLocationItems(pServiceData, pLocItems) {
     return pServiceData;
 }
 
+// Sort services so that the latest appears first
+function compareService(pService1, pService2) {
+    if (pService1.ServiceName < pService2.ServiceName) {
+        return -1;
+    }
+    if (pService1.ServiceName > pService2.ServiceName) {
+        return 1;
+    }
+    return 0;
+}
+
 export const useServiceStore = defineStore('service', {
     state: () => ({
         approvedServices: [],
@@ -83,7 +94,7 @@ export const useServiceStore = defineStore('service', {
         async fetchApprovedServices() {
             try {
                 const response = await getApprovedServices();
-                this.approvedServices = convertResponseData(response.data);
+                this.approvedServices = convertResponseData(response.data).sort(compareService);
             } catch (error) {
                 console.log("Error on fetch approved services");
                 console.error(error);
@@ -92,7 +103,7 @@ export const useServiceStore = defineStore('service', {
         async fetchPendingServices(pToken) {
             try {
                 const response = await getPendingServices(pToken);
-                this.pendingServices = convertResponseData(response.data);
+                this.pendingServices = convertResponseData(response.data).sort(compareService);
             } catch(error) {
                 console.log("Error on fetch pending services")
                 console.error(error);
@@ -113,9 +124,9 @@ export const useServiceStore = defineStore('service', {
                 await createService(pToken, dbService);
                 this.newService();
                 let response = await getApprovedServices();
-                this.approvedServices = convertResponseData(response.data);
+                this.approvedServices = convertResponseData(response.data).sort(compareService);
                 response = await getPendingServices(pToken);
-                this.pendingServices = convertResponseData(response.data);
+                this.pendingServices = convertResponseData(response.data).sort(compareService);
             } catch (error) {
                 console.log("Error on create service")
                 console.error(error);

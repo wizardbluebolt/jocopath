@@ -1,5 +1,5 @@
 <template>
-  <h2 style="text-align: center; padding: 4px;">Services</h2>
+  <h2 style="text-align: center; padding: 4px;">Community Partners and Services</h2>
   <v-card variant="outlined" v-for="service in serviceStore.getApprovedServices">
     <v-card-item class="text-body-1">
       <v-card-title>

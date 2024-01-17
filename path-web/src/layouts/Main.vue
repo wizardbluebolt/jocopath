@@ -20,7 +20,7 @@
               <router-link to="/news">News and Events</router-link>
           </v-list-item>
           <v-list-item>
-              <router-link to="/services">Services</router-link>
+              <router-link to="/services">Partners/Services</router-link>
           </v-list-item>
           <v-list-item>
               <router-link to="/success">Success Stories</router-link>
@@ -28,7 +28,7 @@
           <v-divider :thickness="3"></v-divider>
           <p class="pa-4">Requires Registration</p>
           <v-list-item>
-              <router-link to="/contribute">Contribute</router-link>
+              <router-link to="/contribute">Contribute Content</router-link>
           </v-list-item>
           <v-list-item v-if="isReviewer">
               <router-link to="/review">Review</router-link>

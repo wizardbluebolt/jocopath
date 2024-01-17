@@ -36,7 +36,7 @@
                       </ul>
                     </v-col>
                     <v-col cols="10">
-                      <img src="images/JulieThomasHeadshot.png" width="200"><span class="pl-4 text-h6">Julie Thomas - PATH President</span>
+                      <img src="images/JulieThomasHeadshot.png" width="200"><span class="pl-4 text-base-1">Julie Thomas - PATH President</span>
                     </v-col> 
                     <v-col cols="2"></v-col>
                   </v-row>                  

@@ -98,7 +98,8 @@
         case "news":
           newsStore.newNews();
           newsStore.currNews.ContactName = userStore.getCurrUser;
-          newsStore.currNews.ContactEMail = userStore.getCurrEmail;          break;
+          newsStore.currNews.ContactEMail = userStore.getCurrEmail;          
+          break;
         case "helpwanted":
           helpStore.newHelp();
           helpStore.currHelp.ContactName = userStore.getCurrUser;

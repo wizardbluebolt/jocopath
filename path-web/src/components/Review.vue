@@ -481,7 +481,7 @@
     }
 
     async function doCancelEditService() {
-        await eventStore.fetchPendingServices(userStore.getAccessToken);
+        await serviceStore.fetchPendingServices(userStore.getAccessToken);
         setTimeout(() => {
             editMode.value = false;
         }, 1000);

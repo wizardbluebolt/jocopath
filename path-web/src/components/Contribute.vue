@@ -4,8 +4,14 @@
   
         <v-row class="d-flex align-center justify-center">
           <v-col cols="auto">
-            <h2>How to Contribute to This Website</h2>
+            <h2>How to Contribute Content to This Website</h2>
           </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="auto">
+                You do NOT need to register or sign-in in order to view the content on this website.
+                Registration is only needed for those wishing to contribute content to add to the site.
+            </v-col>
         </v-row>
         <v-row>
             <v-col cols="auto">
@@ -57,7 +63,9 @@
         <v-row>
             <v-col cols="auto">
                 If you would like to contribute as described above, 
-                <router-link to="/contact">please proceed to register or sign-in</router-link>.
+                <router-link to="/contact">please proceed to register or sign-in</router-link>.  Registration is free 
+                and PATH will not sell or otherwise provide your e-mail address or any contact
+                information to third-parties.
             </v-col>
         </v-row>
       </v-responsive>
