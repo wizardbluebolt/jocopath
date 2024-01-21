@@ -13,7 +13,7 @@
       <v-tab value="grantspass">City of Grants Pass</v-tab>
     </v-tabs>
     <v-card-text>
-      <v-window v-model="viewTab">
+      <v-window v-model="viewTab" >
         <v-window-item value="facts">
           <v-card>
             <v-card-text>
@@ -46,9 +46,11 @@
               </v-row>
               <h3 class="pa-2"></h3>
               <v-row>
-                <v-col cols="2"></v-col>
-                <v-col cols="10" class="pl-16">
-                  <img src="images/HomelessWheel.png">
+                <v-col cols="4" class="text-h4 pt-16 pl-8">
+                  <p>Homelessness is a multi-faceted problem requiring multi-faceted "outside the box" solutions</p>
+                </v-col>
+                <v-col cols="7" class="pa-4">
+                  <img src="images/HomelessWheel.svg" width="550" height="550">
                 </v-col>
               </v-row>
             </v-card-text>
