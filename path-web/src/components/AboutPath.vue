@@ -22,9 +22,9 @@
                     to a self-sufficient future in Josephine County.”</h2>                  
                 </v-col>
               </v-row>
-              <v-row>
+              <v-row dense>
                 <v-col cols="6">
-                  <v-row>
+                  <v-row dense>
                     <v-col cols="12">
                       <ul class="pa-4 ml-6">
                         <li class="pb-6 text-h6">We actively support law enforcement, city government, non-profit organizations, 
@@ -35,10 +35,14 @@
                           where they can get the help they need, with self-sufficiency being the ultimate goal</li>
                       </ul>
                     </v-col>
-                    <v-col cols="10">
-                      <img src="images/JulieThomasHeadshot.png" width="200"><span class="pl-4 text-base-1">Julie Thomas - PATH President</span>
+                    <v-col cols="10" class="mb-0 pb-0 ml-4">
+                      <v-img src="images/JulieThomasHeadshot.png" width="200" class="align-end">
+                      </v-img>
                     </v-col> 
-                    <v-col cols="2"></v-col>
+                    <v-col cols="1"></v-col>
+                    <v-col cols="8" class="mt-0 pt-0">
+                      <v-card-title class="text-subtitle-1">Julie Thomas - PATH President</v-card-title>
+                    </v-col>
                   </v-row>                  
                 </v-col>
                 <v-col cols="6">
@@ -51,7 +55,10 @@
         <v-window-item value="history">
           <v-carousel 
           :continuous="false"
-          :show-arrows="true">
+          :show-arrows="true"
+          :hide-delimiters="true"
+          :hide-delimiter-background="true"
+          class="fill-height">
           <v-carousel-item>
             <v-row>
               <v-col cols="12">
@@ -117,7 +124,7 @@
             <v-row>
               <v-col cols="2"></v-col>
               <v-col cols="9">
-                <i class="text-h5">Our name is PATH (Partners Assisting the Homeless)</i>
+                <i class="text-h4">Our name is PATH (Partners Assisting the Homeless)</i>
               </v-col>
             </v-row>
           </v-carousel-item>
@@ -125,7 +132,7 @@
         </v-window-item>
         <v-window-item value="committees">
           <v-card variant="outlined" v-for="committee in allCommittees">
-            <v-card-item class="text-body-1">
+            <v-card-item>
               <v-card-title>
                 {{ committee.name }}
               </v-card-title>

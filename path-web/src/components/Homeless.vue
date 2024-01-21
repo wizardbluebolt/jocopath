@@ -13,7 +13,7 @@
       <v-tab value="grantspass">City of Grants Pass</v-tab>
     </v-tabs>
     <v-card-text>
-      <v-window v-model="viewTab" >
+      <v-window v-model="viewTab">
         <v-window-item value="facts">
           <v-card>
             <v-card-text>
@@ -56,10 +56,13 @@
             </v-card-text>
           </v-card>
         </v-window-item>
-        <v-window-item value="volunteering">
+        <v-window-item value="volunteering" class="fill-height">
           <v-carousel          
               :continuous="false"
-              :show-arrows="true">
+              :show-arrows="true"
+              :hide-delimiters="true"
+              :hide-delimiter-background="true"
+              class="fill-height">
             <v-carousel-item >
               <v-row>
                 <v-col cols="12">
@@ -83,8 +86,9 @@
               </v-row>
               <v-row>
                 <v-col cols="2"></v-col>
-                <v-col cols="7" class="text-h6 pb-4">
-                  <p>“The only thing necessary for the triumph of evil is for good men to do nothing” -- Edmund Burke (Philosopher)</p>
+                <v-col cols="8" class="text-h6 pb-4">
+                  <p>“The only thing necessary for the triumph of evil is for good men to do nothing”</p>
+                  <p class="pl-4">  -- Edmund Burke (Philosopher)</p>
                 </v-col>
               </v-row>
             </v-carousel-item>
@@ -111,9 +115,9 @@
               </v-row>
               <v-row>
                 <v-col cols="2"></v-col>
-                <v-col cols="7" class="text-h6 pb-4">
+                <v-col cols="8" class="text-h6 pb-4">
                   <p>“Never doubt that a small group of individuals can change the world. In fact, it`s the 
-                    only thing that ever has.” -- Margaret Mead (Cultural Anthropologist)</p>
+                    only thing that ever has.”</p><p class="pl-4"> -- Margaret Mead (Cultural Anthropologist)</p>
                 </v-col>
               </v-row>
 
