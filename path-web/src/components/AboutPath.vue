@@ -18,8 +18,9 @@
             <v-card-text>
               <v-row>
                 <v-col cols="12">
-                  <h2 class="pa-2">“We advocate for sustainable services to help people transition out of homelessness 
-                    to a self-sufficient future in Josephine County.”</h2>                  
+                  <h2 class="pa-2">“We collaborate with our community partners to find sustainable
+                    solutions to help people transition from homelessness to a self-sufficient
+                    future in Josephine County.”</h2>                  
                 </v-col>
               </v-row>
               <v-row dense>
@@ -124,7 +125,7 @@
             <v-row>
               <v-col cols="2"></v-col>
               <v-col cols="9">
-                <i class="text-h4">Our name is PATH (Partners Assisting the Homeless)</i>
+                <i class="text-h5">Our name is PATH (Partners Assisting the Homeless)</i>
               </v-col>
             </v-row>
           </v-carousel-item>
@@ -136,14 +137,14 @@
               <v-card-title>
                 {{ committee.name }}
               </v-card-title>
-              <v-card-subtitle>
-                <v-avatar>
+              <v-card-subtitle style="font-size: 1.1rem">
+                <v-avatar :size="60">
                   <v-img
                     :src="committee.photo"></v-img>
                 </v-avatar>
                   Chairperson: {{ committee.chair }}
               </v-card-subtitle>
-              <v-card-text>
+              <v-card-text style="font-size: 1.1rem;">
                 <p>{{ committee.purpose }}</p>
                 <p class="pt-4"><b>Meets: </b>{{ committee.meetingDays }}</p>
               </v-card-text>
@@ -187,8 +188,8 @@
         },
         {
           name: "Operations and Outreach",
-          chair: "Diane Dahlgren",
-          photo: "images/MissingHeadshot.png",
+          chair: "Sheryl Eldridge",
+          photo: "images/SherylEldridgeHeadshot.jpg",
           purpose: "Identifies and coordinates PATH liaisons to various community service organizations. " +
                     "PATH liaisons reach out to the organizations to find out what each of them do, what services " +
                     "they provide, and what clientele they serve, then ask if there are ways PATH can support their efforts. " +
@@ -216,7 +217,7 @@
         {
           name: "Mental Health and Addiction Recovery Solutions",
           chair: "Ann Igl",
-          photo: "images/MissingHeadshot.png",
+          photo: "images/AnnIglHeadshot.jpg",
           purpose: "The committee is dedicated to supporting and creating pathways to recovery for those suffering from " +
                     "addiction and/or mental health challenges within the homeless population in Josephine County. " +
                     "We seek to better understand the intersection between homelessness, addiction, and mental health " +
