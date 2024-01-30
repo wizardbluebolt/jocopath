@@ -5,8 +5,7 @@
       fixed-tabs
       bg-color="primary"
       color="yellow"
-      slider-color="red"
-    >
+      slider-color="red">
       <v-tab value="mission">Mission Statement</v-tab>
       <v-tab value="history">History</v-tab>
       <v-tab value="committees">Committees</v-tab>
@@ -28,12 +27,13 @@
                   <v-row dense>
                     <v-col cols="12">
                       <ul class="pa-4 ml-6">
-                        <li class="pb-6 text-h6">We actively support law enforcement, city government, non-profit organizations, 
+                        <li class="pb-2 text-subtitle-1">We actively support non-profit organizations, law enforcement, city government, 
                           and other local entities working to positively impact these issues plaguing our community
                         </li>
-                        <li class="text-h6">Our goal is to work collaboratively with our community partners to find and support 
+                        <li class="pb-2 text-subtitle-1">Our goal is to work collaboratively with our community partners to find and support 
                           projects and programs that get people off the streets, out of our parks, and into a position
                           where they can get the help they need, with self-sufficiency being the ultimate goal</li>
+                        <li class="text-subtitle-1">PATH is NOT a 501c3 organization and does not itself receive or manage monetary donations.</li>
                       </ul>
                     </v-col>
                     <v-col cols="10" class="mb-0 pb-0 ml-4">
@@ -63,15 +63,14 @@
           <v-carousel-item>
             <v-row>
               <v-col cols="12">
-                <p class="text-h4" style="text-align: center;">What is the Problem?</p>
+                <p class="text-h4" style="text-align: center;">What is Our Community Facing?</p>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="2"></v-col>
-              <v-col cols="4" class="text-h5 pl-8">
+              <v-col cols="4" class="text-h5 pl-4">
                 <p class="pb-6">A Crisis of Homelessness</p>
                 <ul class="pl-4">
-                  <li class="pb-4">Lack of Affordable Housing</li>
                   <li class="pb-4">Homeless People in Our Parks</li>
                   <li class="pb-4">People Overdosing on Drugs</li>
                   <li>People Struggling with Mental Illness</li>
@@ -99,7 +98,7 @@
                 <ul class="pl-4">
                   <li class="pb-4">Court ordered injunction that allows people to sleep on public property, including parks</li>
                   <li class="pb-4">Measure 110 which decriminalized many drugs</li>
-                  <li class="pb-4">Housing shortage</li>
+                  <li class="pb-4">Housing shortage, especially affordable housing</li>
                   <li>People choosing a lifestyle with “no rules”</li>
                 </ul>
               </v-col>
@@ -117,7 +116,7 @@
                 <ul>
                   <li class="pb-4">On November 14, 2022, a small group of concerned citizens got together to brainstorm ideas on how to improve our situation.</li>
                   <li class="pb-4">These conversations turned into action.</li>
-                  <li>This small group has evolved into a grassroots advocacy and action organization committed to finding sustainable solutions to 
+                  <li>PATH has evolved into a grassroots advocacy and action organization committed to finding sustainable solutions to 
                     positively impact homelessness, addiction, and mental illness in our community.</li>
                 </ul>
               </v-col>
@@ -198,6 +197,17 @@
                     "gaps and fill those gaps within service organizations so they can better accomplish their mission. " +
                     "We would love to invite those having a connection to a church or organization in Josephine County to " +
                     "become a liaison.",
+          meetingDays: "Second Friday afternoon each month"
+        },
+        {
+          name: "Safe Parking Program Outreach (Subcommitee)",
+          chair: "Judy Ano",
+          photo: "images/MissingHeadshot.png",
+          purpose: "The City of Grants Pass offers the Safe Parking Program, and our committee focuses on reaching " +
+                    "out to eligible Grants Pass business locations. Based upon the city`s ordinance and interviews " +
+                    "with successful host sites, we developed a packet of information that we share with interested " +
+                    "organizations. Our goal is to locate overnight safe parking sites who will offer temporary " +
+                    "parking for unhoused individuals and families living in their vehicles.",
           meetingDays: "Monthly"
         },
         {
@@ -223,7 +233,7 @@
                     "We seek to better understand the intersection between homelessness, addiction, and mental health " +
                     "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
                     "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
-          meetingDays: "Twice each month"
+          meetingDays: "Monday afternoons, twice each month"
         },                                     
       ])
   </script>
