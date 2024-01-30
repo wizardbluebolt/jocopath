@@ -60,7 +60,10 @@ resource "aws_apigatewayv2_api" "apigw" {
     protocol_type = "HTTP"
     cors_configuration {
       allow_credentials = true
-      allow_headers = ["*"]
+      allow_headers = ["Accept", "Accept-Encoding", "Accept-Language", "Authorization",
+                        "Cache-Control", "Origin", "Pragma", "Referer", 
+                        "Sec-Ch-Ua", "Sec-Ch-Ua-Mobile", "Sec-Ch-Ua-Platform", "Sec-Fetch-Dest", 
+                        "Sec-Fetch-Mode", "Sec-Fetch-Site", "User-Agent"]
       allow_methods = ["DELETE", "GET", "POST", "PUT"]
       allow_origins = ["http://localhost:3000", "https://pathofjoco.org"]
       expose_headers = ["*"]
