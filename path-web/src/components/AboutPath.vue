@@ -77,10 +77,10 @@
                 </ul>
               </v-col>
               <v-col cols="6" class="text-h5">
-                <p class="pb-6">In Grants Pass in the First Nine Months of 2023:</p>
+                <p class="pb-6">In Grants Pass in 2023:</p>
                 <ul class="pl-4">
-                  <li class="pb-4">146 Drug Overdoses</li>
-                  <li class="pb-4">14 Deaths from Overdoses</li>
+                  <li class="pb-4">197 Drug Overdoses</li>
+                  <li class="pb-4">15 Deaths from Overdoses</li>
                 </ul>
               </v-col>
             </v-row>
@@ -202,13 +202,13 @@
         {
           name: "Safe Parking Program Outreach (Subcommitee)",
           chair: "Judy Ano",
-          photo: "images/MissingHeadshot.png",
+          photo: "images/JudyAnoHeadshot.jpg",
           purpose: "The City of Grants Pass offers the Safe Parking Program, and our committee focuses on reaching " +
                     "out to eligible Grants Pass business locations. Based upon the city`s ordinance and interviews " +
                     "with successful host sites, we developed a packet of information that we share with interested " +
                     "organizations. Our goal is to locate overnight safe parking sites who will offer temporary " +
                     "parking for unhoused individuals and families living in their vehicles.",
-          meetingDays: "Monthly"
+          meetingDays: "Occasional as needed"
         },
         {
           name: "Fundraising",
