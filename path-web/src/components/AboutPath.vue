@@ -211,20 +211,6 @@
           meetingDays: "Occasional as needed"
         },
         {
-          name: "Fundraising",
-          chair: "TBD",
-          photo: "images/MissingHeadshot.png",
-          purpose: "Identify ways to raise funds to support PATH operations.",
-          meetingDays: "Not currently active"
-        },
-        {
-          name: "Housing and Development",
-          chair: "Doug Walker",
-          photo: "images/MissingHeadshot.png",
-          purpose: "Support efforts to increase housing and new developments in the community.",
-          meetingDays: "Monthly"
-        },   
-        {
           name: "Mental Health and Addiction Recovery Solutions",
           chair: "Ann Igl",
           photo: "images/AnnIglHeadshot.jpg",
@@ -234,6 +220,20 @@
                     "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
                     "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
           meetingDays: "Monday afternoons, twice each month"
-        },                                     
+        },
+        {
+          name: "Housing and Development",
+          chair: "Doug Walker",
+          photo: "images/MissingHeadshot.png",
+          purpose: "Support efforts to increase housing and new developments in the community.",
+          meetingDays: "Monthly"
+        },   
+/*         {
+          name: "Fundraising",
+          chair: "TBD",
+          photo: "images/MissingHeadshot.png",
+          purpose: "Identify ways to raise funds to support PATH partners and operations.",
+          meetingDays: "Not currently active"
+        },          */                    
       ])
   </script>
