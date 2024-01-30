@@ -5,8 +5,7 @@
       fixed-tabs
       bg-color="primary"
       color="yellow"
-      slider-color="red"
-    >
+      slider-color="red">
       <v-tab value="facts">Facts</v-tab>
       <v-tab value="problem">The Problem</v-tab>
       <v-tab value="volunteering">Volunteering</v-tab>
@@ -27,7 +26,7 @@
                 This is 50% higher than the reported state average, and double the rate estimated in 2007!</p>
               <p class="pa-4 text-h6">In the Medford, Ashland, and Jackson County area, there are estimated to be 1,250 homeless people on a given night, 
                 which is an average of 56 people per 10,000 in the general population.  Medford has a very active low barrier shelter and more established
-                set of services to help address the problem, which may help to explain its lower rate.
+                set of solutions and services to help address the problem, which may help to explain its lower rate.
               </p>
               <p class="pa-4 text-h6">The median "fair market" monthly rental in Grants Pass in 2020 was reported to be $1,070 for a two-bedroom apartment ($12,840 per year).
                 This was an increase from $955 per month in 2019.  </p>
@@ -73,13 +72,13 @@
                 <v-col cols="2"></v-col>
                 <v-col cols="8" class="text-h6 pl-8">
                   <ul class="pl-4">
-                    <li class="pb-4">We are not looking for people to come to meetings to 
-                                      just complain about the problems. We want those interested 
-                                      in working together to find sustainable solutions to our issues.</li>
                     <li class="pb-4">We need people who bring experience, expertise, enthusiasm, and a 
                                       passion to make a difference in our community!</li>
+                    <li class="pb-4">Furthermore, at our meetings we encourage everyone to focus on solutions
+                                      rather than complain about the problems. We want those interested 
+                                      in working together to find sustainable solutions to our issues.</li>
                     <li class="pb-4">We have varying opportunities within our committees as well as in 
-                                      support of our community partner`s efforts to impact homelessness, 
+                                      support of our community partners` efforts to impact homelessness, 
                                       addiction, and mental illness.</li>
                   </ul>
                 </v-col>
@@ -107,7 +106,7 @@
                     <li class="pb-4">Look at all our community partner projects, volunteer and giving 
                                       opportunities that impact homelessness, and get involved in those 
                                       that match your interest and availability.</li>
-                    <li class="pb-4">We also have varying volunteer positions within our subcommittees, 
+                    <li class="pb-4">We also have varying roles within our organization and committees, 
                                       so look at the list of needs and consider volunteering to take 
                                       on one or more of the roles that would be a good fit for you.</li>
                   </ul>
@@ -154,7 +153,7 @@
                 <v-col cols="2"></v-col>
                 <v-col cols="8" class="text-h6 pl-8">
                   <ul class="pl-4">
-                    <li class="pa-4">You no longer have to standby waiting for someone to DO something 
+                    <li class="pa-4">You no longer have to stand by waiting for someone to DO something 
                                       to impact our homeless, housing, addiction and mental health crisis
                                        in our community.</li>
                     <li class="pa-4">You can get actively involved in making a difference.</li>
