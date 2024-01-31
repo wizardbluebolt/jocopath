@@ -108,7 +108,6 @@
         case "service":
           serviceStore.newService();
           serviceStore.currService.ContactName = userStore.getCurrUser;
-          serviceStore.currService.ContactEMail = userStore.getCurrEmail;
         default:
 
       }

@@ -15,13 +15,21 @@
             label="Description">
             </v-textarea>
         </v-col>
-        <v-col class="pb-1" cols="6">
-            <v-text-field
-            v-model="serviceStore.currService.WebURL"
-            :rules="rules.weburl"
-            label="Web URL (optional)">
-            </v-text-field>
-        </v-col>
+        <v-row dense no-gutters class="pl-3">
+            <v-col class="pb-1 pr-4" cols="5">
+                <v-text-field
+                v-model="serviceStore.currService.WebURL"
+                :rules="rules.weburl"
+                label="Web URL (optional)">
+                </v-text-field>
+            </v-col>
+            <v-col class="pb-1" cols="5">
+                <v-text-field
+                    v-model="serviceStore.currService.ContactEMail"
+                    label="Service E-Mail (optional)">
+                </v-text-field>              
+            </v-col>            
+        </v-row>
         <v-row dense no-gutters>
             <v-col class="pb-1" cols="10">
                 <b>Locations: </b>
@@ -119,7 +127,7 @@
                 </v-col>
             </v-row>
         </div>
-        <v-row dense no-gutters>
+        <v-row dense no-gutters class="pl-3">
             <v-col cols="12" class="ml-4 mt-4 mb-0 pb-2">
                 Contact information is only used by PATH staff.  It will not be published.
             </v-col>
@@ -134,12 +142,6 @@
                 v-model="serviceStore.currService.ContactPhone"
                 type="tel"
                 label="Contact Phone (optional)">
-                </v-text-field>              
-            </v-col>
-            <v-col class="pb-1" cols="4">
-                <v-text-field
-                v-model="serviceStore.currService.ContactEMail"
-                label="Contact E-Mail (optional)">
                 </v-text-field>              
             </v-col>
         </v-row>
