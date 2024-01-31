@@ -37,8 +37,7 @@
                       </ul>
                     </v-col>
                     <v-col cols="10" class="mb-0 pb-0 ml-4">
-                      <v-img src="images/JulieThomasHeadshot.png" width="200" class="align-end">
-                      </v-img>
+                      <img src="/images/JulieThomasHeadshot.png" width="200" class="align-end">
                     </v-col> 
                     <v-col cols="1"></v-col>
                     <v-col cols="8" class="mt-0 pt-0">
@@ -47,7 +46,7 @@
                   </v-row>                  
                 </v-col>
                 <v-col cols="6">
-                  <img src="images/TrailPath.jpg" width="600" height="500">
+                  <img src="/images/TrailPath.jpg" width="600" height="500">
                 </v-col>
             </v-row>
             </v-card-text>
