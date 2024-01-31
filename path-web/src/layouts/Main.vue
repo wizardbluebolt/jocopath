@@ -54,7 +54,7 @@
 
         <v-col cols="auto" align-center>
           <v-row>
-            <v-img width="60" height="60" src="@/assets/images/PATHlogo.svg"  class="pa-0;"/>
+            <v-img width="60" height="60" src="/images/PATHLogo.svg"  class="pa-0;"/>
             <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>
           </v-row>
         </v-col>
