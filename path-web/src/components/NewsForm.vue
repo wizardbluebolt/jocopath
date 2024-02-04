@@ -1,5 +1,5 @@
 <template>
-    <v-form @submit.prevent="submitNews">
+    <v-form v-model="isFormValid" @submit.prevent="submitNews">
         <v-row dense no-gutters>
           <v-col cols="12">
               <v-text-field
@@ -69,6 +69,7 @@
               <v-btn 
                 type="submit" 
                 color="primary"
+                :disabled="!isFormValid"
                 @click="$emit('formSubmitted')">
                 Submit News
               </v-btn>              
@@ -89,9 +90,12 @@
     import { useNewsStore } from '@/stores/news';
     import { useUserStore } from '@/stores/user';
     import { isURL } from '@/api/validationUtils';
+    import { ref } from 'vue';
 
     const newsStore = useNewsStore();
     const userStore = useUserStore();
+
+    const isFormValid = ref(false);
 
     const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 

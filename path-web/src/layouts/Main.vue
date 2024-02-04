@@ -17,6 +17,9 @@
               <router-link to="/homeless">Homelessness in JoCo</router-link>
           </v-list-item>
           <v-list-item>
+              <router-link to="/volunteer">Volunteer</router-link>
+          </v-list-item>
+          <v-list-item>
               <router-link to="/news">News and Events</router-link>
           </v-list-item>
           <v-list-item>
@@ -48,19 +51,22 @@
     </v-main>
     <v-footer height="60" app>
       <v-row class="bg-teal-lighten-1 align-center justify-space-around">
-        <v-col cols="auto">
-          Get Help
+        <v-col cols="2">
+          <a href="" >Phone: (541) 450-9535</a>
         </v-col>
-
-        <v-col cols="auto" align-center>
+        <v-col cols="3">
+          <a href="mailto:pathofjoco@gmail.com">Mail: pathofjoco@gmail.com</a>
+        </v-col>
+        <v-col cols="2" align-center>
           <v-row>
             <v-img width="60" height="60" src="/images/PATHLogo.svg"  class="pa-0;"/>
             <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>
           </v-row>
         </v-col>
-
-        <v-col cols="auto">
-          Volunteer
+        <v-col cols="2">
+        </v-col>
+        <v-col cols="2">
+          <a href="https://www.facebook.com/pathjoco">Facebook</a>
         </v-col>
       </v-row>
     </v-footer>

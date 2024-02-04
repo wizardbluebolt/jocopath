@@ -1,9 +1,9 @@
 <template>
-    <v-form @submit.prevent="submitService">
+    <v-form v-model="isFormValid" @submit.prevent="submitService">
         <v-col class="pb-1" cols="12">
             <v-text-field
             v-model="serviceStore.currService.ServiceName"
-            :rules="rules.headlineRules"
+            :rules="rules.serviceNameRules"
             label="Service Name">
             </v-text-field>              
         </v-col>
@@ -148,18 +148,19 @@
         <v-row dense no-gutters>
           <v-col cols="2" class="pr-4">
               <v-btn 
-              type="submit" 
-              color="primary"
-              @click="$emit('formSubmitted')">
-              Submit Service
+                type="submit" 
+                color="primary"
+                :disabled="!isFormValid"
+                @click="$emit('formSubmitted')">
+                Submit Service
               </v-btn>              
           </v-col>
           <v-col cols="2">
               <v-btn 
-              type="button" 
-              color="primary"
-              @click="$emit('formEditCancelled')">
-              Cancel
+                type="button" 
+                color="primary"
+                @click="$emit('formEditCancelled')">
+                Cancel
               </v-btn>              
           </v-col>
         </v-row>
@@ -167,12 +168,15 @@
 </template>
 
 <script setup>
-    import { useServiceStore } from '@/stores/services'
+    import { useServiceStore } from '@/stores/services';
     import { useUserStore } from '@/stores/user';
-    import { isURL } from '@/api/validationUtils'
+    import { isURL } from '@/api/validationUtils';
+    import { ref } from 'vue';
 
     const serviceStore = useServiceStore();
     const userStore = useUserStore();
+
+    const isFormValid = ref(false);
 
     const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 

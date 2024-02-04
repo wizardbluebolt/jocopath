@@ -1,5 +1,5 @@
 <template>
-    <v-form @submit.prevent="submitHelp">
+    <v-form v-model="isFormValid" @submit.prevent="submitHelp">
         <v-row dense no-gutters>
           <v-col cols="12">
               <v-text-field
@@ -75,6 +75,7 @@
               <v-btn 
                 type="submit" 
                 color="primary"
+                :disabled="!isFormValid"
                 @click="$emit('formSubmitted')">
                 Submit Help Wanted
               </v-btn>              
@@ -95,9 +96,12 @@
     import { useHelpStore } from '@/stores/help';
     import { useUserStore } from '@/stores/user';
     import { isURL } from '@/api/validationUtils';
+    import { ref } from 'vue';
 
     const helpStore = useHelpStore();
     const userStore = useUserStore();
+
+    const isFormValid = ref(false);
 
     const emit = defineEmits(['formSubmitted', 'formEditCancelled']);
 
