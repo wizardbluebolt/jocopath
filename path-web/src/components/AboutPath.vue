@@ -46,7 +46,7 @@
                   </v-row>                  
                 </v-col>
                 <v-col cols="6">
-                  <img src="/images/TrailPath.jpg" width="600" height="500">
+                  <img src="/images/TrailPath.jpg" width="500" height="500">
                 </v-col>
             </v-row>
             </v-card-text>
