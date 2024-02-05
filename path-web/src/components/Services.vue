@@ -5,7 +5,7 @@
       <v-card-title>
         {{ service.ServiceName }}
       </v-card-title>
-      <v-card-text>
+      <v-card-text style="font-size: 1.1rem;">
         <p class="pa-2 ma-1">{{ service.Description }}</p>
         <p>
           <a v-if="service.WebURL.length > 0" :href="service.WebURL">Web Site</a>

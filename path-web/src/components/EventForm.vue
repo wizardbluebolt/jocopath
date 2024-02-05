@@ -18,10 +18,11 @@
           </v-col>
           <v-col class="mr-4" cols="4">
               <v-text-field
-              type="datetime-local"
-              v-model="eventStore.currEvent.Date"
-              :rules="rules.date"
-              label="Date">
+                type="datetime-local"
+                v-model="eventStore.currEvent.Date"
+                :rules="rules.date"
+                required
+                label="Date">
               </v-text-field>
           </v-col>
           <v-col cols="8">

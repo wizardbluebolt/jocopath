@@ -81,7 +81,7 @@ export const useEventStore = defineStore('event', {
                 Headline: "",
                 Description: "",
                 WebURL: "",
-                Date: currentDateTime(),
+                Date: null,
                 Location: "",
                 ContactName: "",
                 ContactEMail: "",
