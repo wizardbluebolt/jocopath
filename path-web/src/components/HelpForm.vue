@@ -53,6 +53,7 @@
           <v-col class="mr-4" cols="4">
               <v-text-field
                   v-model="helpStore.currHelp.ContactName"
+                  :rules="rules.contact"
                   label="Contact Name (optional)">
               </v-text-field>              
           </v-col>
@@ -60,13 +61,15 @@
               <v-text-field
                   v-model="helpStore.currHelp.ContactPhone"
                   type="tel"
-                  label="Contact Phone (optional)">
+                  :rules="rules.contact"
+                  label="Contact Phone">
               </v-text-field>              
           </v-col>
           <v-col cols="4">
               <v-text-field
                   v-model="helpStore.currHelp.ContactEMail"
-                  label="Contact E-Mail (optional)">
+                  :rules="rules.contact"
+                  label="Contact E-Mail">
               </v-text-field>              
           </v-col>
         </v-row>
@@ -137,6 +140,12 @@
           if (!value) return true;
           if (isURL(value)) return true;
           return 'If provided, Web URL must be a valid URL'
+        }
+      ],
+      contact: [
+        value => {
+          if (value?.length > 2) return true;
+          return 'Contact information is required'
         }
       ]
     }

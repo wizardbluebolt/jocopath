@@ -47,20 +47,26 @@
           <v-col class="mr-4" cols="4">
               <v-text-field
               v-model="eventStore.currEvent.ContactName"
-              label="Contact Name (optional)">
+              required
+              :rules="rules.contact"
+              label="Contact Name">
               </v-text-field>              
           </v-col>
           <v-col class="mr-4" cols="3">
               <v-text-field
               v-model="eventStore.currEvent.ContactPhone"
               type="tel"
-              label="Contact Phone (optional)">
+              required
+              :rules="rules.contact"
+              label="Contact Phone">
               </v-text-field>              
           </v-col>
           <v-col cols="4">
               <v-text-field
               v-model="eventStore.currEvent.ContactEMail"
-              label="Contact E-Mail (optional)">
+              required
+              :rules="rules.contact"
+              label="Contact E-Mail">
               </v-text-field>              
           </v-col>
         </v-row>
@@ -137,6 +143,12 @@
           if (!value) return true;
           if (isURL(value)) return true;
           return 'If provided, Web URL must be a valid URL'
+        }
+      ],
+      contact: [
+        value => {
+          if (value?.length > 2) return true;
+          return 'Contact information is required'
         }
       ]
     }

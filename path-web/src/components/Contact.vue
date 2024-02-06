@@ -80,10 +80,10 @@
                       "They may contact you with questions."
 
     const forms = [
-      {form: 'service', title: 'Tell us about your service'},
-      {form: 'news', title: 'Tell us about your news item'},
-      {form: 'event', title: 'Tell us about your event'},
-      {form: 'helpwanted', title: 'List a Help Wanted item'}
+      {form: 'service', title: 'Tell us about your Service'},
+      {form: 'news', title: 'Tell us about your News item'},
+      {form: 'event', title: 'Tell us about your Event'},
+      {form: 'helpwanted', title: 'List a How to Help item'}
     ]
 
     function selectForm(pItem) {

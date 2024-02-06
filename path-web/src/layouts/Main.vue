@@ -20,7 +20,7 @@
               <router-link to="/volunteer">Volunteer</router-link>
           </v-list-item>
           <v-list-item>
-              <router-link to="/news">News and Events</router-link>
+              <router-link to="/news">How to Help/News/Events</router-link>
           </v-list-item>
           <v-list-item>
               <router-link to="/services">Partners/Services</router-link>
@@ -50,23 +50,23 @@
         <router-view />
     </v-main>
     <v-footer height="60" app>
-      <v-row class="bg-teal-lighten-1 align-center justify-space-around">
+      <v-row class="bg-teal-lighten-1 align-center ">
         <v-col cols="2">
           <a href="" >Phone: (541) 450-9535</a>
         </v-col>
         <v-col cols="3">
-          <a href="mailto:pathofjoco@gmail.com">Mail: pathofjoco@gmail.com</a>
+          <a href="mailto:pathofjoco@gmail.com">E-Mail: pathofjoco@gmail.com</a>
         </v-col>
         <v-col cols="2" align-center>
           <v-row>
             <v-img width="60" height="60" src="/images/PATHLogo.svg"  class="pa-0;"/>
-            <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>
           </v-row>
         </v-col>
-        <v-col cols="2">
+        <v-col cols="2" class="text-right">
+            <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>        
         </v-col>
-        <v-col cols="2">
-          <a href="https://www.facebook.com/pathjoco">Facebook</a>
+        <v-col cols="3" class="text-right">
+          <a href="https://www.facebook.com/pathjoco">Facebook Page</a>
         </v-col>
       </v-row>
     </v-footer>

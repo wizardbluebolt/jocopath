@@ -33,7 +33,7 @@
                         <li class="pb-2 text-subtitle-1">Our goal is to work collaboratively with our community partners to find and support 
                           projects and programs that get people off the streets, out of our parks, and into a position
                           where they can get the help they need, with self-sufficiency being the ultimate goal</li>
-                        <li class="text-subtitle-1">PATH is NOT a 501c3 organization and does not itself receive or manage monetary donations.</li>
+                        <li class="text-subtitle-1">PATH is NOT a 501(c)(3) organization and does not itself receive or manage monetary donations.</li>
                       </ul>
                     </v-col>
                     <v-col cols="10" class="mb-0 pb-0 ml-4">

@@ -1,21 +1,45 @@
 <template>
-  <h2 style="text-align: center; padding: 4px;">News and Events</h2>
     <v-tabs
       v-model="viewTab"
       fixed-tabs
       bg-color="primary"
       color="yellow"
       slider-color="red">
+      <v-tab value="helpwanted">How To Help</v-tab>
       <v-tab value="news">News</v-tab>
       <v-tab value="events">Events</v-tab>
-      <v-tab value="helpwanted">Help Wanted</v-tab>
     </v-tabs>
     <v-card-text class="text-body-1">
       <v-window v-model="viewTab">
+        <v-window-item value="helpwanted">
+          <v-card variant="outlined" v-for="helpItem in helpStore.getApprovedHelp">
+            <v-card-title>{{ helpItem.Headline }}</v-card-title>
+            <v-card-text style="font-size: 1.1rem;">
+              <p class="pa-4">{{ helpItem.Description }}</p>
+              <v-row dense>
+                <v-col cols="8" class="pl-2">
+                  <a v-if="helpItem.WebURL.length > 0" :href="helpItem.WebURL">More Information</a>
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  {{ formatDateTime(helpItem.Date) }}
+                </v-col>
+              </v-row>
+              <v-row dense no-gutters class="pt-4" v-if="helpItem.PublishContact == 'Y'">
+                <p class="pl-4" v-if="helpItem.ContactName.length > 0">
+                  <b>Contact: </b><span class="pr-4">{{ helpItem.ContactName }}</span> 
+                  <b v-if="helpItem.ContactPhone.length > 0">Phone: </b>
+                  <span class="pr-4" v-if="helpItem.ContactPhone.length > 0">{{ helpItem.ContactPhone }}</span>
+                  <b v-if="helpItem.ContactEMail.length > 0">EMail: </b>
+                  <span v-if="helpItem.ContactEMail.length > 0">{{ helpItem.ContactEMail }}</span>
+                </p>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-window-item>
         <v-window-item value="news">
           <v-card variant="outlined" v-for="newsItem in newsStore.getApprovedNews">
             <v-card-title>{{ newsItem.Headline }}</v-card-title>
-            <v-card-text>
+            <v-card-text style="font-size: 1.1rem;">
               <p class="pa-4">{{ newsItem.Description }}</p>              
               <v-row dense>
                 <v-col cols="8" class="pl-2">
@@ -31,7 +55,7 @@
         <v-window-item value="events">
           <v-card variant="outlined" v-for="eventItem in eventStore.getApprovedEvents">
             <v-card-title>{{ eventItem.Headline }}</v-card-title>
-            <v-card-text>
+            <v-card-text style="font-size: 1.1rem;">
               <p class="pa-4">{{ eventItem.Description }}</p>
               <v-row dense no-gutters>
                 <v-col cols="2" class="pr-3 text-right">
@@ -68,31 +92,6 @@
             </v-card-text>
           </v-card>
         </v-window-item>
-        <v-window-item value="helpwanted">
-          <v-card variant="outlined" v-for="helpItem in helpStore.getApprovedHelp">
-            <v-card-title>{{ helpItem.Headline }}</v-card-title>
-            <v-card-text>
-              <p class="pa-4">{{ helpItem.Description }}</p>
-              <v-row dense>
-                <v-col cols="8" class="pl-2">
-                  <a v-if="helpItem.WebURL.length > 0" :href="helpItem.WebURL">More Information</a>
-                </v-col>
-                <v-col cols="4" class="text-right">
-                  {{ formatDateTime(helpItem.Date) }}
-                </v-col>
-              </v-row>
-              <v-row dense no-gutters class="pt-4" v-if="helpItem.PublishContact == 'Y'">
-                <p class="pl-4" v-if="helpItem.ContactName.length > 0">
-                  <b>Contact: </b><span class="pr-4">{{ helpItem.ContactName }}</span> 
-                  <b v-if="helpItem.ContactPhone.length > 0">Phone: </b>
-                  <span class="pr-4" v-if="helpItem.ContactPhone.length > 0">{{ helpItem.ContactPhone }}</span>
-                  <b v-if="helpItem.ContactEMail.length > 0">EMail: </b>
-                  <span v-if="helpItem.ContactEMail.length > 0">{{ helpItem.ContactEMail }}</span>
-                </p>
-              </v-row>
-            </v-card-text>
-          </v-card>
-        </v-window-item>
       </v-window>
     </v-card-text>
   </template>
@@ -103,7 +102,7 @@
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
-    import { formatDateTime, formatDate } from '@/api/datetimeops';
+    import { formatDateTime } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)
