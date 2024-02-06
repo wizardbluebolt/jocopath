@@ -54,7 +54,7 @@
               <v-text-field
                   v-model="helpStore.currHelp.ContactName"
                   :rules="rules.contact"
-                  label="Contact Name (optional)">
+                  label="Contact Name">
               </v-text-field>              
           </v-col>
           <v-col class="mr-4" cols="3">
