@@ -44,7 +44,7 @@
                         class="text-subtitle-1"
                         text="Learn about current opportunities to help">
                         <template v-slot:actions>
-                            <v-btn href="/news">Click here</v-btn>
+                            <router-link to="/news">Click Here</router-link>
                         </template>
                     </v-banner>
                 </v-col>
@@ -88,7 +88,7 @@
                         class="text-subtitle-1"
                         text="Learn about current opportunities to help">
                         <template v-slot:actions>
-                            <v-btn href="/news">Click here</v-btn>
+                            <router-link to="/news">Click Here</router-link>
                         </template>
                     </v-banner>
                 </v-col>
