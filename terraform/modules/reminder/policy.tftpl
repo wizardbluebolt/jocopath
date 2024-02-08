@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:CreateLogGroup",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:${region}:${account}:*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:Scan"
+          ],
+          "Resource": "arn:aws:dynamodb:${region}:${account}:table/*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "cognito-idp:ListUsersInGroup"
+          ],
+          "Resource": [
+              "arn:aws:cognito-idp:us-west-2:648341344120:userpool/${userpool_id}"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "ses:SendEmail"
+          ],
+          "Resource": [
+              "${email_addr_id_arn}",
+              "arn:aws:ses:us-west-2:648341344120:identity/*",
+              "arn:aws:ses:us-west-2:648341344120:configuration-set/path-config-set"
+          ]
+      }
+    ]
+}
