@@ -160,8 +160,8 @@
       [
         {
           name: "Steering",
-          chair: "Julie Thomas",
-          photo: "images/JulieThomasHeadshot.png",
+          chair: "Julie Hartford",
+          photo: "images/JulieHartfordHeadshot.jpeg",
           purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
                     "Secretary, and the leaders of each committee.  The Steering Committee sets " +
                     "the policies for PATH and makes all executive decisions.  The committee provides " +
