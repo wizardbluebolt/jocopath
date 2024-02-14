@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="210mm"
-   viewBox="0 0 210 210"
+   width="250"
+   height="250"
+   viewBox="0 0 250 250"
    version="1.1"
    id="svg1"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
-   sodipodi:docname="HomelessWheel.svg"
+   sodipodi:docname="HomelessWheel2.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -20,284 +20,303 @@
      borderopacity="0.25"
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="false"
+     inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.69397447"
-     inkscape:cx="396.26818"
-     inkscape:cy="414.28037"
-     inkscape:window-width="1904"
-     inkscape:window-height="1001"
-     inkscape:window-x="-14"
-     inkscape:window-y="-13"
+     inkscape:document-units="px"
+     showborder="false"
+     inkscape:zoom="2.434375"
+     inkscape:cx="96.944801"
+     inkscape:cy="136.37997"
+     inkscape:window-width="1469"
+     inkscape:window-height="986"
+     inkscape:window-x="249"
+     inkscape:window-y="12"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer2" />
   <defs
      id="defs1">
     <rect
-       x="-216.14628"
-       y="818.47392"
-       width="334.30625"
-       height="85.017537"
-       id="rect30" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect20" />
-    <rect
-       x="314.13259"
-       y="355.92088"
-       width="174.358"
-       height="69.16681"
-       id="rect19" />
-    <rect
-       x="318.45552"
-       y="378.97648"
-       width="162.8302"
-       height="56.198033"
-       id="rect1" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect21" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect22" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect23" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect24" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect25" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect26" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
+       x="-25.057766"
+       y="247.70218"
+       width="131.45058"
+       height="22.182285"
        id="rect27" />
     <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect28" />
-    <rect
-       x="677.25835"
-       y="867.46707"
-       width="340.07015"
-       height="54.757058"
-       id="rect29" />
-    <rect
-       x="-216.14628"
-       y="818.47392"
-       width="334.30625"
-       height="85.017537"
-       id="rect31" />
-    <rect
-       x="-216.14628"
-       y="818.47392"
-       width="334.30625"
-       height="85.017537"
-       id="rect32" />
-    <rect
-       x="-216.14628"
-       y="818.47392"
-       width="334.30625"
-       height="85.017537"
-       id="rect33" />
-    <rect
-       x="-216.14628"
-       y="818.47392"
-       width="334.30625"
-       height="85.017537"
-       id="rect34" />
+       x="15.609756"
+       y="7.8048781"
+       width="81.335045"
+       height="34.91656"
+       id="rect13" />
   </defs>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="Outer and Lines"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       transform="matrix(0.08392865,-0.25091895,0.25091895,0.08392865,-158.01177,160.96802)"
-       id="text20"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect20);mix-blend-mode:normal;fill:#000001;fill-opacity:1;fill-rule:nonzero;stroke:#020201;stroke-width:2.49827;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:label="criminalhistory"
-       inkscape:transform-center-x="-21.350449"
-       inkscape:transform-center-y="-61.7638"><tspan
-         x="677.25781"
-         y="890.80016"
-         id="tspan1">Criminal History</tspan></text>
     <circle
-       style="fill:#44d35f;fill-opacity:0.31548756;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       id="path14"
-       cx="105.60847"
-       cy="105.98972"
-       r="100"
-       inkscape:label="Outer Circle" />
+       style="fill:#4faa2c;stroke:#020201;stroke-width:0.498;fill-opacity:0.25565615;stroke-dasharray:none"
+       id="path1"
+       cx="125.28883"
+       cy="124.87805"
+       r="114.60847" />
     <path
-       style="fill:#dbd35f;fill-opacity:0.315488;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       d="M 107.58786,5.7188703 105.68158,205.11681"
-       id="path15" />
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 125.34991,124.99748 126.17009,10.002518"
+       id="path2"
+       inkscape:transform-center-x="-0.82156611"
+       inkscape:transform-center-y="-58.331194" />
     <path
-       style="fill:#dbd35f;fill-opacity:0.315488;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       d="M 166.00741,25.319921 47.262029,185.51576"
-       id="path16" />
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 125.71164,125.31491 183.91942,26.136446"
+       id="path3"
+       inkscape:transform-center-x="-29.877096"
+       inkscape:transform-center-y="-50.105515" />
     <path
-       style="fill:#dbd35f;fill-opacity:0.315488;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       d="M 201.74861,75.515654 11.520828,135.32003"
-       id="path17" />
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 125.86619,125.77068 225.86484,68.983502"
+       id="path4"
+       inkscape:transform-center-x="-50.927081"
+       inkscape:transform-center-y="-28.454102" />
     <path
-       style="fill:#dbd35f;fill-opacity:0.315488;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       d="M 201.15954,137.13301 12.1099,73.702678"
-       id="path18" />
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="m 123.77215,126.24267 114.99496,0.82018"
+       id="path5"
+       inkscape:transform-center-x="-58.331196"
+       inkscape:transform-center-y="0.821567" />
     <path
-       style="fill:#dbd35f;fill-opacity:0.315488;stroke:#000000;stroke-width:0.538001;stroke-dasharray:none"
-       d="M 164.4652,186.63625 48.804241,24.199441"
-       id="path19" />
-    <text
-       xml:space="preserve"
-       transform="matrix(0.21538616,-0.15366567,0.15366567,0.21538616,-131.42803,-11.912872)"
-       id="text21"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect21);mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:label="lackofjob"
-       inkscape:transform-center-x="-53.578006"
-       inkscape:transform-center-y="-37.414645"><tspan
-         x="677.25781"
-         y="890.80016"
-         id="tspan2">Lack of Job</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26457348,0.00228267,-0.00228267,0.26457348,-19.23046,-129.41877)"
-       id="text22"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect22);mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:label="education"
-       inkscape:transform-center-x="-65.340533"
-       inkscape:transform-center-y="1.1642033"><tspan
-         x="677.25781"
-         y="890.80016"
-         id="tspan3">Education</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.21270272,0.15735911,-0.15735911,0.21270272,135.34415,-163.67219)"
-       id="text23"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect23);mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:label="lackofhousing"
-       inkscape:transform-center-x="-52.141188"
-       inkscape:transform-center-y="39.392216"><tspan
-         x="677.25781"
-         y="890.80016"
-         id="tspan4">Lack of Housing</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.07958675,0.25232972,-0.25232972,0.07958675,289.94872,-88.547726)"
-       id="text24"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect24);mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:label="disability"
-       inkscape:transform-center-x="-19.025682"
-       inkscape:transform-center-y="62.519204"><tspan
-         x="677.25781"
-         y="890.80016"
-         id="tspan5">Disability</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.08176074,0.2516337,-0.2516337,0.08176074,309.75511,12.649645)"
-       id="text29"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect30);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:transform-center-x="18.300385"
-       inkscape:transform-center-y="-59.476252"
-       inkscape:label="housingcosts"><tspan
-         x="-216.14648"
-         y="841.80797"
-         id="tspan6">Housing Costs</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.21405241,0.15551818,-0.15551818,0.21405241,216.66441,-89.310654)"
-       id="text31"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect31);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:transform-center-x="49.662274"
-       inkscape:transform-center-y="-37.675478"
-       inkscape:label="addiction"><tspan
-         x="-216.14648"
-         y="841.80797"
-         id="tspan7">Addiction</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,72.95502,-116.02259)"
-       id="text32"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect32);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:transform-center-x="62.05486"
-       inkscape:transform-center-y="-0.90345875"
-       inkscape:label="domesticviolence"><tspan
-         x="-216.14648"
-         y="841.80797"
-         id="tspan8">Domestic Violence</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.21405241,-0.15551818,0.15551818,0.21405241,-45.435727,-57.112225)"
-       id="text33"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect33);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:transform-center-x="51.075684"
-       inkscape:transform-center-y="35.730082"
-       inkscape:label="mentalillness"><tspan
-         x="-216.14648"
-         y="841.80797"
-         id="tspan9">Mental Illness</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.08176074,-0.2516337,0.2516337,0.08176074,-110.08286,55.390037)"
-       id="text34"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect34);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"
-       inkscape:transform-center-x="20.58733"
-       inkscape:transform-center-y="58.733167"
-       inkscape:label="finances"><tspan
-         x="-216.14648"
-         y="841.80797"
-         id="tspan10">Finances</tspan></text>
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="m 123.45471,124.6044 99.17847,58.20778"
+       id="path6"
+       inkscape:transform-center-x="-50.105511"
+       inkscape:transform-center-y="29.877097" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="m 122.99894,124.75895 56.78718,99.99865"
+       id="path7"
+       inkscape:transform-center-x="-28.454096"
+       inkscape:transform-center-y="50.927082" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="m 124.52696,124.66491 -0.82019,114.99496"
+       id="path8"
+       inkscape:transform-center-x="0.821569"
+       inkscape:transform-center-y="58.331197" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 126.16523,124.34748 67.957443,223.52594"
+       id="path9"
+       inkscape:transform-center-x="29.877098"
+       inkscape:transform-center-y="50.105517" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 126.01068,123.89171 26.012024,180.67888"
+       id="path10"
+       inkscape:transform-center-x="50.927082"
+       inkscape:transform-center-y="28.454102" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 126.10472,125.41973 11.109756,124.59953"
+       id="path11"
+       inkscape:transform-center-x="58.331196"
+       inkscape:transform-center-y="-0.821563" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 126.42215,127.058 27.243687,68.850202"
+       id="path12"
+       inkscape:transform-center-x="50.105515"
+       inkscape:transform-center-y="-29.877092" />
+    <path
+       style="fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.699839;stroke-dasharray:none"
+       d="M 124.87792,124.90345 68.090746,24.904783"
+       id="path13"
+       inkscape:transform-center-x="28.454101"
+       inkscape:transform-center-y="-50.927077" />
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Layer 2"
-     style="display:inline;mix-blend-mode:normal">
+     id="layer2"
+     inkscape:label="Text">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="64.957092"
+       y="179.59259"
+       id="text14"
+       inkscape:transform-center-x="-40.251231"
+       inkscape:transform-center-y="-38.007827"
+       transform="rotate(-43.481734)"><tspan
+         sodipodi:role="line"
+         x="64.957092"
+         y="179.59259"
+         id="tspan15"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Lack of Job</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="149.64798"
+       y="154.19453"
+       id="text16"
+       inkscape:transform-center-x="-54.181844"
+       inkscape:transform-center-y="-12.385008"
+       transform="rotate(-13.481734)"><tspan
+         sodipodi:role="line"
+         x="149.64798"
+         y="154.19453"
+         id="tspan16"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Injunction</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="219.29088"
+       y="86.665779"
+       id="text17"
+       inkscape:transform-center-x="-53.344212"
+       inkscape:transform-center-y="15.535349"
+       transform="rotate(16.518266)"><tspan
+         sodipodi:role="line"
+         x="219.29088"
+         y="86.665779"
+         id="tspan17"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Education</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="229.99426"
+       y="-3.2699089"
+       id="text18"
+       inkscape:transform-center-x="-38.007825"
+       inkscape:transform-center-y="40.251243"
+       transform="rotate(46.518266)"><tspan
+         sodipodi:role="line"
+         x="229.99426"
+         y="-3.2699089"
+         id="tspan18"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Lack of Housing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="218.74971"
+       y="-89.647789"
+       id="text19"
+       inkscape:transform-center-x="-12.38501"
+       inkscape:transform-center-y="54.181855"
+       transform="rotate(76.518266)"><tspan
+         sodipodi:role="line"
+         x="218.74971"
+         y="-89.647789"
+         id="tspan19"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Disability</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="-33.579559"
+       y="156.43236"
+       id="text20"
+       inkscape:transform-center-x="-15.535339"
+       inkscape:transform-center-y="-53.344206"
+       transform="rotate(-73.481734)"><tspan
+         sodipodi:role="line"
+         x="-33.579559"
+         y="156.43236"
+         id="tspan20"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Criminal History</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="49.742748"
+       y="88.530334"
+       id="text21"
+       inkscape:transform-center-x="63.728959"
+       inkscape:transform-center-y="-18.148862"
+       transform="rotate(16.518266)"><tspan
+         sodipodi:role="line"
+         x="49.742748"
+         y="88.530334"
+         id="tspan21"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Domestic Violence</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="71.153358"
+       y="-1.1904141"
+       id="text22"
+       inkscape:transform-center-x="46.509698"
+       inkscape:transform-center-y="-47.46524"
+       transform="rotate(46.518266)"><tspan
+         sodipodi:role="line"
+         x="71.153358"
+         y="-1.1904141"
+         id="tspan22"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Substance Abuse</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="49.531914"
+       y="-89.160378"
+       id="text23"
+       inkscape:transform-center-x="16.828197"
+       inkscape:transform-center-y="-64.063346"
+       transform="rotate(76.518266)"><tspan
+         sodipodi:role="line"
+         x="49.531914"
+         y="-89.160378"
+         id="tspan23"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Housing Costs</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="-8.2854643"
+       y="156.6593"
+       id="text24"
+       inkscape:transform-center-x="64.063341"
+       inkscape:transform-center-y="16.828205"
+       transform="rotate(-13.481734)"><tspan
+         sodipodi:role="line"
+         x="-8.2854643"
+         y="156.6593"
+         id="tspan24"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Mental Illness</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       x="-92.849556"
+       y="181.67731"
+       id="text25"
+       inkscape:transform-center-x="47.465229"
+       inkscape:transform-center-y="46.509703"
+       transform="rotate(-43.481734)"><tspan
+         sodipodi:role="line"
+         x="-92.849556"
+         y="181.67731"
+         id="tspan25"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Finances</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:300;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="-183.03738"
+       y="159.98088"
+       id="text26"
+       inkscape:transform-center-x="18.148847"
+       inkscape:transform-center-y="63.728958"
+       transform="rotate(-73.481734)"><tspan
+         sodipodi:role="line"
+         x="-183.03738"
+         y="159.98088"
+         id="tspan26"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Measure 110</tspan></text>
     <circle
-       style="display:inline;opacity:1;mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.661;stroke-dasharray:none"
+       style="display:inline;mix-blend-mode:normal;fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.725486;stroke-dasharray:none"
        id="circle14"
-       cx="106.63472"
-       cy="103.96591"
-       r="29.919516"
+       cx="124.23705"
+       cy="126.67738"
+       r="32.838367"
        inkscape:label="Inner Circle" />
     <text
        xml:space="preserve"
-       transform="matrix(0.32197624,0,0,0.4167631,-18.043159,-51.012798)"
-       id="text19"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect19);fill:#43d260;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.49827;stroke-dasharray:none"><tspan
-         x="314.13281"
-         y="379.25328"
-         id="tspan11">Homelessness</tspan></text>
+       id="text27"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:10.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect27);display:inline;fill:#4faa2c;fill-opacity:0.255656;stroke:#020201;stroke-width:0.698;stroke-dasharray:none"
+       transform="translate(118.7163,-126.52118)"><tspan
+         x="-25.058594"
+         y="257.03649"
+         id="tspan1">Homelessness</tspan></text>
   </g>
 </svg>

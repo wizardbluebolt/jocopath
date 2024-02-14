@@ -27,12 +27,12 @@
                   <v-row dense>
                     <v-col cols="12">
                       <ul class="pa-4 ml-6">
-                        <li class="pb-2 text-subtitle-1">We actively support non-profit organizations, law enforcement, city government, 
-                          and other local entities working to positively impact these issues plaguing our community
+                        <li class="pb-2 text-subtitle-1">We actively support nonprofit organizations, law enforcement, city government, 
+                          and other local entities working to positively resolve the issues that are negatively affecting our community.
                         </li>
                         <li class="pb-2 text-subtitle-1">Our goal is to work collaboratively with our community partners to find and support 
-                          projects and programs that get people off the streets, out of our parks, and into a position
-                          where they can get the help they need, with self-sufficiency being the ultimate goal</li>
+                          projects and programs that get people off the streets, out of the parks, and into a position
+                          where they can get the help they need, with self-sufficiency being the ultimate goal.</li>
                         <li class="text-subtitle-1">PATH is NOT a 501(c)(3) organization and does not itself receive or manage monetary donations.</li>
                       </ul>
                     </v-col>
@@ -70,9 +70,9 @@
               <v-col cols="4" class="text-h5 pl-4">
                 <p class="pb-6">A Crisis of Homelessness</p>
                 <ul class="pl-4">
-                  <li class="pb-4">Homeless People in Our Parks</li>
+                  <li class="pb-4">Homeless People in the Parks</li>
                   <li class="pb-4">People Overdosing on Drugs</li>
-                  <li>People Struggling with Mental Illness</li>
+                  <li>People Struggling with Mental Illness and Substance Abuse</li>
                 </ul>
               </v-col>
               <v-col cols="6" class="text-h5">
@@ -222,10 +222,10 @@
         },
         {
           name: "Housing and Development",
-          chair: "Doug Walker",
+          chair: "TBD",
           photo: "images/MissingHeadshot.png",
           purpose: "Support efforts to increase housing and new developments in the community.",
-          meetingDays: "Monthly"
+          meetingDays: "TBD"
         },   
 /*         {
           name: "Fundraising",

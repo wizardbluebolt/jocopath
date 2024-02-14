@@ -104,14 +104,15 @@
             <v-col cols="2"></v-col>
             <v-col cols="8" class="text-h6 pl-8">
                 <ul class="pl-4">
-                <li class="pa-2">Navigational services</li>
-                <li class="pa-2">Temporary and transitional shelter</li>
-                <li class="pa-2">Permanent housing assistance</li>
-                <li class="pa-2">Food assistance</li>
-                <li class="pa-2">Mental health and emotional support</li>
-                <li class="pa-2">Medical treatment</li>
-                <li class="pa-2">Job placement and training opportunities</li>
-                <li class="pl-2">Substance abuse and addiction recovery</li>
+                    <li class="pa-2">Navigational services</li>
+                    <li class="pa-2">Temporary and transitional shelter</li>
+                    <li class="pa-2">Permanent housing assistance</li>
+                    <li class="pa-2">Food assistance</li>
+                    <li class="pa-2">Mental health and emotional support</li>
+                    <li class="pa-2">Medical treatment</li>
+                    <li class="pa-2">Job placement and training opportunities</li>
+                    <li class="pa-2">Substance abuse and addiction recovery</li>
+                    <li class="pa-2">Volunteers with administrative skills</li>
                 </ul>
             </v-col>
             </v-row>
