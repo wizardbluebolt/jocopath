@@ -82,7 +82,7 @@
                     <v-card-text v-if="!editMode">
                         <p class="pa-4">{{ eventItem.Description }}</p>
                         <p class="pa-4">
-                            <b>Event Date: </b>{{ formatDateTime(eventItem.Date) }}</p>
+                            <b>Event Date: </b>{{ formatDateTimeRange(eventItem.Date, eventItem.EndDate) }}</p>
                         <p v-if="eventItem.Location.length > 0">
                             <b>Location: </b>{{ eventItem.Location }}
                         </p>
@@ -270,7 +270,7 @@
     import { useServiceStore } from "@/stores/services";
     import { useUserStore } from "@/stores/user";
     import Auth from "./Auth.vue";
-    import { formatDateTime } from '@/api/datetimeops';
+    import { formatDateTime, formatDateTimeRange } from '@/api/datetimeops';
 
 
     const eventStore = useEventStore();

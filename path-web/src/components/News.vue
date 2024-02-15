@@ -62,7 +62,7 @@
                   <b>When: </b>
                 </v-col>
                 <v-col cols="10">
-                  {{ formatDateTime(eventItem.Date) }}
+                  {{ formatDateTimeRange(eventItem.Date, eventItem.EndDate) }}
                 </v-col>
               </v-row>
               <v-row dense no-gutters v-if="eventItem.Location.length > 0">
@@ -102,7 +102,7 @@
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
-    import { formatDateTime } from '@/api/datetimeops';
+    import { formatDateTime, formatDateTimeRange } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)

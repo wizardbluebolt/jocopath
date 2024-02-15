@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { getApprovedEvents, getPendingEvents, createEvent, approveEvent, deleteEvent } from "@/api/events"
 import { convertObjects } from "@/api/conversions"
-import { currentDateTime } from '@/api/datetimeops'
 
 // Sort events so that the earliest appears first
 function compareEvents(pEvent1, pEvent2) {
@@ -82,6 +81,7 @@ export const useEventStore = defineStore('event', {
                 Description: "",
                 WebURL: "",
                 Date: null,
+                EndDate: null,
                 Location: "",
                 ContactName: "",
                 ContactEMail: "",

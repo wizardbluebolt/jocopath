@@ -26,6 +26,9 @@ def lambda_handler(event, context):
                 "Location": {
                     "S": payload["Location"]
                 },
+                "EndDate": {
+                    "S": payload["EndDate"]
+                },
                 "WebURL": {
                     "S": payload["WebURL"]
                 },
@@ -39,7 +42,7 @@ def lambda_handler(event, context):
                     "S": payload["ContactPhone"]
                 },
                 "ExpirationDate": {
-                    "S": payload["Date"]
+                    "S": payload["EndDate"]
                 },
                 "Approved": {
                     "S": "N"

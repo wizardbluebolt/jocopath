@@ -22,7 +22,16 @@
                 v-model="eventStore.currEvent.Date"
                 :rules="rules.date"
                 required
-                label="Date">
+                label="Start Date Time">
+              </v-text-field>
+          </v-col>
+          <v-col class="mr-4" cols="4">
+              <v-text-field
+                type="datetime-local"
+                v-model="eventStore.currEvent.EndDate"
+                :rules="rules.date"
+                required
+                label="End Date Time">
               </v-text-field>
           </v-col>
           <v-col cols="8">

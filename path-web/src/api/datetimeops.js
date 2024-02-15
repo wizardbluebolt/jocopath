@@ -10,6 +10,25 @@ function formatDateTime(pString) {
     return date.format(dt, 'M/D/YYYY h:mm A')
 }
 
+function formatDateTimeRange(pString1, pString2) {
+    let formatted = formatDateTime(pString1);
+    if (pString1 == pString2) {
+        return formatted;
+    }
+    if (pString2 == null) {
+        return formatted;
+    }
+    let dt1 = date.parse(pString1, 'YYYY-MM-DD HH:mm');
+    formatted += " - ";
+    let dt2 = date.parse(pString2, "YYYY-MM-DD HH:mm");
+    if (date.isSameDay(dt1, dt2)) {
+        formatted += date.format(dt2, "h:mm A");
+    } else {
+        formatted += formatDateTime(pString2);
+    }
+    return formatted;
+}
+
 function formatDate(pString) {
     if (pString.length === 0) {
         return ""
@@ -29,4 +48,4 @@ function defaultExpirationDate() {
     return date.format(expired, "YYYY-MM-DDTHH:mm");
 }
 
-export { formatDateTime, formatDate, currentDateTime, defaultExpirationDate }
+export { formatDateTime, formatDateTimeRange, formatDate, currentDateTime, defaultExpirationDate }
