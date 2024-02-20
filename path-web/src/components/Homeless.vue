@@ -49,7 +49,7 @@
                   <p>Homelessness is a multi-faceted problem requiring multi-faceted "outside the box" solutions</p>
                 </v-col>
                 <v-col cols="7" class="pa-4">
-                  <img src="/images/HomelessWheel.svg" width="600" height="600">
+                  <img src="/images/HomelessWheel.svg" width="550" height="550">
                 </v-col>
               </v-row>
             </v-card-text>

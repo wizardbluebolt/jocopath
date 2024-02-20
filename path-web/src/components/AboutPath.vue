@@ -87,25 +87,6 @@
           <v-carousel-item>
             <v-row>
               <v-col cols="12">
-                <p class="text-h4" style="text-align: center;">How did we get here?</p>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="2"></v-col>
-              <v-col cols="8" class="text-h5 pl-8">
-                <p class="pb-6">Many things have contributed to where we are today, but most notably:</p>
-                <ul class="pl-4">
-                  <li class="pb-4">Court ordered injunction that allows people to sleep on public property, including parks</li>
-                  <li class="pb-4">Measure 110 which decriminalized many drugs</li>
-                  <li class="pb-4">Housing shortage, especially affordable housing</li>
-                  <li>People choosing a lifestyle with “no rules”</li>
-                </ul>
-              </v-col>
-            </v-row>
-          </v-carousel-item>
-          <v-carousel-item>
-            <v-row>
-              <v-col cols="12">
                 <p class="text-h4" style="text-align: center;">So, what did we do about it?</p>
               </v-col>
             </v-row>
