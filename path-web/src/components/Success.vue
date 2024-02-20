@@ -1,24 +1,41 @@
 <template>
-  <v-sheet max-width="1200">
+  <v-sheet>
     <h2 style="text-align: center; padding: 4px;">Success Stories</h2>
-    <v-card v-for="success in allSuccess" class="ma-4">
-        <v-card-item>
-          <v-card-title>
-            {{ success.when }}
-          </v-card-title>
-          <v-card-text style="font-size: 1.1rem;" class="ml-4">
-            <ul>
-              <li v-for="action in success.what" class="pa-2">{{ action.item }}</li>
-            </ul>
-          </v-card-text>
-        </v-card-item>
-      </v-card>
-    </v-sheet>
+    <v-tabs
+      v-model="viewTab"
+      fixed-tabs
+      bg-color="primary"
+      color="yellow"
+      slider-color="red">
+      <v-tab value="programs">Successful Programs</v-tab>
+      <v-tab value="accomplish">PATH Accomplishments</v-tab>
+    </v-tabs>
+    <v-window v-model="viewTab">
+      <v-window-item value="programs">
+
+      </v-window-item>
+      <v-window-item value="accomplish">
+        <v-card v-for="success in allSuccess" class="ma-4">
+          <v-card-item>
+            <v-card-title>
+              {{ success.when }}
+            </v-card-title>
+            <v-card-text style="font-size: 1.1rem;" class="ml-4">
+              <ul>
+                <li v-for="action in success.what" class="pa-2">{{ action.item }}</li>
+              </ul>
+            </v-card-text>
+          </v-card-item>
+        </v-card>
+      </v-window-item>
+    </v-window>
+  </v-sheet>
 </template>
   
 <script setup>
   import { ref } from 'vue';
 
+  const viewTab = ref(null);
   const allSuccess = ref([
     {
       when: "Nov 2022",

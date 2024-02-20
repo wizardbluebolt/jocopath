@@ -29,7 +29,6 @@
               <router-link to="/success">Success Stories</router-link>
           </v-list-item>
           <v-divider :thickness="3"></v-divider>
-          <p class="pa-4">Requires Registration</p>
           <v-list-item>
               <router-link to="/contribute">Contribute Content</router-link>
           </v-list-item>

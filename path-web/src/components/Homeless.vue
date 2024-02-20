@@ -9,6 +9,7 @@
       <v-tab value="facts">Facts</v-tab>
       <v-tab value="problem">The Problem</v-tab>
       <v-tab value="grantspass">City of Grants Pass</v-tab>
+      <v-tab value="interviews">Interviews</v-tab>
     </v-tabs>
     <v-card-text>
       <v-window v-model="viewTab">
@@ -61,6 +62,9 @@
           <h4 class="pa-4">Relevant Ordinances</h4>
           <h4 class="pa-4">Programs</h4>
           <h4 class="pa-4">Other Actions</h4>
+        </v-window-item>
+        <v-window-item value="interviews">
+
         </v-window-item>
       </v-window>
     </v-card-text>
