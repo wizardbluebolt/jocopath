@@ -35,18 +35,11 @@
                 </v-col>
             </v-row>
             <v-row class="mt-8">
-                <v-col cols="2"></v-col>
-                <v-col cols="6" class="pl-12">
-                    <v-banner 
-                        color="success" 
-                        lines="one"
-                        :border=true
-                        class="text-subtitle-1"
-                        text="Learn about current opportunities to help">
-                        <template v-slot:actions>
-                            <router-link to="/news">Click Here</router-link>
-                        </template>
-                    </v-banner>
+                <v-col cols="3"></v-col>
+                <v-col cols="6" class="pl-12" justify="center">
+                    <v-btn elevation="8" to="/news" size="x-large" color="primary">
+                        Learn about current opportunities to help
+                    </v-btn>
                 </v-col>
             </v-row>
         </v-carousel-item>
@@ -79,18 +72,11 @@
                 </v-col>
             </v-row>
             <v-row class="mt-8">
-                <v-col cols="2"></v-col>
-                <v-col cols="6" class="pl-12">
-                    <v-banner 
-                        color="success" 
-                        lines="one"
-                        :border=true
-                        class="text-subtitle-1"
-                        text="Learn about current opportunities to help">
-                        <template v-slot:actions>
-                            <router-link to="/news">Click Here</router-link>
-                        </template>
-                    </v-banner>
+                <v-col cols="3"></v-col>
+                <v-col cols="6" class="pl-12" justify="center">
+                    <v-btn elevation="8" to="/news" size="x-large" color="primary">
+                        Learn about current opportunities to help
+                    </v-btn>
                 </v-col>
             </v-row>
         </v-carousel-item>
