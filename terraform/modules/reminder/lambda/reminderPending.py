@@ -44,7 +44,7 @@ def lambda_handler(event, context):
                         },
                         'Body': {
                             'Text': {
-                                'Data': 'There are submitted items on https://pathofjoco.org needing review.'
+                                'Data': 'There are submitted items on https://pathofjoco.org/review needing review.'
                             }
                         }
                     }

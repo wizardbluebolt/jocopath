@@ -134,86 +134,86 @@
     </v-card-text>
 </template>
   
-  <script setup>
-    import { ref } from 'vue'
-    const viewTab = ref(null)
-    const allCommittees = ref(
-      [
-        {
-          name: "Steering",
-          chair: "Julie Hartford",
-          photo: "images/JulieHartfordHeadshot.jpeg",
-          purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
-                    "Secretary, and the leaders of each committee.  The Steering Committee sets " +
-                    "the policies for PATH and makes all executive decisions.  The committee provides " +
-                    "oversight to all other committees and subcommittees. The committee reviews " +
-                    "membership and plans the general meetings.  The committee ensures that other " +
-                    "committees are not duplicating each other`s efforts or working at cross-purposes.",
-          meetingDays: "Twice each month or as necessary to make sure all committees are working in tandem."
-        },
-        {
-          name: "Information and Communications",
-          chair: "Richard Flora",
-          photo: "images/RichardFloraHeadshot.jpg",
-          purpose: "Gather information relevant to homelessness in Josephine County so that we might better facilitate " +
-                    "communication within PATH and between the many organizations that provide services to the homeless, " +
-                    "our local government, law enforcement, our homeless community, and our community at large.  " + 
-                    "We strive to ensure that our communications are consistently positive and productive.  "  + 
-                    "The committee responsibilities include administration of the PATH Slack Workgroup, our Facebook page, " +
-                    "and the website.  We monitor what is going on with regards to homelessness, within our community, and " +
-                    "within the world at large, and keep our members informed so that they can determine how best to respond, " +
-                    "if at all.",
-          meetingDays: "First and Third Tuesday morning each month"
-        },
-        {
-          name: "Operations and Outreach",
-          chair: "Sheryl Eldridge",
-          photo: "images/SherylEldridgeHeadshot.jpg",
-          purpose: "Identifies and coordinates PATH liaisons to various community service organizations. " +
-                    "PATH liaisons reach out to the organizations to find out what each of them do, what services " +
-                    "they provide, and what clientele they serve, then ask if there are ways PATH can support their efforts. " +
-                    "The committee looks for ways to serve by providing volunteers, services, identifying giving opportunities, " +
-                    "or by connecting the organizations with other available resources. This committee`s goal is to identify " +
-                    "gaps and fill those gaps within service organizations so they can better accomplish their mission. " +
-                    "We would love to invite those having a connection to a church or organization in Josephine County to " +
-                    "become a liaison.",
-          meetingDays: "Second Friday afternoon each month"
-        },
-        {
-          name: "Safe Parking Program Outreach (Subcommitee)",
-          chair: "Judy Ano",
-          photo: "images/JudyAnoHeadshot.jpg",
-          purpose: "The City of Grants Pass offers the Safe Parking Program, and our committee focuses on reaching " +
-                    "out to eligible Grants Pass business locations. Based upon the city`s ordinance and interviews " +
-                    "with successful host sites, we developed a packet of information that we share with interested " +
-                    "organizations. Our goal is to locate overnight safe parking sites who will offer temporary " +
-                    "parking for unhoused individuals and families living in their vehicles.",
-          meetingDays: "Occasional as needed"
-        },
-        {
-          name: "Mental Health and Addiction Recovery Solutions",
-          chair: "Ann Igl",
-          photo: "images/AnnIglHeadshot.jpg",
-          purpose: "The committee is dedicated to supporting and creating pathways to recovery for those suffering from " +
-                    "addiction and/or mental health challenges within the homeless population in Josephine County. " +
-                    "We seek to better understand the intersection between homelessness, addiction, and mental health " +
-                    "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
-                    "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
-          meetingDays: "Monday afternoons, twice each month"
-        },
-        {
-          name: "Housing and Development",
-          chair: "TBD",
-          photo: "images/MissingHeadshot.png",
-          purpose: "Support efforts to increase housing and new developments in the community.",
-          meetingDays: "TBD"
-        },   
+<script setup>
+  import { ref } from 'vue'
+  const viewTab = ref(null)
+  const allCommittees = ref(
+    [
+      {
+        name: "Steering",
+        chair: "Julie Hartford",
+        photo: "images/JulieHartfordHeadshot.jpeg",
+        purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
+                  "Secretary, and the leaders of each committee.  The Steering Committee sets " +
+                  "the policies for PATH and makes all executive decisions.  The committee provides " +
+                  "oversight to all other committees and subcommittees. The committee reviews " +
+                  "membership and plans the general meetings.  The committee ensures that other " +
+                  "committees are not duplicating each other`s efforts or working at cross-purposes.",
+        meetingDays: "Twice each month or as necessary to make sure all committees are working in tandem."
+      },
+      {
+        name: "Information and Communications",
+        chair: "Richard Flora",
+        photo: "images/RichardFloraHeadshot.jpg",
+        purpose: "Gather information relevant to homelessness in Josephine County so that we might better facilitate " +
+                  "communication within PATH and between the many organizations that provide services to the homeless, " +
+                  "our local government, law enforcement, our homeless community, and our community at large.  " + 
+                  "We strive to ensure that our communications are consistently positive and productive.  "  + 
+                  "The committee responsibilities include administration of the PATH Slack Workgroup, our Facebook page, " +
+                  "and the website.  We monitor what is going on with regards to homelessness, within our community, and " +
+                  "within the world at large, and keep our members informed so that they can determine how best to respond, " +
+                  "if at all.",
+        meetingDays: "First and Third Tuesday morning each month"
+      },
+      {
+        name: "Operations and Outreach",
+        chair: "Sheryl Eldridge",
+        photo: "images/SherylEldridgeHeadshot.jpg",
+        purpose: "Identifies and coordinates PATH liaisons to various community service organizations. " +
+                  "PATH liaisons reach out to the organizations to find out what each of them do, what services " +
+                  "they provide, and what clientele they serve, then ask if there are ways PATH can support their efforts. " +
+                  "The committee looks for ways to serve by providing volunteers, services, identifying giving opportunities, " +
+                  "or by connecting the organizations with other available resources. This committee`s goal is to identify " +
+                  "gaps and fill those gaps within service organizations so they can better accomplish their mission. " +
+                  "We would love to invite those having a connection to a church or organization in Josephine County to " +
+                  "become a liaison.",
+        meetingDays: "Second Friday afternoon each month"
+      },
+      {
+        name: "Safe Parking Program Outreach (Subcommitee)",
+        chair: "Judy Ano",
+        photo: "images/JudyAnoHeadshot.jpg",
+        purpose: "The City of Grants Pass offers the Safe Parking Program, and our committee focuses on reaching " +
+                  "out to eligible Grants Pass business locations. Based upon the city`s ordinance and interviews " +
+                  "with successful host sites, we developed a packet of information that we share with interested " +
+                  "organizations. Our goal is to locate overnight safe parking sites who will offer temporary " +
+                  "parking for unhoused individuals and families living in their vehicles.",
+        meetingDays: "Occasional as needed"
+      },
+      {
+        name: "Mental Health and Addiction Recovery Solutions",
+        chair: "Ann Igl",
+        photo: "images/AnnIglHeadshot.jpg",
+        purpose: "The committee is dedicated to supporting and creating pathways to recovery for those suffering from " +
+                  "addiction and/or mental health challenges within the homeless population in Josephine County. " +
+                  "We seek to better understand the intersection between homelessness, addiction, and mental health " +
+                  "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
+                  "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
+        meetingDays: "Monday afternoons, twice each month"
+      },
+      {
+        name: "Housing and Development",
+        chair: "TBD",
+        photo: "images/MissingHeadshot.png",
+        purpose: "Support efforts to increase housing and new developments in the community.",
+        meetingDays: "TBD"
+      },   
 /*         {
-          name: "Fundraising",
-          chair: "TBD",
-          photo: "images/MissingHeadshot.png",
-          purpose: "Identify ways to raise funds to support PATH partners and operations.",
-          meetingDays: "Not currently active"
-        },          */                    
-      ])
-  </script>
+        name: "Fundraising",
+        chair: "TBD",
+        photo: "images/MissingHeadshot.png",
+        purpose: "Identify ways to raise funds to support PATH partners and operations.",
+        meetingDays: "Not currently active"
+      },          */                    
+    ])
+</script>
