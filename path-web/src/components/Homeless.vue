@@ -67,6 +67,7 @@
           <p v-for="interview in allInterviews" class="ma-8" style="font-size: 1.1rem;">
             <a :href="interview.link">{{ interview.name }}</a>
           </p>
+          <p class="ml-8 mt-12">Used by permission of the creator: Angels From the Community For the Community</p>
         </v-window-item>
       </v-window>
     </v-card-text>
