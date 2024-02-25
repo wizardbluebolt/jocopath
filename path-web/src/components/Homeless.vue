@@ -64,7 +64,9 @@
           <h4 class="pa-4">Other Actions</h4>
         </v-window-item>
         <v-window-item value="interviews">
-
+          <p v-for="interview in allInterviews" class="ma-8" style="font-size: 1.1rem;">
+            <a :href="interview.link">{{ interview.name }}</a>
+          </p>
         </v-window-item>
       </v-window>
     </v-card-text>
@@ -73,4 +75,46 @@
   <script setup>
     import { ref } from 'vue'
     const viewTab = ref(null)
+    const allInterviews = ref([
+      {
+        name: "Mama Bear",
+        link: "https://fb.watch/qqlmQsLrfn/"
+      },
+      {
+        name: "Mariah",
+        link: "https://fb.watch/qqlG7OuZmQ/"
+      },
+      {
+        name: "Cassandra",
+        link: "https://fb.watch/qqlLSqjgv9/"
+      },
+      {
+        name: "Ashly",
+        link: "https://www.facebook.com/reel/272478212083746"
+      },
+      {
+        name: "Chris",
+        link: "https://www.facebook.com/reel/1212787966067822"
+      },
+      {
+        name: "Andra",
+        link: "https://fb.watch/qqm6JeZftY/"
+      },
+      {
+        name: "Carrie",
+        link: "https://www.facebook.com/reel/1030123128363130"
+      },
+      {
+        name: "Ally",
+        link: "https://fb.watch/qqmjkoq4xM/"
+      },
+      {
+        name: "Teaka",
+        link: "https://fb.watch/qqmnW9b7h4/"
+      },
+      {
+        name: "Ally",
+        link: "https://fb.watch/qqmCnjhpKi/"
+      }
+    ])
   </script>

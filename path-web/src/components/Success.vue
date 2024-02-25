@@ -12,7 +12,16 @@
     </v-tabs>
     <v-window v-model="viewTab">
       <v-window-item value="programs">
-
+        <v-card v-for="program in allPrograms" class="ma-4">
+          <v-card-item>
+            <v-card-title>
+              {{ program.name }}
+            </v-card-title>
+            <v-card-text style="font-size: 1.1rem;" class="ml-4">
+              <a :href="program.link">Web Link</a>
+            </v-card-text>
+          </v-card-item>
+        </v-card>
       </v-window-item>
       <v-window-item value="accomplish">
         <v-card v-for="success in allSuccess" class="ma-4">
@@ -36,6 +45,36 @@
   import { ref } from 'vue';
 
   const viewTab = ref(null);
+  const allPrograms = ref([
+    {
+      name: "Transitional Housing in Grants Pass",
+      link: "https://youtu.be/NU8f4PDNWKE?si=EPQdi7qzMUjExsmf"
+    },
+    {
+      name: "Transitional Housing in Eugene",
+      link: "https://youtu.be/yLgW-i_ZYCs?si=LkQ3aIaRnMqJ96Nk"
+    },
+    {
+      name: "Affordable Housing in Eugene",
+      link: "https://youtu.be/KX2_Q5ejUpc?si=AvaO-BrmvwWi376O"
+    },
+    {
+      name: "Finland as a case study",
+      link: "https://www.cnn.com/2023/06/25/uk/prince-william-homeless-intl-scli?fbclid=IwAR0AM-fMYT0k4GqEYS1urDDF9dTjoXftJmD_a9l4S-nPwROpIT98-mzysPc"
+    },
+    {
+      name: "Finland Solved Homelessness",
+      link: "https://youtu.be/0jt_6PBnCJE?si=Ia97m138YWv6MLv6"
+    },
+    {
+      name: "Houston moved 25,000 off the street",
+      link: "https://www.nytimes.com/2022/06/14/headway/houston-homeless-people.html?smid=url-share&fbclid=IwAR1fRTv3WGFM9XwtHoeo1QleeyO1Dj8uyAC8jXjg-ZQEiFZ88hMQhWLFstI"
+    },
+    {
+      name: "Houston homelessness breakthrough",
+      link: "https://www.cnn.com/2023/06/08/opinions/homelessness-solutions-houston-model-eichenbaum-nichols?embedded_webview=true&fbclid=IwAR3XGggtDmv9Fz-0tGBOaTp7sADfQBJ_JRxDGZNeGWCcHqFvp1Ea8fYQRVs"
+    }
+  ])
   const allSuccess = ref([
     {
       when: "Nov 2022",
