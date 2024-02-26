@@ -58,7 +58,7 @@
 
         <v-window-item value="grantspass">
           <h3 class="pa-2">Homelessness in Grants Pass</h3>
-          <h4 class="pa-4">The Court Injuction</h4>
+          <h4 class="pa-4">The Court Injunction</h4>
           <h4 class="pa-4">Relevant Ordinances</h4>
           <h4 class="pa-4">Programs</h4>
           <h4 class="pa-4">Other Actions</h4>

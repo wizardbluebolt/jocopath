@@ -77,6 +77,7 @@
                         v-bind="props"
                         density="compact" 
                         aria-label="Copy Address" 
+                        flat
                         icon
                         @click="doCopy(eventItem.Location)">
                         <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>

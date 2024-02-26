@@ -51,10 +51,10 @@
     <v-footer height="60" app>
       <v-row class="bg-teal-lighten-1 align-center ">
         <v-col cols="2">
-          <a href="" >Phone: (541) 450-9535</a>
+          <a href="" style="color: white;">Phone: (541) 450-9535</a>
         </v-col>
         <v-col cols="3">
-          <a href="mailto:pathofjoco@gmail.com">E-Mail: pathofjoco@gmail.com</a>
+          <a href="mailto:pathofjoco@gmail.com" style="color: white;">E-Mail: pathofjoco@gmail.com</a>
         </v-col>
         <v-col cols="2" align-center>
           <v-row>
@@ -62,10 +62,10 @@
           </v-row>
         </v-col>
         <v-col cols="2" class="text-right">
-            <router-link to="/about" class="pt-4 pl-1">About PATH</router-link>        
+            <router-link to="/about" class="pt-4 pl-1" style="color: white;">About PATH</router-link>        
         </v-col>
         <v-col cols="3" class="text-right">
-          <a href="https://www.facebook.com/pathjoco">Facebook Page</a>
+          <a href="https://www.facebook.com/pathjoco" style="color: white;">Facebook Page</a>
         </v-col>
       </v-row>
     </v-footer>

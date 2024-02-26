@@ -216,10 +216,6 @@
       what: [
         {
           item: "We met with the Josephine County Republican Party to raise awareness of our group and work to find areas of consensus."
-        },
-        {
-          item: "We shared an opportunity for low-income housing at the new Cathedral Square Apartments with groups who work with " +
-                "those who are housing insecure."
         }
       ]
     },

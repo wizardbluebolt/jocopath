@@ -29,6 +29,7 @@
                       v-bind="props"
                       density="compact" 
                       aria-label="Copy Address" 
+                      flat
                       icon
                       @click="doCopy(locationItem.Address)">
                       <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
@@ -45,6 +46,7 @@
                       v-bind="props"
                       density="compact" 
                       aria-label="Copy Phone" 
+                      flat
                       icon
                       @click="doCopy(locationItem.Phone)">
                       <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
@@ -68,6 +70,7 @@
                   v-bind="props"
                   density="compact" 
                   aria-label="Copy E-Mail" 
+                  flat
                   icon
                   @click="doCopy(service.ContactEMail)">
                   <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
