@@ -192,14 +192,14 @@
       },
       {
         name: "Mental Health and Addiction Recovery Solutions",
-        chair: "Ann Igl",
-        photo: "images/AnnIglHeadshot.jpg",
+        chair: "TBD",
+        photo: "images/MissingHeadshot.png",
         purpose: "The committee is dedicated to supporting and creating pathways to recovery for those suffering from " +
                   "addiction and/or mental health challenges within the homeless population in Josephine County. " +
                   "We seek to better understand the intersection between homelessness, addiction, and mental health " +
                   "disorders so that we can be effective in supporting pathways to recovery. We utilize a Biopsychosocial " +
                   "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
-        meetingDays: "Monday afternoons, twice each month"
+        meetingDays: "TBD"
       },
       {
         name: "Housing and Development",

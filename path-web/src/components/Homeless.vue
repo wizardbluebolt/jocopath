@@ -57,11 +57,21 @@
         </v-window-item>
 
         <v-window-item value="grantspass">
-          <h3 class="pa-2">Homelessness in Grants Pass</h3>
-          <h4 class="pa-4">The Court Injunction</h4>
-          <h4 class="pa-4">Relevant Ordinances</h4>
+          <h2 class="pa-2">Homelessness in Grants Pass</h2>
+          <h3 class="pa-4">The Court Injunction</h3>
+          <p style="font-size: 1.1rem" class="ma-4">
+            Since July 22, 2020 the City of Grants Pass has been under an injunction 
+            issued by a federal District Court judge that greatly impacts how the City
+            may enforce its ordinances related to sleeping in public parks.  The full text 
+            of the injunction can be found <a href="https://casetext.com/case/blake-v-city-of-grants-pass-1">here</a>.</p>
+          <p style="font-size: 1.1rem" class="ma-4">
+            The injunction has been upheld under appeal, but has been added to the docket of the current session of the 
+            US Supreme Court.  Oral arguments for the case are scheduled for April 2024, and the case should be decided
+            by the Court in late spring or early summer this year.
+          </p>
+<!--           <h4 class="pa-4">Relevant Ordinances</h4>
           <h4 class="pa-4">Programs</h4>
-          <h4 class="pa-4">Other Actions</h4>
+          <h4 class="pa-4">Other Actions</h4> -->
         </v-window-item>
         <v-window-item value="interviews">
           <p v-for="interview in allInterviews" class="ma-8" style="font-size: 1.1rem;">
