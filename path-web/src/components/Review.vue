@@ -203,6 +203,9 @@
                         <p v-if="serviceItem.WebURL.length > 0">
                             <b>Web URL: </b>{{ serviceItem.WebURL }}
                         </p>
+                        <p v-if="serviceItem.ServiceEMail.length > 0">
+                            <b>Service E-Mail: </b>{{ serviceItem.ServiceEMail }}
+                        </p>
                         <p v-for="locationItem in serviceItem.LocationItems">
                             <b>Location: </b>{{ locationItem.Location }} {{ locationItem.Address }} {{ locationItem.Phone }}
                         </p>

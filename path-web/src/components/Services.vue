@@ -58,12 +58,12 @@
             </v-col>
           </v-row>
         </p>
-        <v-row dense no-gutters v-if="service.ContactEMail.length > 0">
+        <v-row dense no-gutters v-if="service.ServiceEMail.length > 0">
           <v-col cols="2" class="pt-1 pr-3 text-right">
             <b>E-Mail: </b>
           </v-col>
           <v-col cols="10" class="pl-2">
-            {{ service.ContactEMail }}
+            {{ service.ServiceEMail }}
             <v-tooltip location="end">
               <template v-slot:activator="{ props }">
                 <v-btn 
@@ -72,7 +72,7 @@
                   aria-label="Copy E-Mail" 
                   flat
                   icon
-                  @click="doCopy(service.ContactEMail)">
+                  @click="doCopy(service.ServiceEMail)">
                   <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
                 </v-btn>
               </template>

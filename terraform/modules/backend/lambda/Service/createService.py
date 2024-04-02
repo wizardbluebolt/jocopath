@@ -32,6 +32,9 @@ def lambda_handler(event, context):
                 "WebURL": {
                     "S": payload["WebURL"]
                 },                
+                "ServiceEMail": {
+                    "S": payload["ServiceEMail"]
+                },
                 "ContactName": {
                     "S": payload["ContactName"]
                 },

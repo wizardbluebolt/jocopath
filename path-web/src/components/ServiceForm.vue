@@ -25,7 +25,7 @@
             </v-col>
             <v-col class="pb-1" cols="5">
                 <v-text-field
-                    v-model="serviceStore.currService.ContactEMail"
+                    v-model="serviceStore.currService.ServiceEMail"
                     label="Service E-Mail (optional)">
                 </v-text-field>              
             </v-col>            
@@ -138,13 +138,20 @@
                     label="Contact Name">
                 </v-text-field>              
             </v-col>
-            <v-col class="pb-1 pr-4" cols="4">
+            <v-col class="pb-1 pr-4" cols="3">
                 <v-text-field
                     v-model="serviceStore.currService.ContactPhone"
                     type="tel"
                     :rules="rules.contact"
                     label="Contact Phone">
                 </v-text-field>              
+            </v-col>
+            <v-col class="pb-1 pr-4" cols="4">
+                <v-text-field
+                    v-model="serviceStore.currService.ContactEMail"
+                    :rules="rules.contact"
+                    label="Contact EMail">
+                </v-text-field>
             </v-col>
         </v-row>
         <v-row dense no-gutters>
