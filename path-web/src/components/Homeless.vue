@@ -65,9 +65,78 @@
             may enforce its ordinances related to sleeping in public parks.  The full text 
             of the injunction can be found <a href="https://casetext.com/case/blake-v-city-of-grants-pass-1">here</a>.</p>
           <p style="font-size: 1.1rem" class="ma-4">
-            The injunction has been upheld under appeal, but has been added to the docket of the current session of the 
-            US Supreme Court.  Oral arguments for the case are scheduled for April 2024, and the case should be decided
-            by the Court in late spring or early summer this year.
+            The US Supreme Court accepted the City's appeal of the injunction after unsuccessful attempts 
+            to appeal with the 9th Circuit Court.  In June 2024, the Supreme Court announced its decision siding with
+            the City, sending the case back to the District Court stating that the City's ordinances did not violate
+            the Constitution's 8th Amendment regarding cruel and unusual punishment.
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4">
+            <b>PATH Leadership has provided the following response following the Supreme Court's decision:</b>
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            The Supreme Court has recently ruled in favor of the City of Grants Pass in the Grants Pass vs Johnson case. 
+            They ruled that a local ordinance to bar anyone without a permanent residence from sleeping outside does not 
+            amount to "cruel and unusual" punishment under the Eighth Amendment. What does this mean for our community? 
+            In the coming weeks and months, we will learn how the city intends to move forward now that we have received 
+            the decision of the Supreme Court. 
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            As always, PATH is committed to working with our community partners to find sustainable solutions for helping 
+            people transition from homelessness to a self-sufficient future. Now, more than ever, we need to work together 
+            to find and establish ways to get our unhoused out of the parks and public places, and into programs that help 
+            them to get back on their feet, whether that be through drug and alcohol treatment, mental health assistance, 
+            disability assistance, job placement, transitional or affordable housing. 
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            For those who are ready to improve their lives, there are great opportunities ahead for them. PATH’s desire 
+            is to see within our community more places where those who need a hand up have a way to get their lives on 
+            track. There are several steps we can and are taking to accomplish just that.
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            We currently partner with groups who are seeking sustainable solutions to our housing, addiction, and mental 
+            health crises, PATH’s desire for our community, is to have:
+          </p>
+          <ul class="pl-4" style="font-size: 1.1rem">
+            <li class="ml-14 pb-4 pl-4" >
+              A safe, low barrier shelter where people can go to get immediate assistance to overcome 
+              the challenges in their lives, so they can begin their journey to becoming a positive 
+              contributing member of our community.
+            </li>
+            <li class="ml-14 pb-4 pl-4">
+              A safe, well organized, urban campground, where people can go who just need a temporary respite on 
+              their way to a more permanent solution. 
+            </li>
+            <li class="ml-14 pb-4 pl-4">
+              Mental health services and substance abuse and addiction resources that are available to those 
+              who have immediate and long-term needs for assistance.
+            </li>
+            <li class="ml-14 pb-4 pl-4">
+              A place where people who need employment on an immediate basis can find positions, but also access 
+              to job placement assistance for permanent family-wage jobs.
+            </li>            
+            <li class="ml-14 pb-4 pl-4">
+              Affordable housing for those who need it, to include transitional housing, group homes, housing 
+              for low-income seniors and Veterans, workforce housing, as well as affordable move-up housing 
+              for those who wish to leave smaller units as their family grows thus freeing up smaller units.
+            </li>            
+            <li class="ml-14 pb-4 pl-4">
+              Prevention services to help people stay in their homes while navigating a short-term setback.
+            </li>            
+          </ul>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            For those who see these ideas as unrealistic, utopian visions, we can say that we know of several 
+            groups that are actively working on many of these solutions and more. We believe that within our 
+            community there is enough willpower and motivation to move these ideas forward. Things have been 
+            changing for the better within our community in the last several months, and we believe they will 
+            continue to improve slowly, but surely. The "Can Do Spirit" of Southern Oregon is alive and well, 
+            and PATH is proud to play a role in getting things done! By working together, we can find and 
+            implement solutions that will be long-term successes for those who today may not feel any hope for 
+            a bright future. But working together, we can provide that hand up for those who are willing to take 
+            it. We can certainly make a great impact in their lives, and ultimately in our community.
+          </p>
+          <p style="font-size: 1.1rem" class="ma-4 pl-8">
+            PATH’s President, Julie Thomas has said, <b>"For those who say, 'It can't be done!': Get out of the 
+            way of those who are doing it!"</b>
           </p>
 <!--           <h4 class="pa-4">Relevant Ordinances</h4>
           <h4 class="pa-4">Programs</h4>
