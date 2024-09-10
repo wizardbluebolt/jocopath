@@ -5,9 +5,9 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       </template>
       <v-app-bar-title>
-        PATH: Partners Assisting the Homeless in Josephine County
+        PATH: Partners Assisting the Homeless in Josephine County   
       </v-app-bar-title>
-    </v-app-bar>
+    </v-app-bar>  
     <v-navigation-drawer v-model="drawer" temporary>
       <v-list>
           <v-list-item>
@@ -23,7 +23,7 @@
               <router-link to="/news">How to Help/News/Events</router-link>
           </v-list-item>
           <v-list-item>
-              <router-link to="/services">Partners/Services</router-link>
+              <router-link to="/services">Community Resource List</router-link>
           </v-list-item>
           <v-list-item>
               <router-link to="/success">Success Stories</router-link>
@@ -56,15 +56,17 @@
         <v-col cols="3">
           <a href="mailto:pathofjoco@gmail.com" style="color: white;">E-Mail: pathofjoco@gmail.com</a>
         </v-col>
-        <v-col cols="2" align-center>
+        <v-col cols="1" align-center class="pt-4 pl-0 pr-0 pb-0">
           <v-row>
-            <v-img width="60" height="60" src="/images/PATHLogo.svg"  class="pa-0;"/>
           </v-row>
         </v-col>
         <v-col cols="2" class="text-right">
             <router-link to="/about" class="pt-4 pl-1" style="color: white;">About PATH</router-link>        
         </v-col>
-        <v-col cols="3" class="text-right">
+        <v-col cols="2" class="text-right">
+            <router-link to="/contribute" class="pt-4 pl-1" style="color: white;">Contribute Content</router-link>        
+        </v-col>
+        <v-col cols="2" class="text-right">
           <a href="https://www.facebook.com/pathjoco" style="color: white;">Facebook Page</a>
         </v-col>
       </v-row>

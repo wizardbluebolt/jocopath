@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
-import { getApprovedEvents, getPendingEvents, createEvent, approveEvent, deleteEvent } from "@/api/events"
+import { getApprovedEvents, getArchivedEvents, getPendingEvents, createEvent, approveEvent, deleteEvent } from "@/api/events"
 import { convertObjects } from "@/api/conversions"
+import { defaultArchiveDate } from '@/api/datetimeops'; 
 
 // Sort events so that the earliest appears first
 function compareEvents(pEvent1, pEvent2) {
@@ -17,11 +18,13 @@ export const useEventStore = defineStore('event', {
     state: () => ({
         approvedEvents: [],
         pendingEvents: [],
+        archivedEvents: [],
         currEvent: null
     }),
     getters: {
         getApprovedEvents: (state) => state.approvedEvents,
         getPendingEvents: (state) => state.pendingEvents,
+        getArchivedEvents: (state) => state.archivedEvents,
         getCurrEvent: (state) => state.currEvent
     },
     actions: {
@@ -31,6 +34,16 @@ export const useEventStore = defineStore('event', {
                 this.approvedEvents = convertObjects(response.data).sort(compareEvents);
             } catch (error) {
                 console.log("Error on fetch approved events");
+                console.error(error);
+            }
+        },
+        async fetchArchivedEvents() {
+            try {
+                let expDate = defaultArchiveDate();
+                const response = await(getArchivedEvents(expDate));
+                this.archivedEvents = convertObjects(response.data).sort(compareEvents);
+            } catch (error) {
+                console.log("Error on fetch archived events");
                 console.error(error);
             }
         },
@@ -51,6 +64,9 @@ export const useEventStore = defineStore('event', {
                 this.approvedEvents = convertObjects(response.data).sort(compareEvents);
                 response = await getPendingEvents(pToken);
                 this.pendingEvents = convertObjects(response.data).sort(compareEvents);
+                let expDate = defaultArchiveDate();
+                response = await(getArchivedEvents(expDate));
+                this.archivedEvents = convertObjects(response.data).sort(compareEvents);
             } catch (error) {
                 console.log("Error on create event")
                 console.error(error);
@@ -95,6 +111,10 @@ export const useEventStore = defineStore('event', {
         },
         selectApprovedEvent(pEventID) {
             let tEvent = this.approvedEvents.find(tEvent => tEvent.EventID === pEventID);
+            this.currEvent = tEvent;
+        },
+        selectArchivedEvent(pEventID) {
+            let tEvent = this.archivedEvents.find(tEvent => tEvent.EventID === pEventID);
             this.currEvent = tEvent;
         }
     }

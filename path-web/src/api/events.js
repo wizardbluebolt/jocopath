@@ -8,6 +8,11 @@ const getApprovedEvents = async () => {
     return response;
 }
 
+const getArchivedEvents = async (pExpDate) => {
+    let response = await client.get("/event?expdate=" + pExpDate);
+    return response;
+}
+
 const getPendingEvents = async (pToken) => {
      let response = await client.get("/eventpending", {headers: getHeaders(pToken)});
      return response;
@@ -36,6 +41,7 @@ const deleteEvent = async (pToken, pEventID) => {
 
 export {
     getApprovedEvents,
+    getArchivedEvents,
     getPendingEvents,
     createEvent,
     approveEvent,

@@ -6,6 +6,7 @@
             <v-radio-group inline hide-details v-model="listMode">
                 <v-radio label="Pending" value="Pending"></v-radio>
                 <v-radio label="Approved" value="Approved"></v-radio>
+                <v-radio label="Events Archive" value="Archive"></v-radio>
             </v-radio-group>
         </v-row>
     </v-card-text>
@@ -290,7 +291,11 @@
         if (listMode.value == "Pending") {
             return eventStore.pendingEvents;
         } else {
-            return eventStore.approvedEvents;
+            if (listMode.value == "Archive") {
+                return eventStore.archivedEvents;
+            } else {
+                return eventStore.approvedEvents;
+            }
         }
     });
     const currEvent = computed(() => eventStore.currEvent);
@@ -335,6 +340,7 @@
         await eventStore.approveEvent(userStore.getAccessToken);
         await eventStore.fetchPendingEvents(userStore.getAccessToken);
         await eventStore.fetchApprovedEvents();
+        await eventStore.fetchArchivedEvents();
     }
 
     async function doApproveNews(pNewsID) {
@@ -422,11 +428,16 @@
         if (listMode.value == "Pending") {
             eventStore.selectEvent(pEventID);
         } else {
-            eventStore.selectApprovedEvent(pEventID);
+            if (listMode.value ==  "Archive") {
+                eventStore.selectArchivedEvent(pEventID);
+            } else {
+                eventStore.selectApprovedEvent(pEventID);
+            }
         }
         await eventStore.saveEvent(userStore.getAccessToken);
         await eventStore.fetchPendingEvents(userStore.getAccessToken);
         await eventStore.fetchApprovedEvents();
+        await eventStore.fetchArchivedEvents();
     }
 
     async function doCancelNews(pNewsID) {
@@ -519,6 +530,7 @@
         if (eventStore.getPendingEvents.length === 0) {
             await eventStore.fetchPendingEvents(userStore.getAccessToken);
             await eventStore.fetchApprovedEvents();
+            await eventStore.fetchArchivedEvents();
         };
         if (newsStore.getPendingNews.length === 0) {
             await newsStore.fetchPendingNews(userStore.getAccessToken);

@@ -1,6 +1,7 @@
 import date from 'date-and-time';
 
 const defaultExpireDays = 30;
+const defaultArchiveDays = -90;
 
 function formatDateTime(pString) {
     if (pString.length === 0) {
@@ -48,4 +49,10 @@ function defaultExpirationDate() {
     return date.format(expired, "YYYY-MM-DDTHH:mm");
 }
 
-export { formatDateTime, formatDateTimeRange, formatDate, currentDateTime, defaultExpirationDate }
+function defaultArchiveDate() {
+    const now = new Date();
+    let archived = date.addDays(now, defaultArchiveDays);
+    return date.format(archived, "YYYY-MM-DDTHH:mm");
+}
+
+export { formatDateTime, formatDateTimeRange, formatDate, currentDateTime, defaultExpirationDate, defaultArchiveDate }

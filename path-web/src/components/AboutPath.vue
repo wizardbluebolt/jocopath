@@ -163,7 +163,7 @@
                   "and the website.  We monitor what is going on with regards to homelessness, within our community, and " +
                   "within the world at large, and keep our members informed so that they can determine how best to respond, " +
                   "if at all.",
-        meetingDays: "First and Third Tuesday morning each month"
+        meetingDays: "Second Tuesday morning each month"
       },
       {
         name: "Operations and Outreach",

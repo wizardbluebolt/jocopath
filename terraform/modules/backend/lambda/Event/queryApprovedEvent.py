@@ -11,10 +11,14 @@ def lambda_handler(event, context):
     try:
         # print("event -> " + str(event))
         # payload = json.loads(event["body"])
+        try:
+            pdate = event["queryStringParameters"]["expdate"]
+        except KeyError:
+            pdate = currDate
         dbParms = {
             "TableName": os.environ["TABLE"],
             "FilterExpression": "Approved = :apprVal and ExpirationDate > :cDate",
-            "ExpressionAttributeValues": {":apprVal": {"S": "Y"}, ":cDate": {"S": currDate}},
+            "ExpressionAttributeValues": {":apprVal": {"S": "Y"}, ":cDate": {"S": pdate}},
         }
         moreResults = True
         allResults = []
