@@ -236,10 +236,122 @@
         },
         {
           item: "Rallied community partners to support the implementation of a warming and navigation center."
+        }
+      ]
+    },
+    {
+      when: "2024",
+      what: [
+        {
+          item: "Donated 1,167 pounds of food (and counting) to the Food Bank through the Green Bag Project."
         },
         {
-          item: "We have created a Facebook page, phone number, and e-mail address with a new informational pamphlet.  " +
-                "We have created a new website."
+          item: "Along with Grants Pass Kiwanis, we have compiled 11 Welcome Home Kits for homeless Maslow families " + 
+                "moving into new apartments. As we saw the need for further resources, in partnership with some of our " + 
+                "community partners, we searched and fulfilled the needs requests for furniture and household items for all 11 families. "
+        },
+        {
+          item: "Rallied community partners to support the implementation of a warming and navigation center operated by MINT and UCAN, " + 
+                "and a cooling and navigation center operated by MINT at Parker`s Place."
+        },
+        {
+          item: "We hold monthly meetings to highlight non-profits and other organizations working in the area who are trying to bring hope, " + 
+                "help, and solutions to the unhoused. We actively recruit volunteers and donors to assist these organizations, " + 
+                "our community partners."
+        },
+        {
+          item: "Advocated for the lifting of the injunction against the City of Grants Pass and collaborated with the city and police officials " + 
+                "to strategize a plan for moving forward, specifically to exclude the parks for encampments and the temporary use of a few city " + 
+                "lots for people transitioning from the parks."
+        }, 
+        {
+          item: "PATH meets with non-profit groups and organizations regularly to find ways to help them implement their solutions sustainably. "
+        },
+        {
+          item: "PATH`s Information/Communications Committee has worked hard to find `best practices` for communicating positively and " + 
+                "transparently with our community about all things homelessness and to find the best ways to combat disinformation and " + 
+                "to disseminate facts instead. To assist in this, this committee has created a Facebook page, has a phone number, " + 
+                "an email address, a new informational pamphlet and a great website that offers a place for interested people to learn " + 
+                "about PATH, upcoming events, volunteer and giving opportunities, and to learn more about homelessness in our community."
+        },
+        { 
+          item: "We have donated Bibles, needed household items, and furniture for Hearts with a Mission families."
+        }, 
+        {
+          item: "In partnership with Our Foster Kids, we were able to fill new backpacks with school supplies just in time for the first day of " + 
+                "school for Hearts with a Mission children and youth."
+        },
+        {
+          item: "A group of PATH members formed to bring a Recovery Café to Grants Pass. Recovery Café Grants Pass - Hope and Recovery on the Rogue, " + 
+                "will meet the needs of those in recovery by standing alongside their members on their recovery journey.  They have expanded their " + 
+                "core team, formed a 501c3 nonprofit organization and plan to open a site in the first half of 2025."
+        }, 
+        { 
+          item: "Even though we were told it couldn`t be done, we have successfully bridged the gap between many local non-profits and have " + 
+                "created opportunities for them to begin working together to support each other`s efforts…. a win-win for all. We also regularly " + 
+                "connect those in need with the resources available to them."
+        },
+        {
+          item: "PATH has participated in several outreach events for Nonprofits and community organizations, including the July 2024 Nonprofit " + 
+                "Showcase and an informational desk at the St Anne`s Catholic Church."
+        },
+        {
+          item: "We have PATH volunteers imbedded in, or supporting several non-profit organizations to assist them in fulfilling their mission. " + 
+                "Including MINT, the Food Bank, Maslow Project, Recovery Café Grants Pass, Josephine Community Library, and many others."
+        },
+        {
+          item: "PATH, Recovery Café Grants Pass, and Dove Ministries participated in a Volunteer Recruitment event at St Anne`s Church with great success."
+        },
+        {
+          item: "PATH`s Housing Committee has worked tirelessly to identify housing initiatives, housing projects, grant opportunities, etc. " + 
+                "to help advocate for all things housing to include low-income, affordable, workforce, transitional, tiny homes, modular homes, " + 
+                "senior and Veteran housing, and more. They also worked to identify barriers that exist to those experiencing being unhoused " + 
+                "to try and find solutions to those barriers."
+        },
+        {
+          item: "PATH`s Mental Health and Recovery Solutions committee has done extensive research as to the complexities of addiction, " + 
+                "mental illness, and barriers and solutions associated with both. They have met with numerous community partners working in " + 
+                "these areas to identify ways to assist them in their efforts. "
+        },
+        {
+          item: "PATH has provided volunteer support to the Annual PIT (Point in Time) Count in Josephine County."
+        },
+        {
+          item: "We have had many PATH members volunteering at the Warming and the Cooling centers for the past two years."
+        },
+        {
+          item: "As we met with numerous local non-profit working in this space, we found that many had outdated or underutilized community " + 
+                "resource lists. PATH saw the need and filled it by creating an up-to-date and relevant Community Resource List of all local " + 
+                "entities working to impact homelessness, addiction, mental illness, and much more. This resource guide has been distributed " + 
+                "widely and is being used throughout our community to connect resources to those in need. We have also made a live version " + 
+                "available via a QR code on the back of our business cards, and on our website. "
+        },
+        {
+          item: "In May, we organized a small group of PATH leaders, local government and community leaders and Park Watch leaders to visit " + 
+                "Rogue Retreat`s Crossing campground in Medford.  Sam Engel graciously led the tour and offered many ideas that could be " + 
+                "implemented here in Grants Pass. Since then, we have been able to advocate for viable projects for our community and continue " + 
+                "to benefit from open lines of communication with Rogue Retreat."
+        },
+        {
+          item: "PATH and U-Turn for Christ came together to develop the first ever furniture exchange program to support newly housed people in our community."
+        },
+        {
+          item: "When the encampments were getting moved from the parks to city lots, it became apparent that there was no potable water available. " + 
+                "At the request of the City of Grants Pass, PATH researched all possibilities for potable water supplies and participated in a " + 
+                "discussion to resolve the lack of drinking water as quickly as possible. This research and discussion resulted in the successful " + 
+                "connecting of UCAN with the City to make potable water available to each site. "
+        },
+        {
+          item: "PATH participated in a brainstorming session between the Mayor, City Council members, and several community partners to discuss the " + 
+                "best ways forward as the homeless encampments are moved from the parks and public spaces to the temporary encampment lots."
+        },
+        {
+          item: "PATH participated in a discussion between the Grants Pass Police Department leadership and other community partners including members " + 
+                "of MINT and Park Watch to discuss what`s working and not working in the homeless encampments."
+        },
+        {
+          item: "PATH has been a trusted link between City and Police officials and departments and our local non-profits and community partners to " + 
+                "ensure we are all working together in a unified spirit."
         }
       ]
     }
