@@ -41,3 +41,14 @@ resource "aws_dynamodb_table" "services" {
         type = "S"
     } 
 }
+
+resource "aws_dynamodb_table" "donations" {
+    name = "${var.env_name}_Donations"
+    billing_mode = "PAY_PER_REQUEST"
+    hash_key = "DonationID"
+
+    attribute {
+        name = "DonationID"
+        type = "S"
+    } 
+}
