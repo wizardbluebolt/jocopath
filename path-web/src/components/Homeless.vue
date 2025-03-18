@@ -46,10 +46,18 @@
               <h3 class="pa-2"></h3>
               <v-row>
                 <v-col cols="4" class="text-h5 pt-16 pl-8">
-                  <p>Homelessness is a multi-faceted problem requiring multi-faceted "outside the box" solutions</p>
+                  <p>Homelessness is a multi-faceted problem ...</p>
                 </v-col>
                 <v-col cols="7" class="pa-4">
                   <img src="/images/HomelessWheel.svg" width="550" height="550">
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="4" class="text-h5 pt-16 pl-8">
+                  <p>requiring multi-faceted "outside the box" solutions</p>
+                </v-col>
+                <v-col cols="7" class="pa-4">
+                  <img src="/images/HomelessWheel2.svg" width="550" height="550">
                 </v-col>
               </v-row>
             </v-card-text>

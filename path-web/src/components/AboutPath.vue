@@ -141,15 +141,15 @@
     [
       {
         name: "Steering",
-        chair: "Julie Hartford",
-        photo: "images/JulieHartfordHeadshot.jpeg",
+        chair: "Matt Rosen",
+        photo: "images/MattHeadshot2023.jpg",
         purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
                   "Secretary, and the leaders of each committee.  The Steering Committee sets " +
                   "the policies for PATH and makes all executive decisions.  The committee provides " +
                   "oversight to all other committees and subcommittees. The committee reviews " +
                   "membership and plans the general meetings.  The committee ensures that other " +
                   "committees are not duplicating each other`s efforts or working at cross-purposes.",
-        meetingDays: "Twice each month or as necessary to make sure all committees are working in tandem."
+        meetingDays: "Once each month or as necessary to make sure all committees are working in tandem."
       },
       {
         name: "Information and Communications",
@@ -191,6 +191,13 @@
         meetingDays: "Occasional as needed"
       },
       {
+        name: "Housing and Locations",
+        chair: "Kristina Jones Dodd",
+        photo: "images/KristinaJonesDoddHeadshot.jpg",
+        purpose: "Support efforts to increase housing and new developments in the community.",
+        meetingDays: "TBD"
+      },   
+      {
         name: "Mental Health and Addiction Recovery Solutions",
         chair: "TBD",
         photo: "images/MissingHeadshot.png",
@@ -201,13 +208,6 @@
                   "model to help us research, reach out, and support treatment providers, volunteers, and the affected homeless population",
         meetingDays: "TBD"
       },
-      {
-        name: "Housing and Development",
-        chair: "TBD",
-        photo: "images/MissingHeadshot.png",
-        purpose: "Support efforts to increase housing and new developments in the community.",
-        meetingDays: "TBD"
-      },   
 /*         {
         name: "Fundraising",
         chair: "TBD",
