@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { getApprovedDonations, getArchivedDonations, getPendingDonations, createDonation, approveDonation, deleteDonation } from '@/api/donations'
 import { convertObjects } from '@/api/conversions'
-import { defaultArchiveDate } from '@/api/datetimeops'
+import { currentDateTime, defaultExpirationDate } from '@/api/datetimeops'
 
 // Sort donations so that the earliest appears first
 function compareDonations(pDonation1, pDonation2) {
@@ -64,7 +64,7 @@ export const useDonationStore = defineStore('donation', {
                 this.approvedDonations = convertObjects(response.data).sort(compareDonations);
                 response = await getPendingDonations(pToken);
                 this.pendingDonations = convertObjects(response.data).sort(compareDonations);   
-                let expDate = defaultArchiveDate();
+                let expDate = defaultExpirationDate();
                 response = await(getArchivedDonations(expDate));
                 this.archivedDonations = convertObjects(response.data).sort(compareDonations);
             } catch (error) {

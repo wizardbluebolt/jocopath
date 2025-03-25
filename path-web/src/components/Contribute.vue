@@ -43,11 +43,6 @@
         </v-row>
         <v-list>
             <v-list-item>
-                <v-list-item-title><b>Services</b></v-list-item-title>
-                <p>Services provided by non-profits, government organizations, or businesses that can directly 
-                benefit unhoused individuals.</p>
-            </v-list-item>
-            <v-list-item>
                 <v-list-item-title><b>News</b></v-list-item-title>
                 <p>News related to homelessness in our county that would be of interest to the community.</p>
             </v-list-item>
@@ -56,8 +51,12 @@
                 <p>Events taking place somewhere in the county or region that are relevant to the homelessness issue.</p>
             </v-list-item>
             <v-list-item>
-                <v-list-item-title><b>Help Wanted</b></v-list-item-title>
+                <v-list-item-title><b>Volunteer Opportunities</b></v-list-item-title>
                 <p>A notice requesting volunteers or workers to help with a project, event, or initiative.</p>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-title><b>Donation Opportunities</b></v-list-item-title>
+                <p>A notice requesting donations of goods or money to support a project, event, or initiative.</p>
             </v-list-item>
         </v-list>
         <v-row>

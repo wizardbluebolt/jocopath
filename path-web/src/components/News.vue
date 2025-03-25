@@ -51,19 +51,19 @@
                 </v-col>  
               </v-row>
               <v-row dense>
-                <v-col cols="5" class="text-right">
-                  <b>Items Accepted From:</b>{{ formatDateTime(donationItem.StartDate) }}
+                <v-col cols="5" class="pl-2">
+                  <b>Items Accepted From: </b>{{ formatDate(donationItem.StartDate) }}
                 </v-col>
                 <v-col cols="5" class="pl-2">
-                  <b>Until: </b>{{ formatDateTime(donationItem.EndDate) }}
+                  <b>Until: </b>{{ formatDate(donationItem.ExpirationDate) }}
                 </v-col>
               </v-row>
-              <v-row dense>
-                <v-col cols="4">
-                  <b>Hours: </b>{{ donationItem.DonationHours }}
+              <v-row dense v-if="donationItem.DonationHours.length > 0">
+                <v-col cols="5" class="pl-2">
+                  <b>Drop-Off Hours: </b>{{ donationItem.DonationHours }}
                 </v-col>
-                <v-col cols="7" class="pl-2">
-                  <b>Location: </b>{{ donationItem.Location }}
+                <v-col cols="6" class="pl-2">
+                  <b>Drop-Off Location: </b>{{ donationItem.Location }}
                   <v-tooltip location="end">
                     <template v-slot:activator="{ props }">
                       <v-btn 
@@ -165,7 +165,7 @@
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
     import { useDonationStore } from '@/stores/donations';
-    import { formatDateTime, formatDateTimeRange } from '@/api/datetimeops';
+    import { formatDateTime, formatDateTimeRange, formatDate } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)
