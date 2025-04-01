@@ -202,18 +202,19 @@
                     <v-card-title v-if="!editMode">{{ donationItem.Headline }}</v-card-title>
                     <v-card-text v-if="!editMode">
                         <p class="pa-4">{{ donationItem.Description }}</p>
+                        <p class="pl-4">
+                            <b>Donation Kind: </b>{{ donationItem.DonationKind }}</p>
                         <p class="pa-4">
-                            <b>Donation Kind: </b>{{ donationItem.DonationKind }}
-                            <b class="pl-4">How Used: </b>{{ donationItem.HowUsed }}</p>
-                        <p class="pa-4" v-if="donationItem.DonationHours.length > 0">
+                            <b>How Used: </b>{{ donationItem.HowUsed }}</p>
+                        <p class="pl-4" v-if="donationItem.DonationHours.length > 0">
                             <b>Hours: </b>{{ donationItem.DonationHours }}
                             <b class="pl-4">Location: </b>{{ donationItem.Location }}</p>
                         <p class="pa-4">
                             <b>Items Accepted From: </b>{{ formatDate(donationItem.StartDate) }}
                             <b class="pl-4">Until: </b>{{ formatDate(donationItem.ExpirationDate) }}</p>
-                        <p v-if="donationItem.WebURL.length > 0">
+                        <p v-if="donationItem.WebURL.length > 0" class="pl-4">
                             <b>Web URL: </b>{{ donationItem.WebURL }}</p>
-                        <p v-if="donationItem.ContactName.length > 0" class="pt-4">
+                        <p v-if="donationItem.ContactName.length > 0" class="pt-4 pl-4">
                             <b>Contact: </b>{{ donationItem.ContactName }} {{ donationItem.ContactPhone }} {{ donationItem.ContactEMail }}</p>
                     </v-card-text>
                     <v-card-actions v-if="!editMode">

@@ -16,20 +16,26 @@
               label="Description">
               </v-textarea>
           </v-col>
-          <v-col cols="4" class="mr-4">
-              <v-text-field
+        </v-row>
+        <v-row dense no-gutters>
+            <v-col cols="12">
+              <v-textarea
               v-model="donationStore.currDonation.DonationKind"
+              counter
               :rules="rules.kindRules"
               label="Donation Kind">
-              </v-text-field>
+              </v-textarea>
           </v-col>
-          <v-col cols="7">
-              <v-text-field
+          <v-col cols="12">
+              <v-textarea
               v-model="donationStore.currDonation.HowUsed"
+              counter
               :rules="rules.howusedRules"
               label="How Used">
-              </v-text-field>
+              </v-textarea>
           </v-col>
+        </v-row>
+        <v-row dense no-gutters>
           <v-col cols="6">
             <v-text-field
               v-model="donationStore.currDonation.WebURL"
@@ -158,11 +164,11 @@
         ],
         kindRules: [
             v => !!v || 'Donation Kind is required',
-            v => (v && v.length <= 50) || 'Donation Kind must be less than 50 characters',
+            v => (v && v.length <= 500) || 'Donation Kind must be less than 50 characters',
         ],
         howusedRules: [
             v => !!v || 'How Used is required',
-            v => (v && v.length <= 100) || 'How Used must be less than 100 characters',
+            v => (v && v.length <= 500) || 'How Used must be less than 100 characters',
         ],
         weburl: [
             v => !v || isURL(v) || 'Web URL must be a valid URL',

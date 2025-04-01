@@ -5,10 +5,10 @@ import { currentDateTime, defaultExpirationDate } from '@/api/datetimeops'
 
 // Sort help wanted so that the latest appears first
 function compareHelp(pHelp1, pHelp2) {
-    if (pHelp1.Date > pHelp2.Date) {
+    if (pHelp1.Headline < pHelp2.Headline) {
         return -1;
     }
-    if (pHelp1.Date < pHelp2.Date) {
+    if (pHelp1.Headline > pHelp2.Headline) {
         return 1;
     }
     return 0;

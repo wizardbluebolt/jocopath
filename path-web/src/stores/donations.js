@@ -5,10 +5,10 @@ import { currentDateTime, defaultExpirationDate } from '@/api/datetimeops'
 
 // Sort donations so that the earliest appears first
 function compareDonations(pDonation1, pDonation2) {
-    if (pDonation1.StartDate > pDonation2.StartDate) {
+    if (pDonation1.Headline > pDonation2.Headline) {
         return 1
     }
-    if (pDonation1.StartDate < pDonation2.StartDate) {
+    if (pDonation1.Headline < pDonation2.Headline) {
         return -1
     }
     return 0

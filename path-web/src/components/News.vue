@@ -43,10 +43,10 @@
             <v-card-text style="font-size: 1.1rem;">
               <p class="pa-4">{{ donationItem.Description }}</p>
               <v-row dense>
-                <v-col cols="5" class="pl-2">
+                <v-col cols="12" class="pt-4 pl-2">
                   <b>Donation Kind: </b>{{ donationItem.DonationKind }}
                 </v-col>
-                <v-col cols="7" class="pl-2">
+                <v-col cols="12" class="pt-4 pb-4 pl-2"> 
                   <b>How Used: </b>{{ donationItem.HowUsed }}
                 </v-col>  
               </v-row>
