@@ -26,11 +26,6 @@
       <v-window-item value=null>
         <p></p>
       </v-window-item>
-      <v-window-item value="service">
-         <ServiceForm
-          @formSubmitted="formSubmitted"
-          @formEditCancelled="formCancelled"></ServiceForm>
-      </v-window-item>
       <v-window-item value="news">
         <NewsForm
           @formSubmitted="formSubmitted"
@@ -46,6 +41,11 @@
           @formSubmitted="formSubmitted"
           @formEditCancelled="formCancelled"></HelpForm>
       </v-window-item>       
+      <v-window-item value="donation">
+        <DonationForm
+          @formSubmitted="formSubmitted"
+          @formEditCancelled="formCancelled"></DonationForm>
+      </v-window-item>
     </v-window>
   </v-card-text>
 </template>
@@ -55,22 +55,22 @@
     import EventForm from './EventForm.vue';
     import NewsForm from './NewsForm.vue';
     import HelpForm from './HelpForm.vue';
-    import ServiceForm from './ServiceForm.vue';
+    import DonationForm from './DonationForm.vue';
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
-    import { useServiceStore } from '@/stores/services';
+    import { useDonationStore } from '@/stores/donations';
     import { useUserStore } from '@/stores/user';
     import Auth from './Auth.vue';
 
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
     const helpStore = useHelpStore();
-    const serviceStore = useServiceStore();
+    const donationStore = useDonationStore();
     const userStore = useUserStore();
 
     const components = {
-      EventForm, NewsForm, HelpForm, ServiceForm, Auth
+      EventForm, NewsForm, HelpForm, DonationForm, Auth
     }
 
     const formSelected = ref(null);
@@ -80,10 +80,10 @@
                       "They may contact you with questions."
 
     const forms = [
-      {form: 'service', title: 'Tell us about your Service'},
       {form: 'news', title: 'Tell us about your News item'},
       {form: 'event', title: 'Tell us about your Event'},
-      {form: 'helpwanted', title: 'List a How to Help item'}
+      {form: 'helpwanted', title: 'Tell us about a volunteer opportunity'},
+      {form: 'donation', title: 'Tell us about a donation opportunity'}
     ]
 
     function selectForm(pItem) {
@@ -105,9 +105,12 @@
           helpStore.currHelp.ContactName = userStore.getCurrUser;
           helpStore.currHelp.ContactEMail = userStore.getCurrEmail;
           break;
-        case "service":
-          serviceStore.newService();
-          serviceStore.currService.ContactName = userStore.getCurrUser;
+        case "donation":
+          donationStore.newDonation();
+          donationStore.currDonation.ContactName = userStore.getCurrUser;
+          donationStore.currDonation.ContactEMail = userStore.getCurrEmail;
+          break;
+
         default:
 
       }

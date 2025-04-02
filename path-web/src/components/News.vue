@@ -5,7 +5,8 @@
       bg-color="primary"
       color="yellow"
       slider-color="red">
-      <v-tab value="helpwanted">How To Help</v-tab>
+      <v-tab value="helpwanted">Volunteer Opportunities</v-tab>
+      <v-tab value="donations">Donation Opportunities</v-tab>
       <v-tab value="news">News</v-tab>
       <v-tab value="events">Events</v-tab>
     </v-tabs>
@@ -31,6 +32,66 @@
                   <span class="pr-4" v-if="helpItem.ContactPhone.length > 0">{{ helpItem.ContactPhone }}</span>
                   <b v-if="helpItem.ContactEMail.length > 0">EMail: </b>
                   <span v-if="helpItem.ContactEMail.length > 0">{{ helpItem.ContactEMail }}</span>
+                </p>
+              </v-row>
+            </v-card-text>
+          </v-card>
+        </v-window-item>
+        <v-window-item value="donations">
+          <v-card variant="outlined" v-for="donationItem in donationStore.getApprovedDonations">
+            <v-card-title>{{ donationItem.Headline }}</v-card-title>
+            <v-card-text style="font-size: 1.1rem;">
+              <p class="pa-4">{{ donationItem.Description }}</p>
+              <v-row dense>
+                <v-col cols="12" class="pt-4 pl-2">
+                  <b>Donation Kind: </b>{{ donationItem.DonationKind }}
+                </v-col>
+                <v-col cols="12" class="pt-4 pb-4 pl-2"> 
+                  <b>How Used: </b>{{ donationItem.HowUsed }}
+                </v-col>  
+              </v-row>
+              <v-row dense>
+                <v-col cols="5" class="pl-2">
+                  <b>Items Accepted From: </b>{{ formatDate(donationItem.StartDate) }}
+                </v-col>
+                <v-col cols="5" class="pl-2">
+                  <b>Until: </b>{{ formatDate(donationItem.ExpirationDate) }}
+                </v-col>
+              </v-row>
+              <v-row class="pt-2" dense v-if="donationItem.DonationHours.length > 0">
+                <v-col cols="5" class="pl-2">
+                  <b>Drop-Off Hours: </b>{{ donationItem.DonationHours }}
+                </v-col>
+                <v-col cols="6" class="pl-2">
+                  <b>Drop-Off Location: </b>{{ donationItem.Location }}
+                  <v-tooltip location="end">
+                    <template v-slot:activator="{ props }">
+                      <v-btn 
+                        v-bind="props"
+                        density="compact" 
+                        aria-label="Copy Address" 
+                        flat
+                        icon
+                        @click="doCopy(donationItem.Location)">
+                        <v-icon color="grey-lighten-1">mdi-content-copy</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Copy address</span>
+                  </v-tooltip>
+                </v-col>
+              </v-row>
+              <v-row dense>
+                <v-col cols="8" class="pl-2">
+                  <a v-if="donationItem.WebURL.length > 0" :href="donationItem.WebURL">More Information</a>
+                </v-col>
+              </v-row>
+              <v-row dense no-gutters class="pt-4" v-if="donationItem.PublishContact == 'Y'">
+                <p class="pl-1" v-if="donationItem.ContactName.length > 0">
+                  <b>Contact: </b><span class="pr-4">{{ donationItem.ContactName }}</span> 
+                  <b v-if="donationItem.ContactPhone.length > 0">Phone: </b>
+                  <span class="pr-4" v-if="donationItem.ContactPhone.length > 0">{{ donationItem.ContactPhone }}</span>
+                  <b v-if="donationItem.ContactEMail.length > 0">EMail: </b>
+                  <span v-if="donationItem.ContactEMail.length > 0">{{ donationItem.ContactEMail }}</span>
                 </p>
               </v-row>
             </v-card-text>
@@ -103,7 +164,8 @@
     import { useEventStore } from '@/stores/events';
     import { useNewsStore } from '@/stores/news';
     import { useHelpStore } from '@/stores/help';
-    import { formatDateTime, formatDateTimeRange } from '@/api/datetimeops';
+    import { useDonationStore } from '@/stores/donations';
+    import { formatDateTime, formatDateTimeRange, formatDate } from '@/api/datetimeops';
     
     function doCopy(pText) {
       toClipboard(pText)
@@ -114,6 +176,7 @@
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
     const helpStore = useHelpStore();
+    const donationStore = useDonationStore();
 
     onMounted(async function () {
         if (eventStore.getApprovedEvents.length === 0)  {
@@ -124,6 +187,9 @@
         }
         if (helpStore.getApprovedHelp.length === 0) {
           await helpStore.fetchApprovedHelp();
+        }
+        if (donationStore.getApprovedDonations.length === 0) {
+          await donationStore.fetchApprovedDonations();
         }
     });  
   

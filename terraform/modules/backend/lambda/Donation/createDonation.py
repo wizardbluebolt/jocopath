@@ -51,7 +51,7 @@ def lambda_handler(event, context):
                     "S": payload["ContactPhone"]
                 },
                 "ExpirationDate": {
-                    "S": payload["EndDate"]
+                    "S": payload["ExpirationDate"]
                 },
                 "Approved": {
                     "S": "N"

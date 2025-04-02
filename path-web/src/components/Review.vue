@@ -16,6 +16,7 @@
         <v-tab value="news">News ({{ newsList.length }})</v-tab>
         <v-tab value="events">Events ({{ eventsList.length }})</v-tab>
         <v-tab value="helpwanted">Help Wanted ({{ helpList.length }})</v-tab>
+        <v-tab value="donations">Donations ({{ donationList.length }})</v-tab>
         <v-tab value="services">Services ({{ servicesList.length }})</v-tab>
     </v-tabs>
     <v-card-text v-if="userStore.getIsReviewer" class="text-body-1">
@@ -196,6 +197,70 @@
                     </HelpForm>                
                 </v-card>
             </v-window-item>
+            <v-window-item value="donations">
+                <v-card variant="outlined" v-for="donationItem in donationList" :key="donationItem.DonationID">
+                    <v-card-title v-if="!editMode">{{ donationItem.Headline }}</v-card-title>
+                    <v-card-text v-if="!editMode">
+                        <p class="pa-4">{{ donationItem.Description }}</p>
+                        <p class="pl-4">
+                            <b>Donation Kind: </b>{{ donationItem.DonationKind }}</p>
+                        <p class="pa-4">
+                            <b>How Used: </b>{{ donationItem.HowUsed }}</p>
+                        <p class="pl-4" v-if="donationItem.DonationHours.length > 0">
+                            <b>Hours: </b>{{ donationItem.DonationHours }}
+                            <b class="pl-4">Location: </b>{{ donationItem.Location }}</p>
+                        <p class="pa-4">
+                            <b>Items Accepted From: </b>{{ formatDate(donationItem.StartDate) }}
+                            <b class="pl-4">Until: </b>{{ formatDate(donationItem.ExpirationDate) }}</p>
+                        <p v-if="donationItem.WebURL.length > 0" class="pl-4">
+                            <b>Web URL: </b>{{ donationItem.WebURL }}</p>
+                        <p v-if="donationItem.ContactName.length > 0" class="pt-4 pl-4">
+                            <b>Contact: </b>{{ donationItem.ContactName }} {{ donationItem.ContactPhone }} {{ donationItem.ContactEMail }}</p>
+                    </v-card-text>
+                    <v-card-actions v-if="!editMode">
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Approve Donation" icon
+                                    @click="doApproveDonation(donationItem.DonationID)">
+                                    <v-icon color="grey-lighten-1">mdi-check-decagram</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Approve donation</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Edit Donation" icon
+                                    @click="doEditDonation(donationItem.DonationID)">
+                                    <v-icon color="grey-lighten-1">mdi-pencil</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Edit donation</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode == 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Delete Donation" icon
+                                    @click="doDeleteDonation(donationItem.DonationID)">
+                                    <v-icon color="grey-lighten-1">mdi-trash-can</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Delete donation</span>
+                        </v-tooltip>
+                        <v-tooltip location="end" v-if="listMode != 'Pending'">
+                            <template v-slot:activator="{ props }">
+                                <v-btn v-bind="props" density="compact" aria-label="Cancel Donation Approval" icon
+                                    @click="doCancelDonation(donationItem.DonationID)">
+                                    <v-icon color="grey-lighten-1">mdi-cancel</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Cancel donation approval</span>
+                        </v-tooltip>
+                    </v-card-actions>
+                    <DonationForm v-if="editMode && (donationItem.DonationID === currDonation.DonationID)" 
+                        @formSubmitted="donationFormSubmitted"
+                        @formEditCancelled="doCancelEditDonation">
+                    </DonationForm>
+                </v-card>
+            </v-window-item>
             <v-window-item value="services">
                 <v-card variant="outlined" v-for="serviceItem in servicesList" :key="serviceItem.ServiceID">
                     <v-card-title v-if="!editMode">{{ serviceItem.ServiceName }}</v-card-title>
@@ -270,16 +335,19 @@
     import { useNewsStore } from "@/stores/news";
     import HelpForm from "./HelpForm.vue";
     import { useHelpStore } from "@/stores/help";
+    import DonationForm from "./DonationForm.vue";
+    import { useDonationStore } from "@/stores/donations";
     import ServiceForm from "./ServiceForm.vue";
     import { useServiceStore } from "@/stores/services";
     import { useUserStore } from "@/stores/user";
     import Auth from "./Auth.vue";
-    import { formatDateTime, formatDateTimeRange } from '@/api/datetimeops';
+    import { formatDateTime, formatDateTimeRange, formatDate } from '@/api/datetimeops';
 
 
     const eventStore = useEventStore();
     const newsStore = useNewsStore();
     const helpStore = useHelpStore();
+    const donationStore = useDonationStore();
     const serviceStore = useServiceStore();
     const userStore = useUserStore();
 
@@ -318,6 +386,15 @@
     });
     const currHelp = computed(() => helpStore.currHelp);
 
+    const donationList = computed(() => {
+        if (listMode.value == "Pending") {
+            return donationStore.pendingDonations;
+        } else {
+            return donationStore.approvedDonations;
+        }
+    });
+    const currDonation = computed(() => donationStore.currDonation);
+
     const servicesList = computed(() => {
         if (listMode.value == "Pending") {
             return serviceStore.pendingServices;
@@ -332,6 +409,7 @@
         NewsForm,
         HelpForm,
         ServiceForm,
+        DonationForm,
         Auth,
     };
 
@@ -355,6 +433,13 @@
         await helpStore.approveHelp(userStore.getAccessToken);
         await helpStore.fetchPendingHelp(userStore.getAccessToken);
         await helpStore.fetchApprovedHelp();
+    }
+
+    async function doApproveDonation(pDonationID) {
+        donationStore.selectDonation(pDonationID);
+        await donationStore.approveDonation(userStore.getAccessToken);
+        await donationStore.fetchPendingDonations(userStore.getAccessToken);
+        await donationStore.fetchApprovedDonations();
     }
 
     async function doApproveService(pServiceID) {
@@ -394,6 +479,16 @@
         }
     }
 
+    async function doDeleteDonation(pDonationID) {
+        let confMessage = "Are you sure you want to delete this donation?";
+        let confResult = window.confirm(confMessage);
+        if (confResult) {
+            donationStore.selectDonation(pDonationID);
+            await donationStore.deleteDonation(userStore.getAccessToken);
+            await donationStore.fetchPendingDonations(userStore.getAccessToken);
+        }
+    }
+
     async function doDeleteService(pServiceID) {
         let confMessage = "Are you sure you want to delete this service?";
         let confResult = window.confirm(confMessage);
@@ -417,6 +512,11 @@
     function doEditHelp(pHelpID) {
         editMode.value = true;
         helpStore.selectHelp(pHelpID);
+    }
+
+    function doEditDonation(pDonationID) {
+        editMode.value = true;
+        donationStore.selectDonation(pDonationID);
     }
 
     function doEditService(pServiceID) {
@@ -462,6 +562,17 @@
         await helpStore.fetchApprovedHelp();
     }
 
+    async function doCancelDonation(pDonationID) {
+        if (listMode.value == "Pending") {
+            donationStore.selectDonation(pDonationID);
+        } else {
+            donationStore.selectApprovedDonation(pDonationID);
+        }
+        await donationStore.saveDonation(userStore.getAccessToken);
+        await donationStore.fetchPendingDonations(userStore.getAccessToken);
+        await donationStore.fetchApprovedDonations();
+    }
+
     async function doCancelService(pServiceID) {
         if (listMode.value == "Pending") {
             serviceStore.selectService(pServiceID);
@@ -494,6 +605,13 @@
         }, 1000)
     }
 
+    async function doCancelEditDonation() {
+        await donationStore.fetchPendingDonations(userStore.getAccessToken);
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000)
+    }
+
     async function doCancelEditService() {
         await serviceStore.fetchPendingServices(userStore.getAccessToken);
         setTimeout(() => {
@@ -519,6 +637,12 @@
         }, 1000);
     }
 
+    async function donationFormSubmitted() {
+        setTimeout(() => {
+            editMode.value = false;
+        }, 1000);
+    }
+
     async function serviceFormSubmitted() {
         setTimeout(() => {
             editMode.value = false;
@@ -539,6 +663,10 @@
         if (helpStore.getPendingHelp.length === 0) {
             await helpStore.fetchPendingHelp(userStore.getAccessToken);
             await helpStore.fetchApprovedHelp();
+        };
+        if (donationStore.getPendingDonations.length === 0) {
+            await donationStore.fetchPendingDonations(userStore.getAccessToken);
+            await donationStore.fetchApprovedDonations();
         };
         if (serviceStore.getPendingServices.length === 0) {
             await serviceStore.fetchPendingServices(userStore.getAccessToken);
