@@ -58,7 +58,7 @@
                   <b>Until: </b>{{ formatDate(donationItem.ExpirationDate) }}
                 </v-col>
               </v-row>
-              <v-row dense v-if="donationItem.DonationHours.length > 0">
+              <v-row class="pt-2" dense v-if="donationItem.DonationHours.length > 0">
                 <v-col cols="5" class="pl-2">
                   <b>Drop-Off Hours: </b>{{ donationItem.DonationHours }}
                 </v-col>
@@ -86,7 +86,7 @@
                 </v-col>
               </v-row>
               <v-row dense no-gutters class="pt-4" v-if="donationItem.PublishContact == 'Y'">
-                <p class="pl-4" v-if="donationItem.ContactName.length > 0">
+                <p class="pl-1" v-if="donationItem.ContactName.length > 0">
                   <b>Contact: </b><span class="pr-4">{{ donationItem.ContactName }}</span> 
                   <b v-if="donationItem.ContactPhone.length > 0">Phone: </b>
                   <span class="pr-4" v-if="donationItem.ContactPhone.length > 0">{{ donationItem.ContactPhone }}</span>
