@@ -195,7 +195,7 @@
         chair: "Kristina Jones Dodd",
         photo: "images/KristinaJonesDoddHeadshot.jpg",
         purpose: "Support efforts to increase housing and new developments in the community.",
-        meetingDays: "TBD"
+        meetingDays: "Second Monday each month at 2:00 PM, 858 NW 6th St, Grants Pass, OR 97526"
       },   
       {
         name: "Mental Health and Addiction Recovery Solutions",
