@@ -141,8 +141,8 @@
     [
       {
         name: "Steering",
-        chair: "Matt Rosen",
-        photo: "images/MattHeadshot2023.jpg",
+        chair: "Julie Thomas",
+        photo: "images/JulieThomasHeadshot.png",
         purpose: "The Steering Committee consists of the PATH`s President, Vice President, " +
                   "Secretary, and the leaders of each committee.  The Steering Committee sets " +
                   "the policies for PATH and makes all executive decisions.  The committee provides " +
@@ -166,7 +166,7 @@
         meetingDays: "Second Tuesday morning each month"
       },
       {
-        name: "Operations and Outreach",
+        name: "Volunteer and Outreach",
         chair: "Sheryl Eldridge",
         photo: "images/SherylEldridgeHeadshot.jpg",
         purpose: "Identifies and coordinates PATH liaisons to various community service organizations. " +
@@ -177,7 +177,7 @@
                   "gaps and fill those gaps within service organizations so they can better accomplish their mission. " +
                   "We would love to invite those having a connection to a church or organization in Josephine County to " +
                   "become a liaison.",
-        meetingDays: "Second Friday afternoon each month"
+        meetingDays: "Third Thursday at 2pm to 3:30pm each month, GP City Council Chambers, 101 NW A St"
       },
       {
         name: "Safe Parking Program Outreach (Subcommitee)",
