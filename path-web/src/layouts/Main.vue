@@ -26,9 +26,6 @@
               <router-link to="/services">Community Resource List</router-link>
           </v-list-item>
           <v-list-item>
-              <router-link to="/meals">St Vincent de Paul Meal Schedule</router-link>
-          </v-list-item>
-          <v-list-item>
               <router-link to="/success">Success Stories</router-link>
           </v-list-item>
           <v-divider :thickness="3"></v-divider>
