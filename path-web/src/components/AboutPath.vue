@@ -34,6 +34,7 @@
                           projects and programs that get people off the streets, out of the parks, and into a position
                           where they can get the help they need, with self-sufficiency being the ultimate goal.</li>
                         <li class="text-subtitle-1">PATH is NOT a 501(c)(3) organization and does not itself receive or manage monetary donations.</li>
+                        <li class="text-subtitle-1"><a href="https://www.facebook.com/pathjoco">Follow PATH on Facebook</a></li>
                       </ul>
                     </v-col>
                     <v-col cols="10" class="mb-0 pb-0 ml-4">

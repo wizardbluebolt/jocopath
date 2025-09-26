@@ -48,26 +48,13 @@
     <v-main>
         <router-view />
     </v-main>
-    <v-footer height="60" app>
+    <v-footer height="40" app>
       <v-row class="bg-teal-lighten-1 align-center ">
-        <v-col cols="2">
+        <v-col cols="5">
           <a href="" style="color: white;">Phone: (541) 450-9535</a>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="5">
           <a href="mailto:pathofjoco@gmail.com" style="color: white;">E-Mail: pathofjoco@gmail.com</a>
-        </v-col>
-        <v-col cols="1" align-center class="pt-4 pl-0 pr-0 pb-0">
-          <v-row>
-          </v-row>
-        </v-col>
-        <v-col cols="2" class="text-right">
-            <router-link to="/about" class="pt-4 pl-1" style="color: white;">About PATH</router-link>        
-        </v-col>
-        <v-col cols="2" class="text-right">
-            <router-link to="/contribute" class="pt-4 pl-1" style="color: white;">Contribute Content</router-link>        
-        </v-col>
-        <v-col cols="2" class="text-right">
-          <a href="https://www.facebook.com/pathjoco" style="color: white;">Facebook Page</a>
         </v-col>
       </v-row>
     </v-footer>
